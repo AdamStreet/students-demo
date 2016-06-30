@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-#import "FGUtilities.h"
+#import "FGLocalPaths.h"
 
 @interface FGDatabaseManager ()
 
@@ -84,7 +84,8 @@ static FGDatabaseManager *mainDatabaseManager = nil;
 	// Create the coordinator and store
 	
 	_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-	NSURL *storeURL = [FGUtilitiesApplicationDocumentsDirectoryURL() URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", self.name]];
+	NSURL *storeURL = [[FGLocalPaths applicationDocumentsDirectoryURL]
+					   URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", self.name]];
 	NSError *error = nil;
 	NSString *failureReason = @"There was an error creating or loading the application's saved data.";
 	if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
@@ -130,6 +131,7 @@ static FGDatabaseManager *mainDatabaseManager = nil;
 }
 
 @end
+
 
 @implementation FGDatabaseManager (Deleting)
 

@@ -15,7 +15,6 @@
 		66AB09A61D24CD06004985E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66AB09A41D24CD06004985E9 /* LaunchScreen.storyboard */; };
 		66AB09B11D24CD06004985E9 /* students_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09B01D24CD06004985E9 /* students_demoTests.m */; };
 		66AB09CF1D24CFEE004985E9 /* FGDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */; };
-		66AB09D21D24D4C5004985E9 /* FGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D11D24D4C5004985E9 /* FGUtilities.m */; };
 		66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */; };
 		66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D81D24D795004985E9 /* FGTableViewController.m */; };
 		66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09DB1D24D7D3004985E9 /* FGNavigationController.m */; };
@@ -43,6 +42,8 @@
 		66AB0A391D259D03004985E9 /* FGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A351D259D03004985E9 /* FGStudent.m */; };
 		66AB0A3C1D25A551004985E9 /* FGJSONObjectFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A3B1D25A551004985E9 /* FGJSONObjectFetcher.m */; };
 		66AB0A401D25A56A004985E9 /* FGImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A3F1D25A56A004985E9 /* FGImageFetcher.m */; };
+		66AB0A431D25A705004985E9 /* FGImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A421D25A705004985E9 /* FGImageCache.m */; };
+		66AB0A461D25A88F004985E9 /* FGLocalPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A451D25A88F004985E9 /* FGLocalPaths.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +80,6 @@
 		66AB09B71D24CD06004985E9 /* students-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "students-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AB09CD1D24CFEE004985E9 /* FGDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGDatabaseManager.h; sourceTree = "<group>"; };
 		66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGDatabaseManager.m; sourceTree = "<group>"; };
-		66AB09D01D24D4C5004985E9 /* FGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGUtilities.h; sourceTree = "<group>"; };
-		66AB09D11D24D4C5004985E9 /* FGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGUtilities.m; sourceTree = "<group>"; };
 		66AB09D41D24D783004985E9 /* FGStudentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentListTableViewController.h; sourceTree = "<group>"; };
 		66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentListTableViewController.m; sourceTree = "<group>"; };
 		66AB09D71D24D795004985E9 /* FGTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTableViewController.h; sourceTree = "<group>"; };
@@ -135,6 +134,10 @@
 		66AB0A3B1D25A551004985E9 /* FGJSONObjectFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGJSONObjectFetcher.m; sourceTree = "<group>"; };
 		66AB0A3E1D25A56A004985E9 /* FGImageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImageFetcher.h; sourceTree = "<group>"; };
 		66AB0A3F1D25A56A004985E9 /* FGImageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageFetcher.m; sourceTree = "<group>"; };
+		66AB0A411D25A705004985E9 /* FGImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImageCache.h; sourceTree = "<group>"; };
+		66AB0A421D25A705004985E9 /* FGImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageCache.m; sourceTree = "<group>"; };
+		66AB0A441D25A88F004985E9 /* FGLocalPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLocalPaths.h; sourceTree = "<group>"; };
+		66AB0A451D25A88F004985E9 /* FGLocalPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLocalPaths.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,8 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				66AB09E41D24D9BD004985E9 /* Extensions */,
-				66AB09D01D24D4C5004985E9 /* FGUtilities.h */,
-				66AB09D11D24D4C5004985E9 /* FGUtilities.m */,
+				66AB0A441D25A88F004985E9 /* FGLocalPaths.h */,
+				66AB0A451D25A88F004985E9 /* FGLocalPaths.m */,
 				66AB09FB1D24E198004985E9 /* FGJSONConverter.h */,
 				66AB09FC1D24E198004985E9 /* FGJSONConverter.m */,
 				66AB09FE1D24E48A004985E9 /* FGAnalytics.h */,
@@ -276,6 +279,8 @@
 				66AB0A131D24E90E004985E9 /* FGLogger.m */,
 				66AB0A1F1D24FAAC004985E9 /* FGLocalization.h */,
 				66AB0A201D24FAAC004985E9 /* FGLocalization.m */,
+				66AB0A411D25A705004985E9 /* FGImageCache.h */,
+				66AB0A421D25A705004985E9 /* FGImageCache.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -529,7 +534,6 @@
 				66AB09FA1D24DE95004985E9 /* FGStudentFetcher.m in Sources */,
 				66AB0A361D259D03004985E9 /* FGAvatarImageFile.m in Sources */,
 				66AB0A001D24E48A004985E9 /* FGAnalytics.m in Sources */,
-				66AB09D21D24D4C5004985E9 /* FGUtilities.m in Sources */,
 				66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */,
 				66AB09A11D24CD06004985E9 /* students_demo.xcdatamodeld in Sources */,
 				66AB0A381D259D03004985E9 /* FGImageFile.m in Sources */,
@@ -541,6 +545,7 @@
 				66AB0A3C1D25A551004985E9 /* FGJSONObjectFetcher.m in Sources */,
 				66AB09E71D24DAEA004985E9 /* FGStudentDetailTableViewController.m in Sources */,
 				66AB0A2C1D259C96004985E9 /* _FGImageFile.m in Sources */,
+				66AB0A461D25A88F004985E9 /* FGLocalPaths.m in Sources */,
 				66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */,
 				66AB0A211D24FAAC004985E9 /* FGLocalization.m in Sources */,
 				66AB09E31D24D966004985E9 /* UIColor+CustomColors.m in Sources */,
@@ -555,6 +560,7 @@
 				66AB0A171D24EDC5004985E9 /* FGAPIKeys.m in Sources */,
 				66AB0A391D259D03004985E9 /* FGStudent.m in Sources */,
 				66AB09951D24CD06004985E9 /* main.m in Sources */,
+				66AB0A431D25A705004985E9 /* FGImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
