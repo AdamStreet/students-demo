@@ -10,7 +10,23 @@
 
 #import "FGStudentFetcher.h"
 
+@interface FGStudentDetailTableViewController ()
+
+@property (nonatomic) FGStudent *student;
+
+@end
+
 @implementation FGStudentDetailTableViewController
+
+- (id)initWithStudent:(FGStudent *)student
+{
+	self = [super initWithStyle:UITableViewStylePlain];
+	if (self) {
+		self.student = student;
+	}
+	
+	return self;
+}
 
 //- (void)viewDidLoad
 //{

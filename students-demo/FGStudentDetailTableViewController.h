@@ -8,6 +8,12 @@
 
 #import "FGTableViewController.h"
 
+@class FGStudent;
+
 @interface FGStudentDetailTableViewController : FGTableViewController
+
+@property (nonatomic, readonly) FGStudent *student;
+
+- (id)initWithStudent:(FGStudent *)student;
 
 @end

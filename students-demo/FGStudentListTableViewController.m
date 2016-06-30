@@ -12,6 +12,7 @@
 #import "FGDatabaseManager.h"
 #import "FGStudentTableViewCell.h"
 #import "FGStudent.h"
+#import "FGStudentDetailTableViewController.h"
 
 @implementation FGStudentListTableViewController
 
@@ -30,6 +31,12 @@
 
 #pragma mark - Initialization
 #pragma mark - Private methods
+
+- (FGStudent *)studentAtIndexPath:(NSIndexPath *)indexPath
+{
+	return [self.fetchedResultsController objectAtIndexPath:indexPath];
+}
+
 #pragma mark Accessors
 #pragma mark - View lifecycle
 
@@ -72,7 +79,7 @@
 - (void)updateCell:(__kindof UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
 	if ([cell isKindOfClass:[FGStudentTableViewCell class]]){
-		((FGStudentTableViewCell *)cell).student = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		((FGStudentTableViewCell *)cell).student = [self studentAtIndexPath:indexPath];
 	} else {
 		NSAssert1(NO, @"Unknown cell: %@", cell);
 	}
@@ -81,6 +88,14 @@
 #pragma mark - User interaction handlers
 #pragma mark - Notification handlers
 #pragma mark - KVO
-#pragma mark - <>
+#pragma mark - <UITableViewDelegate>
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	// Open Detail
+	FGStudentDetailTableViewController *detailViewController = [[FGStudentDetailTableViewController alloc] initWithStudent:[self studentAtIndexPath:indexPath]];
+	
+	[self.navigationController pushViewController:detailViewController animated:YES];
+}
 
 @end
