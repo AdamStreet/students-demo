@@ -9,12 +9,12 @@
 #import "FGRootViewController.h"
 
 #import "FGNavigationController.h"
-#import "FGStudentListTableViewController.h"
+#import "FGMainMenuTableViewController.h"
 
 @interface FGRootViewController ()
 
 @property (nonatomic) FGNavigationController *navigationController;
-@property (nonatomic) FGStudentListTableViewController *studentListViewController;
+@property (nonatomic) UIViewController *mainViewController;
 
 @end
 
@@ -29,20 +29,18 @@
 {
 	UIView *contentView = self.view;
 	
-	// Add student list view controller as child view controller
+	UIViewController *mainViewController = self.navigationController;
 	
-	UIViewController *studentListViewController = self.navigationController;
+	[mainViewController willMoveToParentViewController:self];
 	
-	[studentListViewController willMoveToParentViewController:self];
+	[self addChildViewController:mainViewController];
 	
-	[self addChildViewController:studentListViewController];
-	
-	UIView *studentListViewControllerView = studentListViewController.view;
+	UIView *studentListViewControllerView = mainViewController.view;
 	studentListViewControllerView.frame = contentView.bounds;
 	studentListViewControllerView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	[contentView addSubview:studentListViewControllerView];
 	
-	[studentListViewController didMoveToParentViewController:self];
+	[mainViewController didMoveToParentViewController:self];
 }
 
 #pragma mark - Public methods
@@ -51,19 +49,19 @@
 - (FGNavigationController *)navigationController
 {
 	if (!_navigationController) {
-		_navigationController = [[FGNavigationController alloc] initWithRootViewController:self.studentListViewController];
+		_navigationController = [[FGNavigationController alloc] initWithRootViewController:self.mainViewController];
 	}
 	
 	return _navigationController;
 }
 
-- (FGStudentListTableViewController *)studentListViewController
+- (UIViewController *)mainViewController
 {
-	if (!_studentListViewController) {
-		_studentListViewController = [[FGStudentListTableViewController alloc] initWithStudents];
+	if (!_mainViewController) {
+		_mainViewController = [[FGMainMenuTableViewController alloc] initWithMainOptions];
 	}
 	
-	return _studentListViewController;
+	return _mainViewController;
 }
 
 #pragma mark Overrides

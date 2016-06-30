@@ -28,6 +28,15 @@
 	return self;
 }
 
+- (id)initWithNewStudent
+{
+	self = [super initWithStyle:UITableViewStylePlain];
+	if (self) {
+	}
+	
+	return self;
+}
+
 //- (void)viewDidLoad
 //{
 //	[super viewDidLoad];

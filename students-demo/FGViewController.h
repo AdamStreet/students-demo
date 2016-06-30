@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^FGViewControllerDismissHandler)(__kindof UIViewController *presentingViewController);
 @interface FGViewController : UIViewController
 
+@property (nonatomic, copy) FGViewControllerDismissHandler cancellationHandler;
+
+- (instancetype)initWithoutNib;
 
 @end
 

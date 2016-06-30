@@ -20,6 +20,6 @@
  */
 @property (nonatomic) BOOL deselectTableViewRowOnDidAppear;
 
-- (instancetype)initWithStyle:(UITableViewStyle)tableViewStyle NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithStyle:(UITableViewStyle)tableViewStyle;
 
 @end

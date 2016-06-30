@@ -47,6 +47,12 @@
 		66AB0A491D25B002004985E9 /* FGImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A481D25B002004985E9 /* FGImageLoader.m */; };
 		66AB0A4C1D25B321004985E9 /* FGFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A4B1D25B321004985E9 /* FGFetchedResultsTableViewController.m */; };
 		66AB0A4F1D25B9FF004985E9 /* FGStudentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A4E1D25B9FF004985E9 /* FGStudentTableViewCell.m */; };
+		66AB0A531D25C1A1004985E9 /* FGMainMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A521D25C1A1004985E9 /* FGMainMenuTableViewController.m */; };
+		66AB0A571D25C38A004985E9 /* FGMainMenuTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A561D25C38A004985E9 /* FGMainMenuTableViewDataSource.m */; };
+		66AB0A5B1D25C3D1004985E9 /* FGMainMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A5A1D25C3D1004985E9 /* FGMainMenuTableViewCell.m */; };
+		66AB0A5F1D25C4FC004985E9 /* FGMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A5E1D25C4FC004985E9 /* FGMenuItem.m */; };
+		66AB0A621D25C7AF004985E9 /* MenuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66AB0A611D25C7AF004985E9 /* MenuItems.plist */; };
+		66AB0A651D25C7F4004985E9 /* FGMenuItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A641D25C7F4004985E9 /* FGMenuItemProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +153,17 @@
 		66AB0A4B1D25B321004985E9 /* FGFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGFetchedResultsTableViewController.m; sourceTree = "<group>"; };
 		66AB0A4D1D25B9FF004985E9 /* FGStudentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentTableViewCell.h; sourceTree = "<group>"; };
 		66AB0A4E1D25B9FF004985E9 /* FGStudentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentTableViewCell.m; sourceTree = "<group>"; };
+		66AB0A511D25C1A1004985E9 /* FGMainMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGMainMenuTableViewController.h; sourceTree = "<group>"; };
+		66AB0A521D25C1A1004985E9 /* FGMainMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGMainMenuTableViewController.m; sourceTree = "<group>"; };
+		66AB0A551D25C38A004985E9 /* FGMainMenuTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGMainMenuTableViewDataSource.h; sourceTree = "<group>"; };
+		66AB0A561D25C38A004985E9 /* FGMainMenuTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGMainMenuTableViewDataSource.m; sourceTree = "<group>"; };
+		66AB0A591D25C3D1004985E9 /* FGMainMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGMainMenuTableViewCell.h; sourceTree = "<group>"; };
+		66AB0A5A1D25C3D1004985E9 /* FGMainMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGMainMenuTableViewCell.m; sourceTree = "<group>"; };
+		66AB0A5D1D25C4FC004985E9 /* FGMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGMenuItem.h; sourceTree = "<group>"; };
+		66AB0A5E1D25C4FC004985E9 /* FGMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGMenuItem.m; sourceTree = "<group>"; };
+		66AB0A611D25C7AF004985E9 /* MenuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuItems.plist; sourceTree = "<group>"; };
+		66AB0A631D25C7F4004985E9 /* FGMenuItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGMenuItemProvider.h; sourceTree = "<group>"; };
+		66AB0A641D25C7F4004985E9 /* FGMenuItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGMenuItemProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				66AB09CA1D24CE71004985E9 /* Bases */,
+				66AB0A541D25C1A5004985E9 /* MainMenu */,
 				66AB09E91D24DAF9004985E9 /* MainList */,
 				66AB09E81D24DAF2004985E9 /* Detail */,
 				66AB0A1C1D24F87C004985E9 /* FGRootViewController.h */,
@@ -420,6 +438,48 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		66AB0A541D25C1A5004985E9 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0A601D25C503004985E9 /* MenuItems */,
+				66AB0A5C1D25C3D6004985E9 /* Cells */,
+				66AB0A581D25C3B5004985E9 /* DataSource */,
+				66AB0A511D25C1A1004985E9 /* FGMainMenuTableViewController.h */,
+				66AB0A521D25C1A1004985E9 /* FGMainMenuTableViewController.m */,
+			);
+			name = MainMenu;
+			sourceTree = "<group>";
+		};
+		66AB0A581D25C3B5004985E9 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0A551D25C38A004985E9 /* FGMainMenuTableViewDataSource.h */,
+				66AB0A561D25C38A004985E9 /* FGMainMenuTableViewDataSource.m */,
+				66AB0A611D25C7AF004985E9 /* MenuItems.plist */,
+				66AB0A631D25C7F4004985E9 /* FGMenuItemProvider.h */,
+				66AB0A641D25C7F4004985E9 /* FGMenuItemProvider.m */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		66AB0A5C1D25C3D6004985E9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0A591D25C3D1004985E9 /* FGMainMenuTableViewCell.h */,
+				66AB0A5A1D25C3D1004985E9 /* FGMainMenuTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		66AB0A601D25C503004985E9 /* MenuItems */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0A5D1D25C4FC004985E9 /* FGMenuItem.h */,
+				66AB0A5E1D25C4FC004985E9 /* FGMenuItem.m */,
+			);
+			name = MenuItems;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,6 +586,7 @@
 			files = (
 				66AB09A61D24CD06004985E9 /* LaunchScreen.storyboard in Resources */,
 				66AB09A31D24CD06004985E9 /* Assets.xcassets in Resources */,
+				66AB0A621D25C7AF004985E9 /* MenuItems.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +615,7 @@
 				66AB09CF1D24CFEE004985E9 /* FGDatabaseManager.m in Sources */,
 				66AB0A1E1D24F87C004985E9 /* FGRootViewController.m in Sources */,
 				66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */,
+				66AB0A571D25C38A004985E9 /* FGMainMenuTableViewDataSource.m in Sources */,
 				66AB09FA1D24DE95004985E9 /* FGStudentFetcher.m in Sources */,
 				66AB0A361D259D03004985E9 /* FGAvatarImageFile.m in Sources */,
 				66AB0A001D24E48A004985E9 /* FGAnalytics.m in Sources */,
@@ -562,7 +624,10 @@
 				66AB09A11D24CD06004985E9 /* students_demo.xcdatamodeld in Sources */,
 				66AB0A381D259D03004985E9 /* FGImageFile.m in Sources */,
 				66AB09EC1D24DB1B004985E9 /* FGTableViewCell.m in Sources */,
+				66AB0A5F1D25C4FC004985E9 /* FGMenuItem.m in Sources */,
 				66AB09F41D24DC2D004985E9 /* FGSessionProvider.m in Sources */,
+				66AB0A651D25C7F4004985E9 /* FGMenuItemProvider.m in Sources */,
+				66AB0A531D25C1A1004985E9 /* FGMainMenuTableViewController.m in Sources */,
 				66AB0A371D259D03004985E9 /* FGFile.m in Sources */,
 				66AB0A401D25A56A004985E9 /* FGImageFetcher.m in Sources */,
 				66AB0A141D24E90E004985E9 /* FGLogger.m in Sources */,
@@ -586,6 +651,7 @@
 				66AB0A171D24EDC5004985E9 /* FGAPIKeys.m in Sources */,
 				66AB0A391D259D03004985E9 /* FGStudent.m in Sources */,
 				66AB09951D24CD06004985E9 /* main.m in Sources */,
+				66AB0A5B1D25C3D1004985E9 /* FGMainMenuTableViewCell.m in Sources */,
 				66AB0A431D25A705004985E9 /* FGImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
