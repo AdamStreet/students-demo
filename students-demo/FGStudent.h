@@ -1,5 +1,9 @@
 #import "_FGStudent.h"
 
 @interface FGStudent : _FGStudent {}
-// Custom logic goes here.
+
+- (NSString *)fullName;
+
++ (NSArray<NSSortDescriptor *> *)sortDescriptorsByName;
+
 @end

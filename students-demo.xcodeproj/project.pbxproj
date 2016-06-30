@@ -45,6 +45,8 @@
 		66AB0A431D25A705004985E9 /* FGImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A421D25A705004985E9 /* FGImageCache.m */; };
 		66AB0A461D25A88F004985E9 /* FGLocalPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A451D25A88F004985E9 /* FGLocalPaths.m */; };
 		66AB0A491D25B002004985E9 /* FGImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A481D25B002004985E9 /* FGImageLoader.m */; };
+		66AB0A4C1D25B321004985E9 /* FGFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A4B1D25B321004985E9 /* FGFetchedResultsTableViewController.m */; };
+		66AB0A4F1D25B9FF004985E9 /* FGStudentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A4E1D25B9FF004985E9 /* FGStudentTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,10 @@
 		66AB0A451D25A88F004985E9 /* FGLocalPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLocalPaths.m; sourceTree = "<group>"; };
 		66AB0A471D25B002004985E9 /* FGImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImageLoader.h; sourceTree = "<group>"; };
 		66AB0A481D25B002004985E9 /* FGImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageLoader.m; sourceTree = "<group>"; };
+		66AB0A4A1D25B321004985E9 /* FGFetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGFetchedResultsTableViewController.h; sourceTree = "<group>"; };
+		66AB0A4B1D25B321004985E9 /* FGFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGFetchedResultsTableViewController.m; sourceTree = "<group>"; };
+		66AB0A4D1D25B9FF004985E9 /* FGStudentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentTableViewCell.h; sourceTree = "<group>"; };
+		66AB0A4E1D25B9FF004985E9 /* FGStudentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +249,8 @@
 				66AB099A1D24CD06004985E9 /* FGViewController.m */,
 				66AB09D71D24D795004985E9 /* FGTableViewController.h */,
 				66AB09D81D24D795004985E9 /* FGTableViewController.m */,
+				66AB0A4A1D25B321004985E9 /* FGFetchedResultsTableViewController.h */,
+				66AB0A4B1D25B321004985E9 /* FGFetchedResultsTableViewController.m */,
 			);
 			name = Bases;
 			sourceTree = "<group>";
@@ -319,6 +327,7 @@
 		66AB09E91D24DAF9004985E9 /* MainList */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0A501D25BA03004985E9 /* Cells */,
 				66AB09D41D24D783004985E9 /* FGStudentListTableViewController.h */,
 				66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */,
 			);
@@ -400,6 +409,15 @@
 				66AB0A3F1D25A56A004985E9 /* FGImageFetcher.m */,
 			);
 			name = ObjectFetchers;
+			sourceTree = "<group>";
+		};
+		66AB0A501D25BA03004985E9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0A4D1D25B9FF004985E9 /* FGStudentTableViewCell.h */,
+				66AB0A4E1D25B9FF004985E9 /* FGStudentTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,6 +558,7 @@
 				66AB0A361D259D03004985E9 /* FGAvatarImageFile.m in Sources */,
 				66AB0A001D24E48A004985E9 /* FGAnalytics.m in Sources */,
 				66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */,
+				66AB0A4F1D25B9FF004985E9 /* FGStudentTableViewCell.m in Sources */,
 				66AB09A11D24CD06004985E9 /* students_demo.xcdatamodeld in Sources */,
 				66AB0A381D259D03004985E9 /* FGImageFile.m in Sources */,
 				66AB09EC1D24DB1B004985E9 /* FGTableViewCell.m in Sources */,
@@ -553,6 +572,7 @@
 				66AB0A461D25A88F004985E9 /* FGLocalPaths.m in Sources */,
 				66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */,
 				66AB0A211D24FAAC004985E9 /* FGLocalization.m in Sources */,
+				66AB0A4C1D25B321004985E9 /* FGFetchedResultsTableViewController.m in Sources */,
 				66AB09E31D24D966004985E9 /* UIColor+CustomColors.m in Sources */,
 				66AB099B1D24CD06004985E9 /* FGViewController.m in Sources */,
 				66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */,

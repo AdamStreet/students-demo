@@ -6,8 +6,8 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGTableViewController.h"
+#import "FGFetchedResultsTableViewController.h"
 
-@interface FGStudentListTableViewController : FGTableViewController
+@interface FGStudentListTableViewController : FGFetchedResultsTableViewController
 
 @end

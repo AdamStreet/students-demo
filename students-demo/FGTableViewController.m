@@ -48,6 +48,8 @@
 	if (!_tableView) {
 		_tableView = [[FGTableView alloc] initWithFrame:CGRectZero
 												  style:self.tableViewStyle];
+		_tableView.delegate = self;
+		_tableView.dataSource = self;
 	}
 	
 	return _tableView;
@@ -57,6 +59,18 @@
 #pragma mark - User interaction handlers
 #pragma mark - Notification handlers
 #pragma mark - KVO
-#pragma mark - <<#delegate#>>
+#pragma mark - <UITableViewDataSource>
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return nil;
+}
+
+#pragma mark - <UITableViewDelegate>
 
 @end

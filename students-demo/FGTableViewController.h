@@ -10,7 +10,7 @@
 
 #import "FGTableView.h"
 
-@interface FGTableViewController : FGViewController
+@interface FGTableViewController : FGViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, readonly) UITableViewStyle tableViewStyle;
 @property (nonatomic, readonly) FGTableView *tableView;

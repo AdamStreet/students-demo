@@ -8,6 +8,17 @@
 
 @implementation FGStudent
 
-// Custom logic goes here.
+- (NSString *)fullName
+{
+	return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+}
+
++ (NSArray<NSSortDescriptor *> *)sortDescriptorsByName
+{
+	return @[[NSSortDescriptor sortDescriptorWithKey:FGStudentAttributes.firstName
+										   ascending:YES],
+			 [NSSortDescriptor sortDescriptorWithKey:FGStudentAttributes.lastName
+										   ascending:YES]];
+}
 
 @end
