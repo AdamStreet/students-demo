@@ -8,14 +8,19 @@
 
 #import "FGViewController.h"
 
+#import "UIColor+FGColor.h"
+
 @interface FGViewController ()
 
 @end
 
+
 @implementation FGViewController
 
-//- (void)viewDidLoad {
-//	[super viewDidLoad];
-//}
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	self.view.backgroundColor = [UIColor generalBackgroundColor];
+}
 
 @end

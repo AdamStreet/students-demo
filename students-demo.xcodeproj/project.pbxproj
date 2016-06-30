@@ -16,6 +16,13 @@
 		66AB09B11D24CD06004985E9 /* students_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09B01D24CD06004985E9 /* students_demoTests.m */; };
 		66AB09CF1D24CFEE004985E9 /* FGDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */; };
 		66AB09D21D24D4C5004985E9 /* FGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D11D24D4C5004985E9 /* FGUtilities.m */; };
+		66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */; };
+		66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D81D24D795004985E9 /* FGTableViewController.m */; };
+		66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09DB1D24D7D3004985E9 /* FGNavigationController.m */; };
+		66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09DE1D24D835004985E9 /* FGTableView.m */; };
+		66AB09E31D24D966004985E9 /* UIColor+FGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09E21D24D966004985E9 /* UIColor+FGColor.m */; };
+		66AB09E71D24DAEA004985E9 /* FGStudentDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09E61D24DAEA004985E9 /* FGStudentDetailTableViewController.m */; };
+		66AB09EC1D24DB1B004985E9 /* FGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09EB1D24DB1B004985E9 /* FGTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,20 @@
 		66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGDatabaseManager.m; sourceTree = "<group>"; };
 		66AB09D01D24D4C5004985E9 /* FGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGUtilities.h; sourceTree = "<group>"; };
 		66AB09D11D24D4C5004985E9 /* FGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGUtilities.m; sourceTree = "<group>"; };
+		66AB09D41D24D783004985E9 /* FGStudentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentListTableViewController.h; sourceTree = "<group>"; };
+		66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentListTableViewController.m; sourceTree = "<group>"; };
+		66AB09D71D24D795004985E9 /* FGTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTableViewController.h; sourceTree = "<group>"; };
+		66AB09D81D24D795004985E9 /* FGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTableViewController.m; sourceTree = "<group>"; };
+		66AB09DA1D24D7D3004985E9 /* FGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGNavigationController.h; sourceTree = "<group>"; };
+		66AB09DB1D24D7D3004985E9 /* FGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGNavigationController.m; sourceTree = "<group>"; };
+		66AB09DD1D24D835004985E9 /* FGTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTableView.h; sourceTree = "<group>"; };
+		66AB09DE1D24D835004985E9 /* FGTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTableView.m; sourceTree = "<group>"; };
+		66AB09E11D24D966004985E9 /* UIColor+FGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FGColor.h"; sourceTree = "<group>"; };
+		66AB09E21D24D966004985E9 /* UIColor+FGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FGColor.m"; sourceTree = "<group>"; };
+		66AB09E51D24DAEA004985E9 /* FGStudentDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentDetailTableViewController.h; sourceTree = "<group>"; };
+		66AB09E61D24DAEA004985E9 /* FGStudentDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentDetailTableViewController.m; sourceTree = "<group>"; };
+		66AB09EA1D24DB1B004985E9 /* FGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTableViewCell.h; sourceTree = "<group>"; };
+		66AB09EB1D24DB1B004985E9 /* FGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +126,7 @@
 			children = (
 				66AB09CC1D24CE96004985E9 /* Database */,
 				66AB09C91D24CE6A004985E9 /* ViewControllers */,
+				66AB09E01D24D839004985E9 /* Views */,
 				66AB09D31D24D4D7004985E9 /* Utilities */,
 				66AB09CB1D24CE80004985E9 /* Resources */,
 				66AB09961D24CD06004985E9 /* FGAppDelegate.h */,
@@ -137,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				66AB09CA1D24CE71004985E9 /* Bases */,
+				66AB09E91D24DAF9004985E9 /* MainList */,
+				66AB09E81D24DAF2004985E9 /* Detail */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -144,8 +168,12 @@
 		66AB09CA1D24CE71004985E9 /* Bases */ = {
 			isa = PBXGroup;
 			children = (
+				66AB09DA1D24D7D3004985E9 /* FGNavigationController.h */,
+				66AB09DB1D24D7D3004985E9 /* FGNavigationController.m */,
 				66AB09991D24CD06004985E9 /* FGViewController.h */,
 				66AB099A1D24CD06004985E9 /* FGViewController.m */,
+				66AB09D71D24D795004985E9 /* FGTableViewController.h */,
+				66AB09D81D24D795004985E9 /* FGTableViewController.m */,
 			);
 			name = Bases;
 			sourceTree = "<group>";
@@ -171,10 +199,57 @@
 		66AB09D31D24D4D7004985E9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				66AB09E41D24D9BD004985E9 /* Extensions */,
 				66AB09D01D24D4C5004985E9 /* FGUtilities.h */,
 				66AB09D11D24D4C5004985E9 /* FGUtilities.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		66AB09E01D24D839004985E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66AB09ED1D24DB26004985E9 /* TableViews & Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		66AB09E41D24D9BD004985E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				66AB09E11D24D966004985E9 /* UIColor+FGColor.h */,
+				66AB09E21D24D966004985E9 /* UIColor+FGColor.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		66AB09E81D24DAF2004985E9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				66AB09E51D24DAEA004985E9 /* FGStudentDetailTableViewController.h */,
+				66AB09E61D24DAEA004985E9 /* FGStudentDetailTableViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		66AB09E91D24DAF9004985E9 /* MainList */ = {
+			isa = PBXGroup;
+			children = (
+				66AB09D41D24D783004985E9 /* FGStudentListTableViewController.h */,
+				66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */,
+			);
+			name = MainList;
+			sourceTree = "<group>";
+		};
+		66AB09ED1D24DB26004985E9 /* TableViews & Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66AB09DD1D24D835004985E9 /* FGTableView.h */,
+				66AB09DE1D24D835004985E9 /* FGTableView.m */,
+				66AB09EA1D24DB1B004985E9 /* FGTableViewCell.h */,
+				66AB09EB1D24DB1B004985E9 /* FGTableViewCell.m */,
+			);
+			name = "TableViews & Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,10 +383,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				66AB09CF1D24CFEE004985E9 /* FGDatabaseManager.m in Sources */,
+				66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */,
 				66AB09D21D24D4C5004985E9 /* FGUtilities.m in Sources */,
+				66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */,
 				66AB09A11D24CD06004985E9 /* students_demo.xcdatamodeld in Sources */,
+				66AB09EC1D24DB1B004985E9 /* FGTableViewCell.m in Sources */,
+				66AB09E71D24DAEA004985E9 /* FGStudentDetailTableViewController.m in Sources */,
+				66AB09E31D24D966004985E9 /* UIColor+FGColor.m in Sources */,
 				66AB099B1D24CD06004985E9 /* FGViewController.m in Sources */,
+				66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */,
 				66AB09981D24CD06004985E9 /* FGAppDelegate.m in Sources */,
+				66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */,
 				66AB09951D24CD06004985E9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
