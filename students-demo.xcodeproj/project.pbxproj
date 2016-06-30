@@ -35,6 +35,7 @@
 		66AB0A101D24E80E004985E9 /* FGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A0C1D24E80E004985E9 /* FGStudent.m */; };
 		66AB0A141D24E90E004985E9 /* FGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A131D24E90E004985E9 /* FGLogger.m */; };
 		66AB0A171D24EDC5004985E9 /* FGAPIKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A161D24EDC5004985E9 /* FGAPIKeys.m */; };
+		66AB0A1E1D24F87C004985E9 /* FGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A1D1D24F87C004985E9 /* FGRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		66AB0A131D24E90E004985E9 /* FGLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLogger.m; sourceTree = "<group>"; };
 		66AB0A151D24EDC5004985E9 /* FGAPIKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGAPIKeys.h; sourceTree = "<group>"; };
 		66AB0A161D24EDC5004985E9 /* FGAPIKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAPIKeys.m; sourceTree = "<group>"; };
+		66AB0A1C1D24F87C004985E9 /* FGRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGRootViewController.h; sourceTree = "<group>"; };
+		66AB0A1D1D24F87C004985E9 /* FGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				66AB09CA1D24CE71004985E9 /* Bases */,
 				66AB09E91D24DAF9004985E9 /* MainList */,
 				66AB09E81D24DAF2004985E9 /* Detail */,
+				66AB0A1C1D24F87C004985E9 /* FGRootViewController.h */,
+				66AB0A1D1D24F87C004985E9 /* FGRootViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66AB09CF1D24CFEE004985E9 /* FGDatabaseManager.m in Sources */,
+				66AB0A1E1D24F87C004985E9 /* FGRootViewController.m in Sources */,
 				66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */,
 				66AB09FA1D24DE95004985E9 /* FGStudentFetcher.m in Sources */,
 				66AB0A001D24E48A004985E9 /* FGAnalytics.m in Sources */,

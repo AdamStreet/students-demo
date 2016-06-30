@@ -9,7 +9,7 @@
 #import "FGAppDelegate.h"
 
 #import "FGDatabaseManager.h"
-#import "FGViewController.h"
+#import "FGRootViewController.h"
 #import "FGSessionProvider.h"
 #import "FGRemoteDataFetcher.h"
 #import "FGAnalytics.h"
@@ -52,6 +52,11 @@
 	[self initializeNetworkLayer];
 }
 
+- (UIViewController *)startViewController
+{
+	return [[FGRootViewController alloc] initWithNibName:nil bundle:nil];
+}
+
 #pragma mark - <UIApplicationDelegate>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -59,10 +64,8 @@
 	
 	// Prepare UI
 	
-	FGViewController *viewController = [[FGViewController alloc] initWithNibName:nil bundle:nil];
-	
 	UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];	// Support iOS 7.x by -initWithFrame:
-	window.rootViewController = viewController;
+	window.rootViewController = [self startViewController];
 	self.window = window;
 	
 	[window makeKeyAndVisible];
