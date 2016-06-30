@@ -15,8 +15,9 @@ typedef void(^FGRemoteDataFetcherJSONCompletion)(id responseObject, NSInteger st
 @interface FGRemoteDataFetcher : NSObject
 
 + (void)initializeSharedFetcherWithSessionProvider:(FGSessionProvider *)sessionProvider;
-
 + (instancetype)sharedFetcher;
+
+- (instancetype)initWithSessionProvider:(FGSessionProvider *)sessionProvider;
 
 - (NSURLSessionDataTask *)jsonDataTaskForURL:(NSURL *)url completion:(FGRemoteDataFetcherJSONCompletion)completion;
 

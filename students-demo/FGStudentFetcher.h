@@ -6,13 +6,18 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGRemoteDataFetcher.h"
+#import <Foundation/Foundation.h>
 
 #import "FGStudent.h"
 
 typedef void(^FGStudentFetcherCompletion)(FGStudent *student, NSError *error);
 
-@interface FGStudentFetcher : FGRemoteDataFetcher
+/**
+ @brief FGStudentFetcher uses +[CGRemoteDataFetcher sharedFetcher] to fetch metadata
+ & +[FGDatabaseManager mainDatabaseManager] to store the created objects.
+ 
+ */
+@interface FGStudentFetcher : NSObject
 
 + (NSURLSessionDataTask *)fetchRandomStudent:(FGStudentFetcherCompletion)completion;
 

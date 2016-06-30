@@ -8,6 +8,8 @@
 
 #import "FGStudentFetcher.h"
 
+#import "FGRemoteDataFetcher.h"
+
 #import "FGImageFile.h"
 #import "FGDatabaseManager.h"
 #import "FGAPIKeys.h"
@@ -23,16 +25,16 @@ static NSString * const kRandomStudentAPIEndPoint = @"https://randomuser.me/api"
 	return [FGRemoteDataFetcher sharedFetcher];
 }
 
++ (FGDatabaseManager *)databaseManager
+{
+	return [FGDatabaseManager mainDatabaseManager];
+}
+
 + (NSDictionary *)studentMetadataFromResponse:(NSDictionary *)response
 {
 	NSArray *results = response[FGAPIKeysResultsKey];
 	
 	return [results firstObject];
-}
-
-+ (FGDatabaseManager *)databaseManager
-{
-	return [FGDatabaseManager mainDatabaseManager];
 }
 
 + (FGStudent *)insertNewStudentInDatabaseWithMetadata:(NSDictionary *)studentMetadata
