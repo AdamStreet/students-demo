@@ -10,6 +10,10 @@
 
 #import "FGDatabaseManager.h"
 #import "FGViewController.h"
+#import "FGSessionProvider.h"
+#import "FGRemoteDataFetcher.h"
+#import "FGAnalytics.h"
+#import "FGCrashReporter.h"
 
 @interface FGAppDelegate ()
 
@@ -18,9 +22,42 @@
 
 @implementation FGAppDelegate
 
+#pragma mark - Private methods
+
+- (void)initializeCrashReporter
+{
+	[FGCrashReporter startCrashReporter];
+}
+
+- (void)initializeAnalytics
+{
+	[FGAnalytics startAnalytics];
+}
+
+- (void)initializeNetworkLayer
+{
+	[FGRemoteDataFetcher initializeSharedFetcherWithSessionProvider:[FGSessionProvider sharedProvider]];
+}
+
+- (void)initializeDatabase
+{
+	[FGDatabaseManager initializeMainDatabaseManagerWithName:@"students_demo"];
+}
+
+- (void)bootUp
+{
+	[self initializeCrashReporter];
+	[self initializeAnalytics];
+	[self initializeDatabase];
+	[self initializeNetworkLayer];
+}
+
+#pragma mark - <UIApplicationDelegate>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[FGDatabaseManager initializeMainDatabaseManagerWithName:@"students_demo"];
+	[self bootUp];
+	
+	// Prepare UI
 	
 	FGViewController *viewController = [[FGViewController alloc] initWithNibName:nil bundle:nil];
 	

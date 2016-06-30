@@ -57,6 +57,8 @@ static FGDatabaseManager *mainDatabaseManager = nil;
 	return self;
 }
 
+#pragma mark - Public methods
+
 #pragma mark - Core Data stack (generated)
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -116,7 +118,30 @@ static FGDatabaseManager *mainDatabaseManager = nil;
 	return _managedObjectContext;
 }
 
-#pragma mark - Core Data Saving support
+@end
+
+
+@implementation FGDatabaseManager (Inserting)
+
+- (__kindof NSManagedObject *)insertEntity:(NSString *)entityName
+{
+	return [NSEntityDescription insertNewObjectForEntityForName:entityName
+										 inManagedObjectContext:self.managedObjectContext];
+}
+
+@end
+
+@implementation FGDatabaseManager (Deleting)
+
+- (void)deleteEntity:(__kindof NSManagedObject *)object
+{
+	[self.managedObjectContext deleteObject:object];
+}
+
+@end
+
+
+@implementation FGDatabaseManager (Persisting)
 
 - (void)saveContext {
 	NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
@@ -126,6 +151,7 @@ static FGDatabaseManager *mainDatabaseManager = nil;
 			// Replace this implementation with code to handle the error appropriately.
 			// abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+			
 			abort();
 		}
 	}

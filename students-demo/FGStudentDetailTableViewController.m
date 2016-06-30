@@ -8,6 +8,13 @@
 
 #import "FGStudentDetailTableViewController.h"
 
+#import "FGStudentFetcher.h"
+
 @implementation FGStudentDetailTableViewController
+
+//- (void)viewDidLoad
+//{
+//	[super viewDidLoad];
+//}
 
 @end

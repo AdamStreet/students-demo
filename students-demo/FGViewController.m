@@ -8,7 +8,7 @@
 
 #import "FGViewController.h"
 
-#import "UIColor+FGColor.h"
+#import "UIColor+CustomColors.h"
 
 @interface FGViewController ()
 

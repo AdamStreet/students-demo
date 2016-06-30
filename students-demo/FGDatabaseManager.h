@@ -6,13 +6,32 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface FGDatabaseManager : NSObject
 
 + (void)initializeMainDatabaseManagerWithName:(NSString *)name;
 
 + (instancetype)mainDatabaseManager;
+
+@end
+
+
+@interface FGDatabaseManager (Inserting)
+
+- (__kindof NSManagedObject *)insertEntity:(NSString *)entityName;
+
+@end
+
+
+@interface FGDatabaseManager (Deleting)
+
+- (void)deleteEntity:(__kindof NSManagedObject *)object;
+
+@end
+
+
+@interface FGDatabaseManager (Persisting)
 
 - (void)saveContext;
 

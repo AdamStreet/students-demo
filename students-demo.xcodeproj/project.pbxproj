@@ -20,9 +20,21 @@
 		66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D81D24D795004985E9 /* FGTableViewController.m */; };
 		66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09DB1D24D7D3004985E9 /* FGNavigationController.m */; };
 		66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09DE1D24D835004985E9 /* FGTableView.m */; };
-		66AB09E31D24D966004985E9 /* UIColor+FGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09E21D24D966004985E9 /* UIColor+FGColor.m */; };
+		66AB09E31D24D966004985E9 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09E21D24D966004985E9 /* UIColor+CustomColors.m */; };
 		66AB09E71D24DAEA004985E9 /* FGStudentDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09E61D24DAEA004985E9 /* FGStudentDetailTableViewController.m */; };
 		66AB09EC1D24DB1B004985E9 /* FGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09EB1D24DB1B004985E9 /* FGTableViewCell.m */; };
+		66AB09F41D24DC2D004985E9 /* FGSessionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09F31D24DC2D004985E9 /* FGSessionProvider.m */; };
+		66AB09F71D24DE01004985E9 /* FGRemoteDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09F61D24DE01004985E9 /* FGRemoteDataFetcher.m */; };
+		66AB09FA1D24DE95004985E9 /* FGStudentFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09F91D24DE95004985E9 /* FGStudentFetcher.m */; };
+		66AB09FD1D24E198004985E9 /* FGJSONConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09FC1D24E198004985E9 /* FGJSONConverter.m */; };
+		66AB0A001D24E48A004985E9 /* FGAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09FF1D24E48A004985E9 /* FGAnalytics.m */; };
+		66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A021D24E506004985E9 /* FGCrashReporter.m */; };
+		66AB0A0D1D24E80E004985E9 /* _FGImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A061D24E80D004985E9 /* _FGImageFile.m */; };
+		66AB0A0E1D24E80E004985E9 /* _FGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A081D24E80D004985E9 /* _FGStudent.m */; };
+		66AB0A0F1D24E80E004985E9 /* FGImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A0A1D24E80D004985E9 /* FGImageFile.m */; };
+		66AB0A101D24E80E004985E9 /* FGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A0C1D24E80E004985E9 /* FGStudent.m */; };
+		66AB0A141D24E90E004985E9 /* FGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A131D24E90E004985E9 /* FGLogger.m */; };
+		66AB0A171D24EDC5004985E9 /* FGAPIKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A161D24EDC5004985E9 /* FGAPIKeys.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,12 +81,36 @@
 		66AB09DB1D24D7D3004985E9 /* FGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGNavigationController.m; sourceTree = "<group>"; };
 		66AB09DD1D24D835004985E9 /* FGTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTableView.h; sourceTree = "<group>"; };
 		66AB09DE1D24D835004985E9 /* FGTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTableView.m; sourceTree = "<group>"; };
-		66AB09E11D24D966004985E9 /* UIColor+FGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FGColor.h"; sourceTree = "<group>"; };
-		66AB09E21D24D966004985E9 /* UIColor+FGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FGColor.m"; sourceTree = "<group>"; };
+		66AB09E11D24D966004985E9 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		66AB09E21D24D966004985E9 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		66AB09E51D24DAEA004985E9 /* FGStudentDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentDetailTableViewController.h; sourceTree = "<group>"; };
 		66AB09E61D24DAEA004985E9 /* FGStudentDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentDetailTableViewController.m; sourceTree = "<group>"; };
 		66AB09EA1D24DB1B004985E9 /* FGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTableViewCell.h; sourceTree = "<group>"; };
 		66AB09EB1D24DB1B004985E9 /* FGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTableViewCell.m; sourceTree = "<group>"; };
+		66AB09F21D24DC2D004985E9 /* FGSessionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGSessionProvider.h; sourceTree = "<group>"; };
+		66AB09F31D24DC2D004985E9 /* FGSessionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGSessionProvider.m; sourceTree = "<group>"; };
+		66AB09F51D24DE01004985E9 /* FGRemoteDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGRemoteDataFetcher.h; sourceTree = "<group>"; };
+		66AB09F61D24DE01004985E9 /* FGRemoteDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGRemoteDataFetcher.m; sourceTree = "<group>"; };
+		66AB09F81D24DE95004985E9 /* FGStudentFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentFetcher.h; sourceTree = "<group>"; };
+		66AB09F91D24DE95004985E9 /* FGStudentFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentFetcher.m; sourceTree = "<group>"; };
+		66AB09FB1D24E198004985E9 /* FGJSONConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGJSONConverter.h; sourceTree = "<group>"; };
+		66AB09FC1D24E198004985E9 /* FGJSONConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGJSONConverter.m; sourceTree = "<group>"; };
+		66AB09FE1D24E48A004985E9 /* FGAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGAnalytics.h; sourceTree = "<group>"; };
+		66AB09FF1D24E48A004985E9 /* FGAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAnalytics.m; sourceTree = "<group>"; };
+		66AB0A011D24E506004985E9 /* FGCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGCrashReporter.h; sourceTree = "<group>"; };
+		66AB0A021D24E506004985E9 /* FGCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGCrashReporter.m; sourceTree = "<group>"; };
+		66AB0A051D24E80D004985E9 /* _FGImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGImageFile.h; sourceTree = "<group>"; };
+		66AB0A061D24E80D004985E9 /* _FGImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FGImageFile.m; sourceTree = "<group>"; };
+		66AB0A071D24E80D004985E9 /* _FGStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGStudent.h; sourceTree = "<group>"; };
+		66AB0A081D24E80D004985E9 /* _FGStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FGStudent.m; sourceTree = "<group>"; };
+		66AB0A091D24E80D004985E9 /* FGImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImageFile.h; sourceTree = "<group>"; };
+		66AB0A0A1D24E80D004985E9 /* FGImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageFile.m; sourceTree = "<group>"; };
+		66AB0A0B1D24E80D004985E9 /* FGStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudent.h; sourceTree = "<group>"; };
+		66AB0A0C1D24E80E004985E9 /* FGStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudent.m; sourceTree = "<group>"; };
+		66AB0A121D24E90E004985E9 /* FGLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLogger.h; sourceTree = "<group>"; };
+		66AB0A131D24E90E004985E9 /* FGLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLogger.m; sourceTree = "<group>"; };
+		66AB0A151D24EDC5004985E9 /* FGAPIKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGAPIKeys.h; sourceTree = "<group>"; };
+		66AB0A161D24EDC5004985E9 /* FGAPIKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAPIKeys.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +160,7 @@
 		66AB09921D24CD06004985E9 /* students-demo */ = {
 			isa = PBXGroup;
 			children = (
+				66AB09F11D24DBB1004985E9 /* Network */,
 				66AB09CC1D24CE96004985E9 /* Database */,
 				66AB09C91D24CE6A004985E9 /* ViewControllers */,
 				66AB09E01D24D839004985E9 /* Views */,
@@ -189,6 +226,7 @@
 		66AB09CC1D24CE96004985E9 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0A041D24E7FE004985E9 /* Models */,
 				66AB099F1D24CD06004985E9 /* students_demo.xcdatamodeld */,
 				66AB09CD1D24CFEE004985E9 /* FGDatabaseManager.h */,
 				66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */,
@@ -202,6 +240,14 @@
 				66AB09E41D24D9BD004985E9 /* Extensions */,
 				66AB09D01D24D4C5004985E9 /* FGUtilities.h */,
 				66AB09D11D24D4C5004985E9 /* FGUtilities.m */,
+				66AB09FB1D24E198004985E9 /* FGJSONConverter.h */,
+				66AB09FC1D24E198004985E9 /* FGJSONConverter.m */,
+				66AB09FE1D24E48A004985E9 /* FGAnalytics.h */,
+				66AB09FF1D24E48A004985E9 /* FGAnalytics.m */,
+				66AB0A011D24E506004985E9 /* FGCrashReporter.h */,
+				66AB0A021D24E506004985E9 /* FGCrashReporter.m */,
+				66AB0A121D24E90E004985E9 /* FGLogger.h */,
+				66AB0A131D24E90E004985E9 /* FGLogger.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -217,8 +263,8 @@
 		66AB09E41D24D9BD004985E9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				66AB09E11D24D966004985E9 /* UIColor+FGColor.h */,
-				66AB09E21D24D966004985E9 /* UIColor+FGColor.m */,
+				66AB09E11D24D966004985E9 /* UIColor+CustomColors.h */,
+				66AB09E21D24D966004985E9 /* UIColor+CustomColors.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +296,44 @@
 				66AB09EB1D24DB1B004985E9 /* FGTableViewCell.m */,
 			);
 			name = "TableViews & Cells";
+			sourceTree = "<group>";
+		};
+		66AB09F11D24DBB1004985E9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				66AB09F21D24DC2D004985E9 /* FGSessionProvider.h */,
+				66AB09F31D24DC2D004985E9 /* FGSessionProvider.m */,
+				66AB09F51D24DE01004985E9 /* FGRemoteDataFetcher.h */,
+				66AB09F61D24DE01004985E9 /* FGRemoteDataFetcher.m */,
+				66AB09F81D24DE95004985E9 /* FGStudentFetcher.h */,
+				66AB09F91D24DE95004985E9 /* FGStudentFetcher.m */,
+				66AB0A151D24EDC5004985E9 /* FGAPIKeys.h */,
+				66AB0A161D24EDC5004985E9 /* FGAPIKeys.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		66AB0A041D24E7FE004985E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0A111D24E81F004985E9 /* Generated by mogenerator */,
+				66AB0A091D24E80D004985E9 /* FGImageFile.h */,
+				66AB0A0A1D24E80D004985E9 /* FGImageFile.m */,
+				66AB0A0B1D24E80D004985E9 /* FGStudent.h */,
+				66AB0A0C1D24E80E004985E9 /* FGStudent.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		66AB0A111D24E81F004985E9 /* Generated by mogenerator */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0A051D24E80D004985E9 /* _FGImageFile.h */,
+				66AB0A061D24E80D004985E9 /* _FGImageFile.m */,
+				66AB0A071D24E80D004985E9 /* _FGStudent.h */,
+				66AB0A081D24E80D004985E9 /* _FGStudent.m */,
+			);
+			name = "Generated by mogenerator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,16 +468,28 @@
 			files = (
 				66AB09CF1D24CFEE004985E9 /* FGDatabaseManager.m in Sources */,
 				66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */,
+				66AB09FA1D24DE95004985E9 /* FGStudentFetcher.m in Sources */,
+				66AB0A001D24E48A004985E9 /* FGAnalytics.m in Sources */,
 				66AB09D21D24D4C5004985E9 /* FGUtilities.m in Sources */,
+				66AB0A101D24E80E004985E9 /* FGStudent.m in Sources */,
 				66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */,
 				66AB09A11D24CD06004985E9 /* students_demo.xcdatamodeld in Sources */,
 				66AB09EC1D24DB1B004985E9 /* FGTableViewCell.m in Sources */,
+				66AB09F41D24DC2D004985E9 /* FGSessionProvider.m in Sources */,
+				66AB0A141D24E90E004985E9 /* FGLogger.m in Sources */,
 				66AB09E71D24DAEA004985E9 /* FGStudentDetailTableViewController.m in Sources */,
-				66AB09E31D24D966004985E9 /* UIColor+FGColor.m in Sources */,
+				66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */,
+				66AB09E31D24D966004985E9 /* UIColor+CustomColors.m in Sources */,
+				66AB0A0F1D24E80E004985E9 /* FGImageFile.m in Sources */,
+				66AB0A0E1D24E80E004985E9 /* _FGStudent.m in Sources */,
+				66AB0A0D1D24E80E004985E9 /* _FGImageFile.m in Sources */,
 				66AB099B1D24CD06004985E9 /* FGViewController.m in Sources */,
 				66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */,
 				66AB09981D24CD06004985E9 /* FGAppDelegate.m in Sources */,
 				66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */,
+				66AB09FD1D24E198004985E9 /* FGJSONConverter.m in Sources */,
+				66AB09F71D24DE01004985E9 /* FGRemoteDataFetcher.m in Sources */,
+				66AB0A171D24EDC5004985E9 /* FGAPIKeys.m in Sources */,
 				66AB09951D24CD06004985E9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
