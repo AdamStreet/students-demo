@@ -37,6 +37,13 @@
 	return [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
+- (void)showStudentDetails:(FGStudent *)student
+{
+	FGStudentDetailTableViewController *detailViewController = [[FGStudentDetailTableViewController alloc] initWithStudent:student];
+	
+	[self.navigationController pushViewController:detailViewController animated:YES];
+}
+
 #pragma mark Accessors
 #pragma mark - View lifecycle
 
@@ -92,10 +99,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// Open Detail
-	FGStudentDetailTableViewController *detailViewController = [[FGStudentDetailTableViewController alloc] initWithStudent:[self studentAtIndexPath:indexPath]];
-	
-	[self.navigationController pushViewController:detailViewController animated:YES];
+	[self showStudentDetails:[self studentAtIndexPath:indexPath]];
 }
 
 @end

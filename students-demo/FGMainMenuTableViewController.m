@@ -13,7 +13,7 @@
 #import "FGMenuItemProvider.h"
 #import "FGNavigationController.h"
 #import "FGStudentListTableViewController.h"
-#import "FGStudentDetailTableViewController.h"
+#import "FGNewStudentTableViewController.h"
 
 @interface FGMainMenuTableViewController ()
 
@@ -55,7 +55,7 @@
 
 - (void)showAddStudentViewController
 {
-	FGViewController *viewController = [[FGStudentDetailTableViewController alloc] initWithNewStudent];
+	FGViewController *viewController = [[FGNewStudentTableViewController alloc] initWithNewStudent];
 	viewController.cancellationHandler = ^(__kindof UIViewController *presentingViewController){
 		[presentingViewController dismissViewControllerAnimated:YES
 													 completion:nil];

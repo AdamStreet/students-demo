@@ -16,6 +16,4 @@
 
 - (id)initWithStudent:(FGStudent *)student;
 
-- (id)initWithNewStudent;
-
 @end
