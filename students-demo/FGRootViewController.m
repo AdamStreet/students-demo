@@ -60,7 +60,7 @@
 - (FGStudentListTableViewController *)studentListViewController
 {
 	if (!_studentListViewController) {
-		_studentListViewController = [[FGStudentListTableViewController alloc] initWithStyle:UITableViewStylePlain];
+		_studentListViewController = [[FGStudentListTableViewController alloc] initWithStudents];
 	}
 	
 	return _studentListViewController;

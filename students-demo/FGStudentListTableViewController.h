@@ -10,4 +10,6 @@
 
 @interface FGStudentListTableViewController : FGFetchedResultsTableViewController
 
+- (instancetype)initWithStudents;
+
 @end

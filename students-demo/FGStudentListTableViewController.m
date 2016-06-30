@@ -18,10 +18,10 @@
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
-- (instancetype)initWithStyle:(UITableViewStyle)tableViewStyle
+- (instancetype)initWithStudents
 {
-	self = [super initWithStyle:tableViewStyle
-			fetchedResultController:self.fetchedResultsController];
+	self = [super initWithStyle:UITableViewStyleGrouped
+		fetchedResultController:self.fetchedResultsController];
 	if (self) {
 		self.title = FGLocalizedString(@"Students", @"Student list title");
 	}
