@@ -35,4 +35,6 @@
 
 - (void)saveContext;
 
+- (void)rollback;
+
 @end

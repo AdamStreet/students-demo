@@ -159,4 +159,9 @@ static FGDatabaseManager *mainDatabaseManager = nil;
 	}
 }
 
+- (void)rollback
+{
+	[self.managedObjectContext rollback];
+}
+
 @end
