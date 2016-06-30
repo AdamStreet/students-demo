@@ -8,7 +8,7 @@
 
 #import "FGStudentFetcher.h"
 
-#import "FGRemoteDataFetcher.h"
+#import "FGJSONObjectFetcher.h"
 
 #import "FGAvatarImageFile.h"
 #import "FGDatabaseManager.h"
@@ -19,11 +19,6 @@ static NSString * const kRandomStudentAPIEndPoint = @"https://randomuser.me/api"
 @implementation FGStudentFetcher
 
 #pragma mark - Private methods
-
-+ (FGRemoteDataFetcher *)remoteDataFetcher
-{
-	return [FGRemoteDataFetcher sharedFetcher];
-}
 
 + (FGDatabaseManager *)databaseManager
 {
@@ -51,18 +46,18 @@ static NSString * const kRandomStudentAPIEndPoint = @"https://randomuser.me/api"
 
 + (NSURLSessionDataTask *)fetchRandomStudent:(FGStudentFetcherCompletion)completion
 {
-	return [[self remoteDataFetcher] jsonDataTaskForURL:[NSURL URLWithString:kRandomStudentAPIEndPoint]
-											 completion:^(id responseObject, NSInteger statusCode, NSError *error) {
-												 NSDictionary *studentMetadata = [self studentMetadataFromResponse:responseObject];
-												 FGStudent *student = nil;
-												 if (studentMetadata) {
-													 student = [self insertNewStudentInDatabaseWithMetadata:studentMetadata];
-												 }
-												 
-												 if (completion) {
-													 completion(student, error);
-												 }
-											 }];
+	return [FGJSONObjectFetcher jsonDataTaskForURL:[NSURL URLWithString:kRandomStudentAPIEndPoint]
+										completion:^(id responseObject, NSInteger statusCode, NSError *error) {
+											NSDictionary *studentMetadata = [self studentMetadataFromResponse:responseObject];
+											FGStudent *student = nil;
+											if (studentMetadata) {
+												student = [self insertNewStudentInDatabaseWithMetadata:studentMetadata];
+											}
+											
+											if (completion) {
+												completion(student, error);
+											}
+										}];
 }
 
 @end

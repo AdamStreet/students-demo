@@ -9,8 +9,9 @@
 #import "FGRemoteDataFetcher.h"
 
 #import "FGSessionProvider.h"
-#import "FGJSONConverter.h"
 #import "FGLogger.h"
+
+const NSInteger kStatusCodeUnknown = -1;
 
 @interface FGRemoteDataFetcher ()
 
@@ -18,6 +19,7 @@
 
 @end
 
+#define ENABLE_LOGGING 1
 
 @implementation FGRemoteDataFetcher
 
@@ -57,48 +59,43 @@ static FGRemoteDataFetcher *sharedInstance = nil;
 }
 
 #pragma mark - Private methods
+
 #pragma mark Accessors
 #pragma mark - Public methods
 
-- (NSURLSessionDataTask *)jsonDataTaskForURL:(NSURL *)url completion:(FGRemoteDataFetcherJSONCompletion)completion
+- (NSURLSessionDataTask *)dataTaskForURL:(NSURL *)url
+							  completion:(FGRemoteDataFetcherDataTaskCompletion)completion
 {
 	NSURLSessionDataTask *task = [self.sessionProvider.session
-								   dataTaskWithURL:url
-								   completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-									   NSInteger statusCode = 0;
-									   
-									   if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-										   statusCode = [(NSHTTPURLResponse *)response statusCode];
-									   }
-									   
-									   DebugLog(@"Received reponse: %@\n\tDataLength=%@\n\tError: %@",
-												@(statusCode), @(data.length), error);
-									   
-									   if (completion) {
-										   if (!data) {
-											   if (completion) {
-												   completion(nil, statusCode, error);
-											   }
-										   } else {
-											   [FGJSONConverter convertDataToJsonInBackground:data
-																				   completion:^(id object, NSError *error) {
-																					   if (completion) {
-																						   completion(object, statusCode, error);
-																					   }
-																				   }];
-										   }
-									   }
-								   }];
+								  dataTaskWithURL:url
+								  completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+									  NSInteger statusCode = kStatusCodeUnknown;
+									  
+									  if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+										  statusCode = [(NSHTTPURLResponse *)response statusCode];
+									  }
+									  
+#if ENABLE_LOGGING
+									  DebugLog(@"Received reponse: %@\n\tDataLength=%@\n\tError: %@",
+											   @(statusCode), @(data.length), error);
+#endif
+									  
+									  if (completion) {
+										  completion(data, response, statusCode, error);
+									  }
+								  }];
 	[task resume];
 	
 	return task;
 }
+
+
 
 #pragma mark Accessors
 #pragma mark Overrides
 #pragma mark - User interaction handlers
 #pragma mark - Notification handlers
 #pragma mark - KVO
-#pragma mark - <<#delegate#>>
+#pragma mark - <>
 
 @end

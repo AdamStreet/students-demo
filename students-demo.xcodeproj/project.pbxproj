@@ -41,6 +41,8 @@
 		66AB0A371D259D03004985E9 /* FGFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A311D259D03004985E9 /* FGFile.m */; };
 		66AB0A381D259D03004985E9 /* FGImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A331D259D03004985E9 /* FGImageFile.m */; };
 		66AB0A391D259D03004985E9 /* FGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A351D259D03004985E9 /* FGStudent.m */; };
+		66AB0A3C1D25A551004985E9 /* FGJSONObjectFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A3B1D25A551004985E9 /* FGJSONObjectFetcher.m */; };
+		66AB0A401D25A56A004985E9 /* FGImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A3F1D25A56A004985E9 /* FGImageFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,10 @@
 		66AB0A331D259D03004985E9 /* FGImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageFile.m; sourceTree = "<group>"; };
 		66AB0A341D259D03004985E9 /* FGStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudent.h; sourceTree = "<group>"; };
 		66AB0A351D259D03004985E9 /* FGStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudent.m; sourceTree = "<group>"; };
+		66AB0A3A1D25A551004985E9 /* FGJSONObjectFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGJSONObjectFetcher.h; sourceTree = "<group>"; };
+		66AB0A3B1D25A551004985E9 /* FGJSONObjectFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGJSONObjectFetcher.m; sourceTree = "<group>"; };
+		66AB0A3E1D25A56A004985E9 /* FGImageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImageFetcher.h; sourceTree = "<group>"; };
+		66AB0A3F1D25A56A004985E9 /* FGImageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,7 +333,7 @@
 				66AB09F31D24DC2D004985E9 /* FGSessionProvider.m */,
 				66AB09F51D24DE01004985E9 /* FGRemoteDataFetcher.h */,
 				66AB09F61D24DE01004985E9 /* FGRemoteDataFetcher.m */,
-				66AB0A1B1D24F768004985E9 /* StudentFetcher */,
+				66AB0A3D1D25A554004985E9 /* ObjectFetchers */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -372,6 +378,18 @@
 				66AB0A161D24EDC5004985E9 /* FGAPIKeys.m */,
 			);
 			name = StudentFetcher;
+			sourceTree = "<group>";
+		};
+		66AB0A3D1D25A554004985E9 /* ObjectFetchers */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0A1B1D24F768004985E9 /* StudentFetcher */,
+				66AB0A3A1D25A551004985E9 /* FGJSONObjectFetcher.h */,
+				66AB0A3B1D25A551004985E9 /* FGJSONObjectFetcher.m */,
+				66AB0A3E1D25A56A004985E9 /* FGImageFetcher.h */,
+				66AB0A3F1D25A56A004985E9 /* FGImageFetcher.m */,
+			);
+			name = ObjectFetchers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,7 +536,9 @@
 				66AB09EC1D24DB1B004985E9 /* FGTableViewCell.m in Sources */,
 				66AB09F41D24DC2D004985E9 /* FGSessionProvider.m in Sources */,
 				66AB0A371D259D03004985E9 /* FGFile.m in Sources */,
+				66AB0A401D25A56A004985E9 /* FGImageFetcher.m in Sources */,
 				66AB0A141D24E90E004985E9 /* FGLogger.m in Sources */,
+				66AB0A3C1D25A551004985E9 /* FGJSONObjectFetcher.m in Sources */,
 				66AB09E71D24DAEA004985E9 /* FGStudentDetailTableViewController.m in Sources */,
 				66AB0A2C1D259C96004985E9 /* _FGImageFile.m in Sources */,
 				66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */,

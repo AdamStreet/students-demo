@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class FGSessionProvider;
 
-typedef void(^FGRemoteDataFetcherJSONCompletion)(id responseObject, NSInteger statusCode, NSError *error);
+typedef void(^FGRemoteDataFetcherDataTaskCompletion)(NSData *data, NSURLResponse *response, NSInteger statusCode, NSError *error);
+
+extern const NSInteger kStatusCodeUnknown;
 
 @interface FGRemoteDataFetcher : NSObject
 
@@ -19,6 +22,7 @@ typedef void(^FGRemoteDataFetcherJSONCompletion)(id responseObject, NSInteger st
 
 - (instancetype)initWithSessionProvider:(FGSessionProvider *)sessionProvider;
 
-- (NSURLSessionDataTask *)jsonDataTaskForURL:(NSURL *)url completion:(FGRemoteDataFetcherJSONCompletion)completion;
+- (NSURLSessionDataTask *)dataTaskForURL:(NSURL *)url
+							  completion:(FGRemoteDataFetcherDataTaskCompletion)completion;
 
 @end
