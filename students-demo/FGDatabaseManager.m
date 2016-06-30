@@ -165,3 +165,61 @@ static FGDatabaseManager *mainDatabaseManager = nil;
 }
 
 @end
+
+
+@implementation FGDatabaseManager (Fetching)
+
+- (NSArray *)fetchResultsOfRequest:(NSFetchRequest *)fetchRequest
+{
+	NSError *error = nil;
+	NSArray *result = [self fetchResultsOfRequest:fetchRequest error:&error];
+	
+	if (error) {
+		NSAssert1(NO, @"Error while performing fetch: %@", error);
+	}
+	
+	return result;
+}
+
+- (NSArray *)fetchResultsOfRequest:(NSFetchRequest *)fetchRequest
+							 error:(NSError * __autoreleasing *)error
+{
+	return [self.managedObjectContext executeFetchRequest:fetchRequest
+													error:error];
+}
+
+- (NSFetchedResultsController *)fetchedResultsControllerForFetchRequest:(NSFetchRequest *)fetchRequest
+													 sectionNameKeyPath:(NSString *)sectionNameKeyPath
+															  cacheName:(NSString *)cacheName
+{
+	NSError *error = nil;
+	NSFetchedResultsController *controller = [self fetchedResultsControllerForFetchRequest:fetchRequest
+																		sectionNameKeyPath:sectionNameKeyPath
+																				 cacheName:cacheName
+																					 error:&error];
+	
+	if (error) {
+		NSAssert1(NO, @"Error while performing fetch: %@", error);
+	}
+	
+	return controller;
+}
+
+- (NSFetchedResultsController *)fetchedResultsControllerForFetchRequest:(NSFetchRequest *)fetchRequest
+													 sectionNameKeyPath:(NSString *)sectionNameKeyPath
+															  cacheName:(NSString *)cacheName
+																  error:(NSError * __autoreleasing *)error
+{
+	NSFetchedResultsController *fetchedResultsController =
+	[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+										managedObjectContext:self.managedObjectContext
+										  sectionNameKeyPath:sectionNameKeyPath
+												   cacheName:cacheName];
+	
+	if (![fetchedResultsController performFetch:error])
+		return nil;
+	
+	return fetchedResultsController;
+}
+
+@end

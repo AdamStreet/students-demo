@@ -38,3 +38,19 @@
 - (void)rollback;
 
 @end
+
+@interface FGDatabaseManager (Fetching)
+
+- (NSArray *)fetchResultsOfRequest:(NSFetchRequest *)fetchRequest;
+- (NSArray *)fetchResultsOfRequest:(NSFetchRequest *)fetchRequest
+							 error:(NSError * __autoreleasing *)error;
+
+- (NSFetchedResultsController *)fetchedResultsControllerForFetchRequest:(NSFetchRequest *)fetchRequest
+													 sectionNameKeyPath:(NSString *)sectionNameKeyPath
+															  cacheName:(NSString *)cacheName;
+- (NSFetchedResultsController *)fetchedResultsControllerForFetchRequest:(NSFetchRequest *)fetchRequest
+													 sectionNameKeyPath:(NSString *)sectionNameKeyPath
+															  cacheName:(NSString *)cacheName
+																  error:(NSError * __autoreleasing *)error;
+
+@end
