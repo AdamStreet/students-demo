@@ -8,6 +8,9 @@
 
 @implementation FGImageFile
 
-// Custom logic goes here.
+- (UIImage *)image
+{
+	return [UIImage imageWithContentsOfFile:self.path];
+}
 
 @end

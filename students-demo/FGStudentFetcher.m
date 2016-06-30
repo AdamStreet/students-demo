@@ -10,7 +10,7 @@
 
 #import "FGRemoteDataFetcher.h"
 
-#import "FGImageFile.h"
+#import "FGAvatarImageFile.h"
 #import "FGDatabaseManager.h"
 #import "FGAPIKeys.h"
 
@@ -42,10 +42,7 @@ static NSString * const kRandomStudentAPIEndPoint = @"https://randomuser.me/api"
 	FGStudent *student = [[self databaseManager] insertEntity:[FGStudent entityName]];
 	student.lastName = [studentMetadata valueForKeyPath:FGAPIKeysLastNameKeyPath];
 	student.firstName = [studentMetadata valueForKeyPath:FGAPIKeysFirstNameKeyPath];
-	
-	FGImageFile *imageFile = [[self databaseManager] insertEntity:[FGImageFile entityName]];
-	imageFile.path = [studentMetadata valueForKeyPath:FGAPIKeysLargeAvatarKeyPath];
-	student.avatarImageFile = imageFile;
+	student.avatarImagePath = [studentMetadata valueForKeyPath:FGAPIKeysLargeAvatarKeyPath];
 	
 	return student;
 }

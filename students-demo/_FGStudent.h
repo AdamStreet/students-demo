@@ -4,6 +4,7 @@
 @import CoreData;
 
 extern const struct FGStudentAttributes {
+	__unsafe_unretained NSString *avatarImagePath;
 	__unsafe_unretained NSString *firstName;
 	__unsafe_unretained NSString *lastName;
 } FGStudentAttributes;
@@ -12,7 +13,7 @@ extern const struct FGStudentRelationships {
 	__unsafe_unretained NSString *avatarImageFile;
 } FGStudentRelationships;
 
-@class FGImageFile;
+@class FGAvatarImageFile;
 
 @interface FGStudentID : NSManagedObjectID {}
 @end
@@ -23,6 +24,10 @@ extern const struct FGStudentRelationships {
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) FGStudentID* objectID;
 
+@property (nonatomic, strong) NSString* avatarImagePath;
+
+//- (BOOL)validateAvatarImagePath:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* firstName;
 
 //- (BOOL)validateFirstName:(id*)value_ error:(NSError**)error_;
@@ -31,7 +36,7 @@ extern const struct FGStudentRelationships {
 
 //- (BOOL)validateLastName:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) FGImageFile *avatarImageFile;
+@property (nonatomic, strong) FGAvatarImageFile *avatarImageFile;
 
 //- (BOOL)validateAvatarImageFile:(id*)value_ error:(NSError**)error_;
 
@@ -39,13 +44,16 @@ extern const struct FGStudentRelationships {
 
 @interface _FGStudent (CoreDataGeneratedPrimitiveAccessors)
 
+- (NSString*)primitiveAvatarImagePath;
+- (void)setPrimitiveAvatarImagePath:(NSString*)value;
+
 - (NSString*)primitiveFirstName;
 - (void)setPrimitiveFirstName:(NSString*)value;
 
 - (NSString*)primitiveLastName;
 - (void)setPrimitiveLastName:(NSString*)value;
 
-- (FGImageFile*)primitiveAvatarImageFile;
-- (void)setPrimitiveAvatarImageFile:(FGImageFile*)value;
+- (FGAvatarImageFile*)primitiveAvatarImageFile;
+- (void)setPrimitiveAvatarImageFile:(FGAvatarImageFile*)value;
 
 @end

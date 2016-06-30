@@ -1,29 +1,33 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to FGImageFile.m instead.
+// Make changes to FGFile.m instead.
 
-#import "_FGImageFile.h"
+#import "_FGFile.h"
 
-@implementation FGImageFileID
+const struct FGFileAttributes FGFileAttributes = {
+	.path = @"path",
+};
+
+@implementation FGFileID
 @end
 
-@implementation _FGImageFile
+@implementation _FGFile
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription insertNewObjectForEntityForName:@"ImageFile" inManagedObjectContext:moc_];
+	return [NSEntityDescription insertNewObjectForEntityForName:@"File" inManagedObjectContext:moc_];
 }
 
 + (NSString*)entityName {
-	return @"ImageFile";
+	return @"File";
 }
 
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription entityForName:@"ImageFile" inManagedObjectContext:moc_];
+	return [NSEntityDescription entityForName:@"File" inManagedObjectContext:moc_];
 }
 
-- (FGImageFileID*)objectID {
-	return (FGImageFileID*)[super objectID];
+- (FGFileID*)objectID {
+	return (FGFileID*)[super objectID];
 }
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
@@ -31,6 +35,8 @@
 
 	return keyPaths;
 }
+
+@dynamic path;
 
 @end
 

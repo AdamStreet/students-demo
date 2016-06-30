@@ -4,6 +4,7 @@
 #import "_FGStudent.h"
 
 const struct FGStudentAttributes FGStudentAttributes = {
+	.avatarImagePath = @"avatarImagePath",
 	.firstName = @"firstName",
 	.lastName = @"lastName",
 };
@@ -40,6 +41,8 @@ const struct FGStudentRelationships FGStudentRelationships = {
 
 	return keyPaths;
 }
+
+@dynamic avatarImagePath;
 
 @dynamic firstName;
 

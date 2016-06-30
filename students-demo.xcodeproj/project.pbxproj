@@ -29,14 +29,18 @@
 		66AB09FD1D24E198004985E9 /* FGJSONConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09FC1D24E198004985E9 /* FGJSONConverter.m */; };
 		66AB0A001D24E48A004985E9 /* FGAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09FF1D24E48A004985E9 /* FGAnalytics.m */; };
 		66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A021D24E506004985E9 /* FGCrashReporter.m */; };
-		66AB0A0D1D24E80E004985E9 /* _FGImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A061D24E80D004985E9 /* _FGImageFile.m */; };
-		66AB0A0E1D24E80E004985E9 /* _FGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A081D24E80D004985E9 /* _FGStudent.m */; };
-		66AB0A0F1D24E80E004985E9 /* FGImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A0A1D24E80D004985E9 /* FGImageFile.m */; };
-		66AB0A101D24E80E004985E9 /* FGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A0C1D24E80E004985E9 /* FGStudent.m */; };
 		66AB0A141D24E90E004985E9 /* FGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A131D24E90E004985E9 /* FGLogger.m */; };
 		66AB0A171D24EDC5004985E9 /* FGAPIKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A161D24EDC5004985E9 /* FGAPIKeys.m */; };
 		66AB0A1E1D24F87C004985E9 /* FGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A1D1D24F87C004985E9 /* FGRootViewController.m */; };
 		66AB0A211D24FAAC004985E9 /* FGLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A201D24FAAC004985E9 /* FGLocalization.m */; };
+		66AB0A2A1D259C96004985E9 /* _FGAvatarImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A231D259C96004985E9 /* _FGAvatarImageFile.m */; };
+		66AB0A2B1D259C96004985E9 /* _FGFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A251D259C96004985E9 /* _FGFile.m */; };
+		66AB0A2C1D259C96004985E9 /* _FGImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A271D259C96004985E9 /* _FGImageFile.m */; };
+		66AB0A2D1D259C96004985E9 /* _FGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A291D259C96004985E9 /* _FGStudent.m */; };
+		66AB0A361D259D03004985E9 /* FGAvatarImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A2F1D259D03004985E9 /* FGAvatarImageFile.m */; };
+		66AB0A371D259D03004985E9 /* FGFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A311D259D03004985E9 /* FGFile.m */; };
+		66AB0A381D259D03004985E9 /* FGImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A331D259D03004985E9 /* FGImageFile.m */; };
+		66AB0A391D259D03004985E9 /* FGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A351D259D03004985E9 /* FGStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,14 +105,6 @@
 		66AB09FF1D24E48A004985E9 /* FGAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAnalytics.m; sourceTree = "<group>"; };
 		66AB0A011D24E506004985E9 /* FGCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGCrashReporter.h; sourceTree = "<group>"; };
 		66AB0A021D24E506004985E9 /* FGCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGCrashReporter.m; sourceTree = "<group>"; };
-		66AB0A051D24E80D004985E9 /* _FGImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGImageFile.h; sourceTree = "<group>"; };
-		66AB0A061D24E80D004985E9 /* _FGImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FGImageFile.m; sourceTree = "<group>"; };
-		66AB0A071D24E80D004985E9 /* _FGStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGStudent.h; sourceTree = "<group>"; };
-		66AB0A081D24E80D004985E9 /* _FGStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FGStudent.m; sourceTree = "<group>"; };
-		66AB0A091D24E80D004985E9 /* FGImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImageFile.h; sourceTree = "<group>"; };
-		66AB0A0A1D24E80D004985E9 /* FGImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageFile.m; sourceTree = "<group>"; };
-		66AB0A0B1D24E80D004985E9 /* FGStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudent.h; sourceTree = "<group>"; };
-		66AB0A0C1D24E80E004985E9 /* FGStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudent.m; sourceTree = "<group>"; };
 		66AB0A121D24E90E004985E9 /* FGLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLogger.h; sourceTree = "<group>"; };
 		66AB0A131D24E90E004985E9 /* FGLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLogger.m; sourceTree = "<group>"; };
 		66AB0A151D24EDC5004985E9 /* FGAPIKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGAPIKeys.h; sourceTree = "<group>"; };
@@ -117,6 +113,22 @@
 		66AB0A1D1D24F87C004985E9 /* FGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGRootViewController.m; sourceTree = "<group>"; };
 		66AB0A1F1D24FAAC004985E9 /* FGLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLocalization.h; sourceTree = "<group>"; };
 		66AB0A201D24FAAC004985E9 /* FGLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLocalization.m; sourceTree = "<group>"; };
+		66AB0A221D259C96004985E9 /* _FGAvatarImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGAvatarImageFile.h; sourceTree = "<group>"; };
+		66AB0A231D259C96004985E9 /* _FGAvatarImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FGAvatarImageFile.m; sourceTree = "<group>"; };
+		66AB0A241D259C96004985E9 /* _FGFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGFile.h; sourceTree = "<group>"; };
+		66AB0A251D259C96004985E9 /* _FGFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FGFile.m; sourceTree = "<group>"; };
+		66AB0A261D259C96004985E9 /* _FGImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGImageFile.h; sourceTree = "<group>"; };
+		66AB0A271D259C96004985E9 /* _FGImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FGImageFile.m; sourceTree = "<group>"; };
+		66AB0A281D259C96004985E9 /* _FGStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGStudent.h; sourceTree = "<group>"; };
+		66AB0A291D259C96004985E9 /* _FGStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FGStudent.m; sourceTree = "<group>"; };
+		66AB0A2E1D259D03004985E9 /* FGAvatarImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGAvatarImageFile.h; sourceTree = "<group>"; };
+		66AB0A2F1D259D03004985E9 /* FGAvatarImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAvatarImageFile.m; sourceTree = "<group>"; };
+		66AB0A301D259D03004985E9 /* FGFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGFile.h; sourceTree = "<group>"; };
+		66AB0A311D259D03004985E9 /* FGFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGFile.m; sourceTree = "<group>"; };
+		66AB0A321D259D03004985E9 /* FGImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImageFile.h; sourceTree = "<group>"; };
+		66AB0A331D259D03004985E9 /* FGImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageFile.m; sourceTree = "<group>"; };
+		66AB0A341D259D03004985E9 /* FGStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudent.h; sourceTree = "<group>"; };
+		66AB0A351D259D03004985E9 /* FGStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,10 +336,14 @@
 			isa = PBXGroup;
 			children = (
 				66AB0A111D24E81F004985E9 /* Generated by mogenerator */,
-				66AB0A091D24E80D004985E9 /* FGImageFile.h */,
-				66AB0A0A1D24E80D004985E9 /* FGImageFile.m */,
-				66AB0A0B1D24E80D004985E9 /* FGStudent.h */,
-				66AB0A0C1D24E80E004985E9 /* FGStudent.m */,
+				66AB0A2E1D259D03004985E9 /* FGAvatarImageFile.h */,
+				66AB0A2F1D259D03004985E9 /* FGAvatarImageFile.m */,
+				66AB0A301D259D03004985E9 /* FGFile.h */,
+				66AB0A311D259D03004985E9 /* FGFile.m */,
+				66AB0A321D259D03004985E9 /* FGImageFile.h */,
+				66AB0A331D259D03004985E9 /* FGImageFile.m */,
+				66AB0A341D259D03004985E9 /* FGStudent.h */,
+				66AB0A351D259D03004985E9 /* FGStudent.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -335,10 +351,14 @@
 		66AB0A111D24E81F004985E9 /* Generated by mogenerator */ = {
 			isa = PBXGroup;
 			children = (
-				66AB0A051D24E80D004985E9 /* _FGImageFile.h */,
-				66AB0A061D24E80D004985E9 /* _FGImageFile.m */,
-				66AB0A071D24E80D004985E9 /* _FGStudent.h */,
-				66AB0A081D24E80D004985E9 /* _FGStudent.m */,
+				66AB0A221D259C96004985E9 /* _FGAvatarImageFile.h */,
+				66AB0A231D259C96004985E9 /* _FGAvatarImageFile.m */,
+				66AB0A241D259C96004985E9 /* _FGFile.h */,
+				66AB0A251D259C96004985E9 /* _FGFile.m */,
+				66AB0A261D259C96004985E9 /* _FGImageFile.h */,
+				66AB0A271D259C96004985E9 /* _FGImageFile.m */,
+				66AB0A281D259C96004985E9 /* _FGStudent.h */,
+				66AB0A291D259C96004985E9 /* _FGStudent.m */,
 			);
 			name = "Generated by mogenerator";
 			sourceTree = "<group>";
@@ -484,32 +504,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66AB0A2D1D259C96004985E9 /* _FGStudent.m in Sources */,
 				66AB09CF1D24CFEE004985E9 /* FGDatabaseManager.m in Sources */,
 				66AB0A1E1D24F87C004985E9 /* FGRootViewController.m in Sources */,
 				66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */,
 				66AB09FA1D24DE95004985E9 /* FGStudentFetcher.m in Sources */,
+				66AB0A361D259D03004985E9 /* FGAvatarImageFile.m in Sources */,
 				66AB0A001D24E48A004985E9 /* FGAnalytics.m in Sources */,
 				66AB09D21D24D4C5004985E9 /* FGUtilities.m in Sources */,
-				66AB0A101D24E80E004985E9 /* FGStudent.m in Sources */,
 				66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */,
 				66AB09A11D24CD06004985E9 /* students_demo.xcdatamodeld in Sources */,
+				66AB0A381D259D03004985E9 /* FGImageFile.m in Sources */,
 				66AB09EC1D24DB1B004985E9 /* FGTableViewCell.m in Sources */,
 				66AB09F41D24DC2D004985E9 /* FGSessionProvider.m in Sources */,
+				66AB0A371D259D03004985E9 /* FGFile.m in Sources */,
 				66AB0A141D24E90E004985E9 /* FGLogger.m in Sources */,
 				66AB09E71D24DAEA004985E9 /* FGStudentDetailTableViewController.m in Sources */,
+				66AB0A2C1D259C96004985E9 /* _FGImageFile.m in Sources */,
 				66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */,
 				66AB0A211D24FAAC004985E9 /* FGLocalization.m in Sources */,
 				66AB09E31D24D966004985E9 /* UIColor+CustomColors.m in Sources */,
-				66AB0A0F1D24E80E004985E9 /* FGImageFile.m in Sources */,
-				66AB0A0E1D24E80E004985E9 /* _FGStudent.m in Sources */,
-				66AB0A0D1D24E80E004985E9 /* _FGImageFile.m in Sources */,
 				66AB099B1D24CD06004985E9 /* FGViewController.m in Sources */,
 				66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */,
 				66AB09981D24CD06004985E9 /* FGAppDelegate.m in Sources */,
 				66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */,
+				66AB0A2B1D259C96004985E9 /* _FGFile.m in Sources */,
 				66AB09FD1D24E198004985E9 /* FGJSONConverter.m in Sources */,
 				66AB09F71D24DE01004985E9 /* FGRemoteDataFetcher.m in Sources */,
+				66AB0A2A1D259C96004985E9 /* _FGAvatarImageFile.m in Sources */,
 				66AB0A171D24EDC5004985E9 /* FGAPIKeys.m in Sources */,
+				66AB0A391D259D03004985E9 /* FGStudent.m in Sources */,
 				66AB09951D24CD06004985E9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
