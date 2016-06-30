@@ -15,6 +15,11 @@
 @property (nonatomic, readonly) UITableViewStyle tableViewStyle;
 @property (nonatomic, readonly) FGTableView *tableView;
 
+/**
+ YES by default.
+ */
+@property (nonatomic) BOOL deselectTableViewRowOnDidAppear;
+
 - (instancetype)initWithStyle:(UITableViewStyle)tableViewStyle NS_DESIGNATED_INITIALIZER;
 
 @end

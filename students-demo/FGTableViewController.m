@@ -19,6 +19,8 @@
 	self = [super initWithNibName:nil bundle:nil];
 	if (self) {
 		_tableViewStyle = tableViewStyle;
+		
+		self.deselectTableViewRowOnDidAppear = YES;
 	}
 	
 	return self;
@@ -38,6 +40,16 @@
 	tableView.frame = contentView.bounds;
 	tableView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	[contentView addSubview:tableView];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+	if (self.deselectTableViewRowOnDidAppear) {
+		[self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow]
+									  animated:YES];
+	}
 }
 
 #pragma mark - Public methods
