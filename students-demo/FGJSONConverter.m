@@ -19,7 +19,7 @@
 												options:0
 												  error:&internalError];
 	if (internalError) {
-		DebugLog(@"JSON error while converting: %@", error);
+		DebugLog(@"JSON error while converting: %@", internalError);
 		
 		if (error) {
 			*error = [internalError copy];
