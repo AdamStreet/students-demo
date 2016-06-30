@@ -10,7 +10,6 @@
 		66AB09951D24CD06004985E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09941D24CD06004985E9 /* main.m */; };
 		66AB09981D24CD06004985E9 /* FGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09971D24CD06004985E9 /* FGAppDelegate.m */; };
 		66AB099B1D24CD06004985E9 /* FGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB099A1D24CD06004985E9 /* FGViewController.m */; };
-		66AB099E1D24CD06004985E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66AB099C1D24CD06004985E9 /* Main.storyboard */; };
 		66AB09A11D24CD06004985E9 /* students_demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66AB099F1D24CD06004985E9 /* students_demo.xcdatamodeld */; };
 		66AB09A31D24CD06004985E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AB09A21D24CD06004985E9 /* Assets.xcassets */; };
 		66AB09A61D24CD06004985E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66AB09A41D24CD06004985E9 /* LaunchScreen.storyboard */; };
@@ -41,7 +40,6 @@
 		66AB09971D24CD06004985E9 /* FGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGAppDelegate.m; sourceTree = "<group>"; };
 		66AB09991D24CD06004985E9 /* FGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGViewController.h; sourceTree = "<group>"; };
 		66AB099A1D24CD06004985E9 /* FGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGViewController.m; sourceTree = "<group>"; };
-		66AB099D1D24CD06004985E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66AB09A01D24CD06004985E9 /* students_demo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = students_demo.xcdatamodel; sourceTree = "<group>"; };
 		66AB09A21D24CD06004985E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66AB09A51D24CD06004985E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,15 +97,13 @@
 		66AB09921D24CD06004985E9 /* students-demo */ = {
 			isa = PBXGroup;
 			children = (
+				66AB09CC1D24CE96004985E9 /* Database */,
+				66AB09C91D24CE6A004985E9 /* ViewControllers */,
+				66AB09CB1D24CE80004985E9 /* Resources */,
 				66AB09961D24CD06004985E9 /* FGAppDelegate.h */,
 				66AB09971D24CD06004985E9 /* FGAppDelegate.m */,
-				66AB09991D24CD06004985E9 /* FGViewController.h */,
-				66AB099A1D24CD06004985E9 /* FGViewController.m */,
-				66AB099C1D24CD06004985E9 /* Main.storyboard */,
-				66AB09A21D24CD06004985E9 /* Assets.xcassets */,
 				66AB09A41D24CD06004985E9 /* LaunchScreen.storyboard */,
 				66AB09A71D24CD06004985E9 /* Info.plist */,
-				66AB099F1D24CD06004985E9 /* students_demo.xcdatamodeld */,
 				66AB09931D24CD06004985E9 /* Supporting Files */,
 			);
 			path = "students-demo";
@@ -128,6 +124,39 @@
 				66AB09B21D24CD06004985E9 /* Info.plist */,
 			);
 			path = "students-demoTests";
+			sourceTree = "<group>";
+		};
+		66AB09C91D24CE6A004985E9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				66AB09CA1D24CE71004985E9 /* Bases */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		66AB09CA1D24CE71004985E9 /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				66AB09991D24CD06004985E9 /* FGViewController.h */,
+				66AB099A1D24CD06004985E9 /* FGViewController.m */,
+			);
+			name = Bases;
+			sourceTree = "<group>";
+		};
+		66AB09CB1D24CE80004985E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66AB09A21D24CD06004985E9 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		66AB09CC1D24CE96004985E9 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				66AB099F1D24CD06004985E9 /* students_demo.xcdatamodeld */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +265,6 @@
 			files = (
 				66AB09A61D24CD06004985E9 /* LaunchScreen.storyboard in Resources */,
 				66AB09A31D24CD06004985E9 /* Assets.xcassets in Resources */,
-				66AB099E1D24CD06004985E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +327,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		66AB099C1D24CD06004985E9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				66AB099D1D24CD06004985E9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		66AB09A41D24CD06004985E9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -489,6 +509,7 @@
 				66AB09C21D24CD06004985E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66AB09C31D24CD06004985E9 /* Build configuration list for PBXNativeTarget "students-demoTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +518,7 @@
 				66AB09C51D24CD06004985E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66AB09C61D24CD06004985E9 /* Build configuration list for PBXNativeTarget "students-demoUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +527,7 @@
 				66AB09C81D24CD06004985E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

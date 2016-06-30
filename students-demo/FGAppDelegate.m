@@ -8,6 +8,8 @@
 
 #import "FGAppDelegate.h"
 
+#import "FGViewController.h"
+
 @interface FGAppDelegate ()
 
 @end
@@ -16,7 +18,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Override point for customization after application launch.
+	FGViewController *viewController = [[FGViewController alloc] initWithNibName:nil bundle:nil];
+	
+	UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];	// Support iOS 7.x by -initWithFrame:
+	window.rootViewController = viewController;
+	self.window = window;
+	
+	[window makeKeyAndVisible];
+	
 	return YES;
 }
 
