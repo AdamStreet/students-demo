@@ -30,9 +30,9 @@
 #pragma mark Accessors
 #pragma mark - View lifecycle
 
-- (void)loadView
+- (void)viewDidLoad
 {
-	[super loadView];
+	[super viewDidLoad];
 	
 	UIView *contentView = self.view;
 	
