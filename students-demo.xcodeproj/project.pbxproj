@@ -36,6 +36,7 @@
 		66AB0A141D24E90E004985E9 /* FGLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A131D24E90E004985E9 /* FGLogger.m */; };
 		66AB0A171D24EDC5004985E9 /* FGAPIKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A161D24EDC5004985E9 /* FGAPIKeys.m */; };
 		66AB0A1E1D24F87C004985E9 /* FGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A1D1D24F87C004985E9 /* FGRootViewController.m */; };
+		66AB0A211D24FAAC004985E9 /* FGLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A201D24FAAC004985E9 /* FGLocalization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		66AB0A161D24EDC5004985E9 /* FGAPIKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAPIKeys.m; sourceTree = "<group>"; };
 		66AB0A1C1D24F87C004985E9 /* FGRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGRootViewController.h; sourceTree = "<group>"; };
 		66AB0A1D1D24F87C004985E9 /* FGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGRootViewController.m; sourceTree = "<group>"; };
+		66AB0A1F1D24FAAC004985E9 /* FGLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLocalization.h; sourceTree = "<group>"; };
+		66AB0A201D24FAAC004985E9 /* FGLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLocalization.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +256,8 @@
 				66AB0A021D24E506004985E9 /* FGCrashReporter.m */,
 				66AB0A121D24E90E004985E9 /* FGLogger.h */,
 				66AB0A131D24E90E004985E9 /* FGLogger.m */,
+				66AB0A1F1D24FAAC004985E9 /* FGLocalization.h */,
+				66AB0A201D24FAAC004985E9 /* FGLocalization.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				66AB0A141D24E90E004985E9 /* FGLogger.m in Sources */,
 				66AB09E71D24DAEA004985E9 /* FGStudentDetailTableViewController.m in Sources */,
 				66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */,
+				66AB0A211D24FAAC004985E9 /* FGLocalization.m in Sources */,
 				66AB09E31D24D966004985E9 /* UIColor+CustomColors.m in Sources */,
 				66AB0A0F1D24E80E004985E9 /* FGImageFile.m in Sources */,
 				66AB0A0E1D24E80E004985E9 /* _FGStudent.m in Sources */,

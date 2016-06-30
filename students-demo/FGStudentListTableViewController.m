@@ -8,6 +8,18 @@
 
 #import "FGStudentListTableViewController.h"
 
+#import "FGLocalization.h"
+
 @implementation FGStudentListTableViewController
+
+- (instancetype)initWithStyle:(UITableViewStyle)tableViewStyle
+{
+	self = [super initWithStyle:tableViewStyle];
+	if (self) {
+		self.title = FGLocalizedString(@"Students", @"Student list title");
+	}
+	
+	return self;
+}
 
 @end
