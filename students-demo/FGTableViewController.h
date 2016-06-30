@@ -15,6 +15,6 @@
 @property (nonatomic, readonly) UITableViewStyle tableViewStyle;
 @property (nonatomic, readonly) FGTableView *tableView;
 
-- (instancetype)initWithStyle:(UITableViewStyle)tableViewStyle;
+- (instancetype)initWithStyle:(UITableViewStyle)tableViewStyle NS_DESIGNATED_INITIALIZER;
 
 @end
