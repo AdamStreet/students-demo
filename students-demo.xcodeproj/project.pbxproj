@@ -44,6 +44,7 @@
 		66AB0A401D25A56A004985E9 /* FGImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A3F1D25A56A004985E9 /* FGImageFetcher.m */; };
 		66AB0A431D25A705004985E9 /* FGImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A421D25A705004985E9 /* FGImageCache.m */; };
 		66AB0A461D25A88F004985E9 /* FGLocalPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A451D25A88F004985E9 /* FGLocalPaths.m */; };
+		66AB0A491D25B002004985E9 /* FGImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A481D25B002004985E9 /* FGImageLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,8 @@
 		66AB0A421D25A705004985E9 /* FGImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageCache.m; sourceTree = "<group>"; };
 		66AB0A441D25A88F004985E9 /* FGLocalPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLocalPaths.h; sourceTree = "<group>"; };
 		66AB0A451D25A88F004985E9 /* FGLocalPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLocalPaths.m; sourceTree = "<group>"; };
+		66AB0A471D25B002004985E9 /* FGImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImageLoader.h; sourceTree = "<group>"; };
+		66AB0A481D25B002004985E9 /* FGImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +284,8 @@
 				66AB0A201D24FAAC004985E9 /* FGLocalization.m */,
 				66AB0A411D25A705004985E9 /* FGImageCache.h */,
 				66AB0A421D25A705004985E9 /* FGImageCache.m */,
+				66AB0A471D25B002004985E9 /* FGImageLoader.h */,
+				66AB0A481D25B002004985E9 /* FGImageLoader.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				66AB0A2B1D259C96004985E9 /* _FGFile.m in Sources */,
 				66AB09FD1D24E198004985E9 /* FGJSONConverter.m in Sources */,
 				66AB09F71D24DE01004985E9 /* FGRemoteDataFetcher.m in Sources */,
+				66AB0A491D25B002004985E9 /* FGImageLoader.m in Sources */,
 				66AB0A2A1D259C96004985E9 /* _FGAvatarImageFile.m in Sources */,
 				66AB0A171D24EDC5004985E9 /* FGAPIKeys.m in Sources */,
 				66AB0A391D259D03004985E9 /* FGStudent.m in Sources */,

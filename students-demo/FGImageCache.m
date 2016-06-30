@@ -73,12 +73,18 @@ static FGImageCache *sharedInstance = nil;
 				   forKey:reference
 					 cost:kDefaultImageCost];
 	
-	// TODO: Save to disk (on background thread)
+	// TODO Save to disk (on background thread)
 }
 
 - (UIImage *)cachedImage:(id)reference
 {
-	return [self.cache objectForKey:reference];
+	UIImage *image = [self.cache objectForKey:reference];
+	
+	if (!image) {
+		// TODO Recall from disk
+	}
+	
+	return image;
 }
 
 @end
