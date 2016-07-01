@@ -10,7 +10,9 @@
 
 #import "FGStudent.h"
 
-typedef void(^FGStudentFetcherCompletion)(FGStudent *student, NSError *error);
+typedef void(^FGStudentFetcherMetadataCompletion)(NSDictionary *metadata, NSError *error);
+typedef void(^FGStudentFetcherStudentCompletion)(FGStudent *student, NSError *error);
+
 
 /**
  @brief FGStudentFetcher uses +[CGRemoteDataFetcher sharedFetcher] to fetch metadata
@@ -19,6 +21,8 @@ typedef void(^FGStudentFetcherCompletion)(FGStudent *student, NSError *error);
  */
 @interface FGStudentFetcher : NSObject
 
-+ (NSURLSessionDataTask *)fetchRandomStudent:(FGStudentFetcherCompletion)completion;
++ (NSURLSessionDataTask *)fetchRandomStudentMetadata:(FGStudentFetcherMetadataCompletion)completion;
+
++ (NSURLSessionDataTask *)fetchAndInsertRandomStudent:(FGStudentFetcherStudentCompletion)completion;
 
 @end

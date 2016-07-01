@@ -8,7 +8,7 @@
     </entity>
     <entity name="ImageFile" representedClassName="FGImageFile" parentEntity="File" syncable="YES"/>
     <entity name="Student" representedClassName="FGStudent" syncable="YES">
-        <attribute name="avatarImagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatarImageURLString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="avatarImageFile" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="AvatarImageFile" inverseName="student" inverseEntity="AvatarImageFile" syncable="YES"/>

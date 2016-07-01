@@ -12,7 +12,7 @@
 
 #import "FGAvatarImageFile.h"
 #import "FGDatabaseManager.h"
-#import "FGAPIKeys.h"
+#import "FGStudentAPIKeys.h"
 
 static NSString * const kRandomStudentAPIEndPoint = @"https://randomuser.me/api";
 
@@ -27,7 +27,7 @@ static NSString * const kRandomStudentAPIEndPoint = @"https://randomuser.me/api"
 
 + (NSDictionary *)studentMetadataFromResponse:(NSDictionary *)response
 {
-	NSArray *results = response[FGAPIKeysResultsKey];
+	NSArray *results = response[FGStudentAPIKeysResultsKey];
 	
 	return [results firstObject];
 }
@@ -35,29 +35,39 @@ static NSString * const kRandomStudentAPIEndPoint = @"https://randomuser.me/api"
 + (FGStudent *)insertNewStudentInDatabaseWithMetadata:(NSDictionary *)studentMetadata
 {
 	FGStudent *student = [[self databaseManager] insertEntity:[FGStudent entityName]];
-	student.lastName = [studentMetadata valueForKeyPath:FGAPIKeysLastNameKeyPath];
-	student.firstName = [studentMetadata valueForKeyPath:FGAPIKeysFirstNameKeyPath];
-	student.avatarImagePath = [studentMetadata valueForKeyPath:FGAPIKeysLargeAvatarKeyPath];
+	student.lastName = [studentMetadata valueForKeyPath:FGStudentAPIKeysLastNameKeyPath];
+	student.firstName = [studentMetadata valueForKeyPath:FGStudentAPIKeysFirstNameKeyPath];
+	student.avatarImageURLString = [studentMetadata valueForKeyPath:FGStudentAPIKeysLargeAvatarKeyPath];
 	
 	return student;
 }
 
 #pragma mark - Public methods
 
-+ (NSURLSessionDataTask *)fetchRandomStudent:(FGStudentFetcherCompletion)completion
++ (NSURLSessionDataTask *)fetchRandomStudentMetadata:(FGStudentFetcherMetadataCompletion)completion
 {
 	return [FGJSONObjectFetcher jsonDataTaskForURL:[NSURL URLWithString:kRandomStudentAPIEndPoint]
 										completion:^(id responseObject, NSInteger statusCode, NSError *error) {
-											NSDictionary *studentMetadata = [self studentMetadataFromResponse:responseObject];
-											FGStudent *student = nil;
-											if (studentMetadata) {
-												student = [self insertNewStudentInDatabaseWithMetadata:studentMetadata];
-											}
-											
 											if (completion) {
-												completion(student, error);
+												NSDictionary *studentMetadata = [self studentMetadataFromResponse:responseObject];
+												
+												completion(studentMetadata, error);
 											}
 										}];
+}
+
++ (NSURLSessionDataTask *)fetchAndInsertRandomStudent:(FGStudentFetcherStudentCompletion)completion
+{
+	return [self fetchRandomStudentMetadata:^(NSDictionary *metadata, NSError *error) {
+		FGStudent *student = nil;
+		if (metadata) {
+			student = [self insertNewStudentInDatabaseWithMetadata:metadata];
+		}
+		
+		if (completion) {
+			completion(student, error);
+		}
+	}];
 }
 
 @end

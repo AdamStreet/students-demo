@@ -1,14 +1,14 @@
 //
-//  FGTableViewCell.h
+//  FGView.h
 //  students-demo
 //
-//  Created by Adam Szabo on 29/06/2016.
+//  Created by Adam Szabo on 30/06/2016.
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface FGTableViewCell : UITableViewCell
+@interface FGView : UIView
 
 - (void)setupInitialConstraints;
 

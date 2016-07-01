@@ -3,6 +3,7 @@
 @interface FGStudent : _FGStudent {}
 
 - (NSString *)fullName;
+- (NSURL *)avatarImageURL;
 
 + (NSArray<NSSortDescriptor *> *)sortDescriptorsByName;
 

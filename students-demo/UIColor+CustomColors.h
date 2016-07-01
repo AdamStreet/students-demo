@@ -12,4 +12,8 @@
 
 + (UIColor *)generalBackgroundColor;
 
++ (UIColor *)separatorColor;
+
++ (UIColor *)buttonTextColor;
+
 @end

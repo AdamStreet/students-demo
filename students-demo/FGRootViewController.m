@@ -13,7 +13,7 @@
 
 @interface FGRootViewController ()
 
-@property (nonatomic) FGNavigationController *navigationController;
+@property (nonatomic) FGNavigationController *mainNavigationController;
 @property (nonatomic) UIViewController *mainViewController;
 
 @end
@@ -29,16 +29,16 @@
 {
 	UIView *contentView = self.view;
 	
-	UIViewController *mainViewController = self.navigationController;
+	UIViewController *mainViewController = self.mainNavigationController;
 	
 	[mainViewController willMoveToParentViewController:self];
 	
 	[self addChildViewController:mainViewController];
 	
-	UIView *studentListViewControllerView = mainViewController.view;
-	studentListViewControllerView.frame = contentView.bounds;
-	studentListViewControllerView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-	[contentView addSubview:studentListViewControllerView];
+	UIView *mainViewControllerView = mainViewController.view;
+	mainViewControllerView.frame = contentView.bounds;
+	mainViewControllerView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+	[contentView addSubview:mainViewControllerView];
 	
 	[mainViewController didMoveToParentViewController:self];
 }
@@ -46,13 +46,13 @@
 #pragma mark - Public methods
 #pragma mark Accessors
 
-- (FGNavigationController *)navigationController
+- (FGNavigationController *)mainNavigationController
 {
-	if (!_navigationController) {
-		_navigationController = [[FGNavigationController alloc] initWithRootViewController:self.mainViewController];
+	if (!_mainNavigationController) {
+		_mainNavigationController = [[FGNavigationController alloc] initWithRootViewController:self.mainViewController];
 	}
 	
-	return _navigationController;
+	return _mainNavigationController;
 }
 
 - (UIViewController *)mainViewController

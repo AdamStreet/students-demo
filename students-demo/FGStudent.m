@@ -1,5 +1,7 @@
 #import "FGStudent.h"
 
+#import "FGAvatarImageFile.h"
+
 @interface FGStudent ()
 
 // Private interface goes here.
@@ -11,6 +13,13 @@
 - (NSString *)fullName
 {
 	return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+}
+
+- (NSURL *)avatarImageURL
+{
+	NSString *path = (self.avatarImageFile.path?: self.avatarImageURLString);
+	
+	return [NSURL URLWithString:path];
 }
 
 + (NSArray<NSSortDescriptor *> *)sortDescriptorsByName

@@ -55,13 +55,19 @@
 
 - (void)showAddStudentViewController
 {
-	FGViewController *viewController = [[FGNewStudentTableViewController alloc] initWithNewStudent];
-	viewController.cancellationHandler = ^(__kindof UIViewController *presentingViewController){
+	FGNewStudentTableViewController *newStudentTableViewController = [[FGNewStudentTableViewController alloc] initWithNewStudent];
+	newStudentTableViewController.cancellationHandler = ^(__kindof UIViewController *presentingViewController){
 		[presentingViewController dismissViewControllerAnimated:YES
 													 completion:nil];
 	};
+	__weak FGNewStudentTableViewController *weakNewStudentTableViewController = newStudentTableViewController;
+	newStudentTableViewController.completionHandler = ^(FGStudent *student) {
+		[weakNewStudentTableViewController.presentingViewController dismissViewControllerAnimated:YES
+																					   completion:nil];
+	};
+	
 	// Wrap in NavigationController
-	FGNavigationController *navigationController = [[FGNavigationController alloc] initWithRootViewController:viewController];
+	FGNavigationController *navigationController = [[FGNavigationController alloc] initWithRootViewController:newStudentTableViewController];
 	
 	[self presentViewController:navigationController
 					   animated:YES

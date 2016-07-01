@@ -10,4 +10,12 @@
 
 @implementation FGTableView
 
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
+{
+	self = [super initWithFrame:frame style:style];
+	if (self) {
+//		self.cellLayoutMarginsFollowReadableWidth = NO;
+	}
+	return self;
+}
 @end

@@ -1,21 +1,23 @@
 //
-//  FGTableViewCell.m
+//  FGView.m
 //  students-demo
 //
-//  Created by Adam Szabo on 29/06/2016.
+//  Created by Adam Szabo on 30/06/2016.
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGTableViewCell.h"
+#import "FGView.h"
 
-@interface FGTableViewCell ()
+@interface FGView ()
 
 @property (nonatomic, getter=hasAddedInitialConstraints) BOOL addedInitialConstraints;
 
 @end
 
 
-@implementation FGTableViewCell
+@implementation FGView
+
+#pragma mark - View lifecycle
 
 - (void)updateConstraints
 {

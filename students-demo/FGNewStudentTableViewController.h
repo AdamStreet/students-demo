@@ -8,8 +8,13 @@
 
 #import "FGTableViewController.h"
 
+@class FGStudent;
+
+typedef void(^FGNewStudentTableViewControllerCompletion)(FGStudent *student);
+
 @interface FGNewStudentTableViewController : FGTableViewController
 
+@property (nonatomic, copy) FGNewStudentTableViewControllerCompletion completionHandler;
 - (id)initWithNewStudent;
 
 @end
