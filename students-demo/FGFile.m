@@ -16,7 +16,7 @@ static NSString *kFileContainerName = @"saved_files";
 
 - (void)deleteFileOnPath
 {
-	[[NSFileManager defaultManager] removeItemAtPath:self.relativePath
+	[[NSFileManager defaultManager] removeItemAtPath:[[self fileURL] path]
 											   error:nil];
 }
 
