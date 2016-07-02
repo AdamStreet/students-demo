@@ -75,6 +75,10 @@ static FGRemoteDataFetcher *sharedInstance = nil;
 										  statusCode = [(NSHTTPURLResponse *)response statusCode];
 									  }
 									  
+									  if (error &&
+										  [error code] == NSURLErrorCancelled)
+										  return;	// Silence "error" when user manually cancelled the request
+									  
 #if ENABLE_LOGGING
 									  DebugLog(@"Received reponse: %@\n\tDataLength=%@\n\tError: %@",
 											   @(statusCode), @(data.length), error);
