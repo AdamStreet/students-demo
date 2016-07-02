@@ -21,6 +21,7 @@
 #import "FGImagePickerViewController.h"
 #import "FGAlertView.h"
 #import "FGLocalization.h"
+#import "FGAvatarImageFileCreator.h"
 
 @interface FGNewStudentTableViewController ()
 
@@ -69,6 +70,11 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 }
 
 #pragma mark - Private methods
+
+- (FGDatabaseManager *)databaseManager
+{
+	return [FGDatabaseManager mainDatabaseManager];
+}
 
 - (void)fetchRandomUser
 {
@@ -266,7 +272,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 
 - (void)doneButtonTapped:(id)sender
 {
-	FGStudent *newStudent = [[FGDatabaseManager mainDatabaseManager] insertEntity:[FGStudent entityName]];
+	FGStudent *newStudent = [[self databaseManager] insertEntity:[FGStudent entityName]];
 	newStudent.firstName = self.firstNameTextFieldTableViewCell.textField.text;
 	newStudent.lastName = self.lastNameTextFieldTableViewCell.textField.text;
 	
@@ -274,10 +280,15 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	if (avatarURL) {
 		newStudent.avatarImageURLString = [avatarURL absoluteString];
 	} else {
-		// TODO Save in file & create entity
+		UIImage *createdImage = self.avatarTableViewCell.avatarImageView.imageView.image;
+		if (createdImage) {
+			FGAvatarImageFile *avatarImageFile = [FGAvatarImageFileCreator avatarImageFileWithImage:createdImage
+																			  databaseManager:[self databaseManager]];
+			newStudent.avatarImageFile = avatarImageFile;
+		}
 	}
 
-	[[FGDatabaseManager mainDatabaseManager] saveContext];
+	[[self databaseManager] saveContext];
 	
 	if (self.completionHandler) {
 		self.completionHandler(newStudent);

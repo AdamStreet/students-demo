@@ -6,4 +6,8 @@
 
 - (UIImage *)image;
 
++ (NSString *)persistImage:(UIImage *)image
+					onPath:(NSString *)path
+				  filename:(NSString *)filename;
+
 @end

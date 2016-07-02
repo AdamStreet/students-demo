@@ -8,6 +8,28 @@
 
 @implementation FGFile
 
-// Custom logic goes here.
+#pragma mark - Private methods
+
+- (void)deleteFileOnPath
+{
+	[[NSFileManager defaultManager] removeItemAtPath:self.path
+											   error:nil];
+}
+
+#pragma mark - Public methods
+
++ (NSString *)uniqueFileName
+{
+	return [[NSUUID UUID] UUIDString];
+}
+
+#pragma mark Overrides 
+
+- (void)prepareForDeletion
+{
+	[super prepareForDeletion];
+	
+	[self deleteFileOnPath];
+}
 
 @end

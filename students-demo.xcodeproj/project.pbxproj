@@ -75,6 +75,7 @@
 		66AB0AA51D2603B8004985E9 /* FGImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AA41D2603B8004985E9 /* FGImagePickerViewController.m */; };
 		66AB0AA81D277A43004985E9 /* FGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AA71D277A43004985E9 /* FGAlertView.m */; };
 		66AB0AAB1D2781E3004985E9 /* FGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AAA1D2781E3004985E9 /* FGButton.m */; };
+		66AB0AAE1D278DAB004985E9 /* FGAvatarImageFileCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AAD1D278DAB004985E9 /* FGAvatarImageFileCreator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +231,8 @@
 		66AB0AA71D277A43004985E9 /* FGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAlertView.m; sourceTree = "<group>"; };
 		66AB0AA91D2781E3004985E9 /* FGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGButton.h; sourceTree = "<group>"; };
 		66AB0AAA1D2781E3004985E9 /* FGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGButton.m; sourceTree = "<group>"; };
+		66AB0AAC1D278DAB004985E9 /* FGAvatarImageFileCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGAvatarImageFileCreator.h; sourceTree = "<group>"; };
+		66AB0AAD1D278DAB004985E9 /* FGAvatarImageFileCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAvatarImageFileCreator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -579,6 +582,7 @@
 		66AB0A6C1D25DF07004985E9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0AAF1D278E9E004985E9 /* Helpers */,
 				66AB0AA21D260206004985E9 /* TextFields */,
 				66AB0AA11D2601F4004985E9 /* ButtonStyled */,
 				66AB0A6D1D25DF1B004985E9 /* FGAvatarTableViewCell.h */,
@@ -620,6 +624,15 @@
 				66AB0A8D1D25EF34004985E9 /* FGLastNameTextFieldTableViewCell.m */,
 			);
 			name = TextFields;
+			sourceTree = "<group>";
+		};
+		66AB0AAF1D278E9E004985E9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0AAC1D278DAB004985E9 /* FGAvatarImageFileCreator.h */,
+				66AB0AAD1D278DAB004985E9 /* FGAvatarImageFileCreator.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -778,6 +791,7 @@
 				66AB0A971D25F60B004985E9 /* FGLabel.m in Sources */,
 				66AB0A8E1D25EF34004985E9 /* FGLastNameTextFieldTableViewCell.m in Sources */,
 				66AB09F41D24DC2D004985E9 /* FGSessionProvider.m in Sources */,
+				66AB0AAE1D278DAB004985E9 /* FGAvatarImageFileCreator.m in Sources */,
 				66AB0AA81D277A43004985E9 /* FGAlertView.m in Sources */,
 				66AB0A721D25DF32004985E9 /* FGAddPhotoTableViewCell.m in Sources */,
 				66AB0A651D25C7F4004985E9 /* FGMenuItemProvider.m in Sources */,
