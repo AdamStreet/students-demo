@@ -223,3 +223,18 @@ static FGDatabaseManager *mainDatabaseManager = nil;
 }
 
 @end
+
+@implementation FGDatabaseManager (Performing)
+
+- (void)performBlockAndWait:(void (^)())block
+{
+	[self.managedObjectContext performBlockAndWait:block];
+}
+
+- (void)performBlock:(void (^)())block
+{
+	[self.managedObjectContext performBlock:block];
+}
+
+
+@end

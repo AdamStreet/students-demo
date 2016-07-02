@@ -14,6 +14,8 @@
 
 + (instancetype)mainDatabaseManager;
 
+- (instancetype)initWithName:(NSString *)name;
+
 @end
 
 
@@ -39,6 +41,7 @@
 
 @end
 
+
 @interface FGDatabaseManager (Fetching)
 
 - (NSArray *)fetchResultsOfRequest:(NSFetchRequest *)fetchRequest;
@@ -52,5 +55,14 @@
 													 sectionNameKeyPath:(NSString *)sectionNameKeyPath
 															  cacheName:(NSString *)cacheName
 																  error:(NSError * __autoreleasing *)error;
+
+@end
+
+
+@interface FGDatabaseManager (Performing)
+
+- (void)performBlockAndWait:(void (^)())block;
+
+- (void)performBlock:(void (^)())block;
 
 @end
