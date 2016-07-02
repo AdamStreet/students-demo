@@ -22,10 +22,16 @@
 #import "FGAlertView.h"
 #import "FGLocalization.h"
 #import "FGAvatarImageFileCreator.h"
+#import "FGBarButtonItem.h"
+#import "FGTextFieldValueChangedHelper.h"
 
 @interface FGNewStudentTableViewController ()
 
 @property (nonatomic, weak) NSURLSessionTask *pendingSessionTask;
+
+@property (nonatomic) FGBarButtonItem *doneButtonItem;
+
+@property (nonatomic) FGTextFieldValueChangedHelper *textFieldValueChangedHelper;
 
 @property (nonatomic) FGAddRandomStudentTableViewCell *addRandomStudentTableViewCell;
 @property (nonatomic) FGFirstNameTextFieldTableViewCell *firstNameTextFieldTableViewCell;
@@ -91,17 +97,18 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 			
 			[self clearInputValues];
 			[self setInputValuesEnabled:YES];
+		} else {
+		
+			self.addRandomStudentTableViewCell.buttonState = FGAddRandomStudentTableViewCellButtonStateLoaded;
 			
-			return;
+			[self cancelPendingTask];
+			
+			[self fillStudentDetails:[studentMetadata valueForKeyPath:FGStudentAPIKeysFirstNameKeyPath]
+							lastName:[studentMetadata valueForKeyPath:FGStudentAPIKeysLastNameKeyPath]
+					 avatarImagePath:[studentMetadata valueForKeyPath:FGStudentAPIKeysLargeAvatarKeyPath]];
 		}
 		
-		self.addRandomStudentTableViewCell.buttonState = FGAddRandomStudentTableViewCellButtonStateLoaded;
-		
-		[self cancelPendingTask];
-		
-		[self fillStudentDetails:[studentMetadata valueForKeyPath:FGStudentAPIKeysFirstNameKeyPath]
-						lastName:[studentMetadata valueForKeyPath:FGStudentAPIKeysLastNameKeyPath]
-				 avatarImagePath:[studentMetadata valueForKeyPath:FGStudentAPIKeysLargeAvatarKeyPath]];
+		[self validateContent];
 	}];
 }
 
@@ -115,6 +122,8 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	self.firstNameTextFieldTableViewCell.textField.text = nil;
 	self.lastNameTextFieldTableViewCell.textField.text = nil;
 	[self.avatarTableViewCell.avatarImageView clear];
+	
+	[self validateContent];
 }
 
 - (void)setInputValuesEnabled:(BOOL)enabled
@@ -164,7 +173,42 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 											   }];
 }
 
+- (BOOL)validateContent
+{
+	BOOL isValid = (0 < [self.firstNameTextFieldTableViewCell.textField.text length] ||
+					0 < [self.lastNameTextFieldTableViewCell.textField.text length]);
+	
+	self.doneButtonItem.enabled = isValid;
+	
+	return isValid;
+}
+
 #pragma mark Accessors
+
+- (FGTextFieldValueChangedHelper *)textFieldValueChangedHelper
+{
+	if (!_textFieldValueChangedHelper) {
+		_textFieldValueChangedHelper = [[FGTextFieldValueChangedHelper alloc] init];
+		__weak FGNewStudentTableViewController *weakSelf = self;
+		_textFieldValueChangedHelper.changeHandler = ^{
+			[weakSelf validateContent];
+		};
+	}
+	
+	return _textFieldValueChangedHelper;
+}
+
+- (FGBarButtonItem *)doneButtonItem
+{
+	if (!_doneButtonItem) {
+		_doneButtonItem = [[FGBarButtonItem alloc]
+						   initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+						   target:self
+						   action:@selector(doneButtonTapped:)];
+	}
+	
+	return _doneButtonItem;
+}
 
 - (FGAddRandomStudentTableViewCell *)addRandomStudentTableViewCell
 {
@@ -184,6 +228,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	if (!_firstNameTextFieldTableViewCell) {
 		_firstNameTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGFirstNameTextFieldTableViewCellIdentifier
 																				forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowFirstName inSection:kSectionNameTextFields]];
+		[self.textFieldValueChangedHelper registerTextField:_firstNameTextFieldTableViewCell.textField];
 	}
 	
 	return _firstNameTextFieldTableViewCell;
@@ -194,6 +239,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	if (!_lastNameTextFieldTableViewCell) {
 		_lastNameTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGLastNameTextFieldTableViewCellIdentifier
 																			   forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowLastName inSection:kSectionNameTextFields]];
+		[self.textFieldValueChangedHelper registerTextField:_lastNameTextFieldTableViewCell.textField];
 	}
 	
 	return _lastNameTextFieldTableViewCell;
@@ -224,20 +270,20 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 
 #pragma mark - View lifecycle
 
-//- (void)loadView
-//{
-//	[super loadView];
-//}
-
 - (UINavigationItem *)navigationItem
 {
 	UINavigationItem *navigationItem = [super navigationItem];
 	
-	navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-																					  target:self
-																					  action:@selector(doneButtonTapped:)];
+	navigationItem.rightBarButtonItem = self.doneButtonItem;
 	
 	return navigationItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	[self validateContent];
 }
 
 #pragma mark - Public methods

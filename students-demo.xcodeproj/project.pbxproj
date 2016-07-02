@@ -82,6 +82,8 @@
 		66AB0ABD1D279374004985E9 /* FGStudentAvatarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ABC1D279374004985E9 /* FGStudentAvatarTableViewCell.m */; };
 		66AB0AC01D2850DF004985E9 /* FGStudentNameContainerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ABF1D2850DF004985E9 /* FGStudentNameContainerTableViewCell.m */; };
 		66AB0AC41D285245004985E9 /* FGBaseStudentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AC31D285245004985E9 /* FGBaseStudentTableViewController.m */; };
+		66AB0AC71D2853E3004985E9 /* FGBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AC61D2853E3004985E9 /* FGBarButtonItem.m */; };
+		66AB0ACC1D285537004985E9 /* FGTextFieldValueChangedHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ACB1D285537004985E9 /* FGTextFieldValueChangedHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +253,10 @@
 		66AB0ABF1D2850DF004985E9 /* FGStudentNameContainerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentNameContainerTableViewCell.m; sourceTree = "<group>"; };
 		66AB0AC21D285245004985E9 /* FGBaseStudentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGBaseStudentTableViewController.h; sourceTree = "<group>"; };
 		66AB0AC31D285245004985E9 /* FGBaseStudentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGBaseStudentTableViewController.m; sourceTree = "<group>"; };
+		66AB0AC51D2853E3004985E9 /* FGBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGBarButtonItem.h; sourceTree = "<group>"; };
+		66AB0AC61D2853E3004985E9 /* FGBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGBarButtonItem.m; sourceTree = "<group>"; };
+		66AB0ACA1D285537004985E9 /* FGTextFieldValueChangedHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTextFieldValueChangedHelper.h; sourceTree = "<group>"; };
+		66AB0ACB1D285537004985E9 /* FGTextFieldValueChangedHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTextFieldValueChangedHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +414,7 @@
 		66AB09E01D24D839004985E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0AC81D2853E7004985E9 /* Buttons */,
 				66AB09ED1D24DB26004985E9 /* TableViews & Cells */,
 				66AB0A761D25DFFB004985E9 /* FGTextField.h */,
 				66AB0A771D25DFFB004985E9 /* FGTextField.m */,
@@ -425,8 +432,6 @@
 				66AB0A9C1D260177004985E9 /* FGActivityIndicatorView.m */,
 				66AB0AA61D277A43004985E9 /* FGAlertView.h */,
 				66AB0AA71D277A43004985E9 /* FGAlertView.m */,
-				66AB0AA91D2781E3004985E9 /* FGButton.h */,
-				66AB0AAA1D2781E3004985E9 /* FGButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 		66AB09E81D24DAF2004985E9 /* NewStudent */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0AC91D285513004985E9 /* Helpers */,
 				66AB0A851D25E5CA004985E9 /* View */,
 				66AB0A6C1D25DF07004985E9 /* Cells */,
 				66AB0A661D25D4D8004985E9 /* FGNewStudentTableViewController.h */,
@@ -689,6 +695,26 @@
 			name = Student;
 			sourceTree = "<group>";
 		};
+		66AB0AC81D2853E7004985E9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0AA91D2781E3004985E9 /* FGButton.h */,
+				66AB0AAA1D2781E3004985E9 /* FGButton.m */,
+				66AB0AC51D2853E3004985E9 /* FGBarButtonItem.h */,
+				66AB0AC61D2853E3004985E9 /* FGBarButtonItem.m */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		66AB0AC91D285513004985E9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0ACA1D285537004985E9 /* FGTextFieldValueChangedHelper.h */,
+				66AB0ACB1D285537004985E9 /* FGTextFieldValueChangedHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -826,6 +852,7 @@
 				66AB0A1E1D24F87C004985E9 /* FGRootViewController.m in Sources */,
 				66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */,
 				66AB0A7B1D25E123004985E9 /* FGImageView.m in Sources */,
+				66AB0ACC1D285537004985E9 /* FGTextFieldValueChangedHelper.m in Sources */,
 				66AB0A571D25C38A004985E9 /* FGMainMenuTableViewDataSource.m in Sources */,
 				66AB0AC01D2850DF004985E9 /* FGStudentNameContainerTableViewCell.m in Sources */,
 				66AB09FA1D24DE95004985E9 /* FGStudentFetcher.m in Sources */,
@@ -869,6 +896,7 @@
 				66AB0AA01D2601EA004985E9 /* FGButtonedTableViewCell.m in Sources */,
 				66AB0A461D25A88F004985E9 /* FGLocalPaths.m in Sources */,
 				66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */,
+				66AB0AC71D2853E3004985E9 /* FGBarButtonItem.m in Sources */,
 				66AB0A211D24FAAC004985E9 /* FGLocalization.m in Sources */,
 				66AB0A9D1D260177004985E9 /* FGActivityIndicatorView.m in Sources */,
 				66AB0AAB1D2781E3004985E9 /* FGButton.m in Sources */,
