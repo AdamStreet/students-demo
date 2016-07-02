@@ -86,7 +86,8 @@ typedef NS_ENUM(NSUInteger, FullNameRowName) {
 {
 	switch (section) {
 		case kSectionNameAvatarImage:
-			return 1;
+			return (self.student.avatarImageURL? 1 : 0);
+			
 		case kSectionNameFullName:
 			return kNumberOfFullNameRows;
 	}
