@@ -12,6 +12,13 @@
 
 @property (nonatomic, readonly) NSURLSession *session;
 
++ (void)initializeSharedProviderWithURLSession:(NSURLSession *)session;
 + (instancetype)sharedProvider;
+
+/**
+ @brief Initializes a session provider, a wrapper for NSURLSession.
+ @param session If this parameter is nil, the +[NSURLSession sharedSession] is used.
+ */
+- (instancetype)initWithURLSession:(NSURLSession *)session;
 
 @end

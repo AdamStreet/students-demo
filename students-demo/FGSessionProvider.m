@@ -24,7 +24,7 @@ static FGSessionProvider *sharedInstance = nil;
 	return !!sharedInstance;
 }
 
-+ (void)initializeSharedProvider
++ (void)initializeSharedProviderWithURLSession:(NSURLSession *)session
 {
 	if (sharedInstance) {
 		NSAssert(NO, @"Shared instance already initialized");
@@ -32,23 +32,26 @@ static FGSessionProvider *sharedInstance = nil;
 		return;
 	}
 	
-	sharedInstance = [[self alloc] init];
+	sharedInstance = [[self alloc] initWithURLSession:session];
 }
 
 + (instancetype)sharedProvider
 {
 	if (![self isSharedProviderInitialized]) {
-		[self initializeSharedProvider];
+		NSAssert(NO, @"Shared instance is not initialized");
 	}
 	
 	return sharedInstance;
 }
 
-- (instancetype)init
+- (instancetype)initWithURLSession:(NSURLSession *)session
 {
 	self = [super init];
 	if (self) {
-		self.session = [NSURLSession sharedSession];	// Do custom configuration here - if needed
+		if (!session) {
+			session = [NSURLSession sharedSession];
+		}
+		self.session = session;
 	}
 
 	return self;

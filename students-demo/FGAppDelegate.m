@@ -36,6 +36,7 @@
 
 - (void)initializeNetworkLayer
 {
+	[FGSessionProvider initializeSharedProviderWithURLSession:nil];
 	[FGRemoteDataFetcher initializeSharedFetcherWithSessionProvider:[FGSessionProvider sharedProvider]];
 }
 
