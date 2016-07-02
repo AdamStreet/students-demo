@@ -14,6 +14,8 @@ NSString * const FGStudentTableViewCellIdentifier = @"FGStudentTableViewCell";
 
 @implementation FGStudentTableViewCell
 
+@synthesize student = _student;
+
 #pragma mark - Initialization
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

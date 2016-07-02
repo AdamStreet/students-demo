@@ -259,10 +259,6 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		   forCellReuseIdentifier:FGFirstNameTextFieldTableViewCellIdentifier];
 		[_tableView registerClass:[FGLastNameTextFieldTableViewCell class]
 		   forCellReuseIdentifier:FGLastNameTextFieldTableViewCellIdentifier];
-		
-		_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-		
-		_tableView.allowsSelection = NO;
 	}
 	
 	return _tableView;

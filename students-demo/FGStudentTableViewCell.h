@@ -6,14 +6,12 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGTableViewCell.h"
+#import "FGBaseStudentTableViewCell.h"
 
 @class FGStudent;
 
 extern NSString * const FGStudentTableViewCellIdentifier;
 
-@interface FGStudentTableViewCell : FGTableViewCell
-
-@property (nonatomic) FGStudent *student;
+@interface FGStudentTableViewCell : FGBaseStudentTableViewCell
 
 @end

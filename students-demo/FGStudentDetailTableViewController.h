@@ -6,11 +6,11 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGTableViewController.h"
+#import "FGBaseStudentTableViewController.h"
 
 @class FGStudent;
 
-@interface FGStudentDetailTableViewController : FGTableViewController
+@interface FGStudentDetailTableViewController : FGBaseStudentTableViewController
 
 @property (nonatomic, readonly) FGStudent *student;
 

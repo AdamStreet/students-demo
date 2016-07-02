@@ -6,13 +6,13 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGTableViewController.h"
+#import "FGBaseStudentTableViewController.h"
 
 @class FGStudent;
 
 typedef void(^FGNewStudentTableViewControllerCompletion)(FGStudent *student);
 
-@interface FGNewStudentTableViewController : FGTableViewController
+@interface FGNewStudentTableViewController : FGBaseStudentTableViewController
 
 @property (nonatomic, copy) FGNewStudentTableViewControllerCompletion completionHandler;
 - (id)initWithNewStudent;
