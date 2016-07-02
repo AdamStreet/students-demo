@@ -18,12 +18,46 @@ NSString * const FGAddRandomStudentTableViewCellIdentifier = @"FGAddRandomStuden
 {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self) {
-		self.textLabel.text = FGLocalizedString(@"Get Random Student", @"Random user fetch button title");
-		
 		self.topSeparator.hidden = YES;
+		
+		[self updateLabel];
 	}
 	
 	return self;
+}
+
+#pragma mark - Private methods
+
+- (void)updateLabel
+{
+	switch (self.buttonState) {
+  case FGAddRandomStudentTableViewCellButtonStateInitial:
+			[self.button setTitle:FGLocalizedString(@"Get Random Student", @"Random user fetch button title")
+						 forState:UIControlStateNormal];
+			break;
+		case FGAddRandomStudentTableViewCellButtonStateLoading:
+			[self.button setTitle:FGLocalizedString(@"Loading Random Student...", @"Random user fetch button title")
+						 forState:UIControlStateNormal];
+			break;
+		case FGAddRandomStudentTableViewCellButtonStateLoaded:
+			[self.button setTitle:FGLocalizedString(@"Get New Random Student", @"Random user fetch button title")
+						 forState:UIControlStateNormal];
+			break;
+			
+  default:
+			break;
+	}
+}
+
+#pragma mark - Public methods
+
+#pragma mark Accessors
+
+- (void)setButtonState:(FGAddRandomStudentTableViewCellButtonState)buttonState
+{
+	_buttonState = buttonState;
+	
+	[self updateLabel];
 }
 
 @end

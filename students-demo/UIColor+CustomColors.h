@@ -15,5 +15,6 @@
 + (UIColor *)separatorColor;
 
 + (UIColor *)buttonTextColor;
++ (UIColor *)buttonDisabledTextColor;
 
 @end

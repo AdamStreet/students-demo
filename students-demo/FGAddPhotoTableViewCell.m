@@ -18,8 +18,8 @@ NSString * const FGAddPhotoTableViewCellIdentifier = @"FGAddPhotoTableViewCell";
 {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self) {
-		self.textLabel.text = FGLocalizedString(@"Add Profile Photo", @"Add photo button title");
-		self.textLabel.textAlignment = NSTextAlignmentCenter;
+		[self.button setTitle:FGLocalizedString(@"Add Profile Photo", @"Add photo button title")
+					 forState:UIControlStateNormal];
 		
 		self.topSeparator.hidden = YES;
 		self.bottomSeparator.hidden = YES;

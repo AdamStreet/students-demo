@@ -26,9 +26,11 @@
 
 @property (nonatomic, weak) NSURLSessionTask *pendingSessionTask;
 
+@property (nonatomic) FGAddRandomStudentTableViewCell *addRandomStudentTableViewCell;
 @property (nonatomic) FGFirstNameTextFieldTableViewCell *firstNameTextFieldTableViewCell;
 @property (nonatomic) FGLastNameTextFieldTableViewCell *lastNameTextFieldTableViewCell;
 @property (nonatomic) FGAvatarTableViewCell *avatarTableViewCell;
+@property (nonatomic) FGAddPhotoTableViewCell *addPhotoTableViewCell;
 
 @end
 
@@ -71,15 +73,23 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 - (void)fetchRandomUser
 {
 	[self clearInputValues];
+	[self setInputValuesEnabled:NO];
 	
 	[self cancelPendingTask];
+	
+	self.addRandomStudentTableViewCell.buttonState = FGAddRandomStudentTableViewCellButtonStateLoading;
 	
 	self.pendingSessionTask = [FGStudentFetcher fetchRandomStudentMetadata:^(NSDictionary *studentMetadata, NSError *error) {
 		if (error) {
 			[self showConnectionError:error];
 			
+			[self clearInputValues];
+			[self setInputValuesEnabled:YES];
+			
 			return;
 		}
+		
+		self.addRandomStudentTableViewCell.buttonState = FGAddRandomStudentTableViewCellButtonStateLoaded;
 		
 		[self cancelPendingTask];
 		
@@ -99,6 +109,13 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	self.firstNameTextFieldTableViewCell.textField.text = nil;
 	self.lastNameTextFieldTableViewCell.textField.text = nil;
 	[self.avatarTableViewCell.avatarImageView clear];
+}
+
+- (void)setInputValuesEnabled:(BOOL)enabled
+{
+	self.firstNameTextFieldTableViewCell.textField.enabled = enabled;
+	self.lastNameTextFieldTableViewCell.textField.enabled = enabled;
+	self.addPhotoTableViewCell.button.enabled = enabled;
 }
 
 - (void)addPhoto
@@ -143,6 +160,19 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 
 #pragma mark Accessors
 
+- (FGAddRandomStudentTableViewCell *)addRandomStudentTableViewCell
+{
+	if (!_addRandomStudentTableViewCell) {
+		_addRandomStudentTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGAddRandomStudentTableViewCellIdentifier
+																			  forIndexPath:[NSIndexPath indexPathForRow:0 inSection:kSectionAddRandomUser]];
+		_addRandomStudentTableViewCell.button.tapHandler = ^{
+			[self fetchRandomUser];
+		};
+	}
+	
+	return _addRandomStudentTableViewCell;
+}
+
 - (FGFirstNameTextFieldTableViewCell *)firstNameTextFieldTableViewCell
 {
 	if (!_firstNameTextFieldTableViewCell) {
@@ -171,6 +201,19 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	}
 	
 	return _avatarTableViewCell;
+}
+
+- (FGAddPhotoTableViewCell *)addPhotoTableViewCell
+{
+	if (!_addPhotoTableViewCell) {
+		_addPhotoTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGAddPhotoTableViewCellIdentifier
+																	  forIndexPath:[NSIndexPath indexPathForRow:0 inSection:kSectionAddPhoto]];
+		_addPhotoTableViewCell.button.tapHandler = ^{
+			[self addPhoto];
+		};
+	}
+	
+	return _addPhotoTableViewCell;
 }
 
 #pragma mark - View lifecycle
@@ -212,6 +255,8 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		   forCellReuseIdentifier:FGLastNameTextFieldTableViewCellIdentifier];
 		
 		_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+		
+		_tableView.allowsSelection = NO;
 	}
 	
 	return _tableView;
@@ -274,12 +319,11 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	NSString *tableViewCellIdentifier = nil;
 	__kindof UITableViewCell *cell = nil;
 	
 	switch (indexPath.section) {
 		case kSectionAddRandomUser:
-			tableViewCellIdentifier = FGAddRandomStudentTableViewCellIdentifier;
+			cell = self.addRandomStudentTableViewCell;
 			
 			break;
 		case kSectionAvatar:
@@ -287,7 +331,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 			
 			break;
 		case kSectionAddPhoto:
-			tableViewCellIdentifier = FGAddPhotoTableViewCellIdentifier;
+			cell = self.addPhotoTableViewCell;
 			
 			break;
 		case kSectionNameTextFields:
@@ -301,10 +345,6 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 			
 		default:
 			break;
-	}
-	
-	if (!cell) {
-		cell = [tableView dequeueReusableCellWithIdentifier:tableViewCellIdentifier																		forIndexPath:indexPath];
 	}
 	
 	// Bind required elements
@@ -348,39 +388,6 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		return 120.0;
 	
 	return tableView.rowHeight;
-}
-
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	switch (indexPath.section) {
-		case kSectionAddRandomUser:
-			return YES;
-			
-		case kSectionAddPhoto:
-			return YES;
-			
-		default:
-			return NO;
-	}
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	if (indexPath.section == kSectionAddRandomUser) {
-		[self fetchRandomUser];
-		
-		[tableView deselectRowAtIndexPath:indexPath animated:YES];
-		
-		return;
-	}
-	
-	if (indexPath.section == kSectionAddPhoto) {
-		[self addPhoto];
-		
-		return;
-	}
-	
-	NSAssert1(NO, @"Undhandled indexPath: %@", indexPath);
 }
 
 @end

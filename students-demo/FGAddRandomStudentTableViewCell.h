@@ -6,10 +6,18 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGButtonStyleTableViewCell.h"
+#import "FGButtonedTableViewCell.h"
 
 extern NSString * const FGAddRandomStudentTableViewCellIdentifier;
 
-@interface FGAddRandomStudentTableViewCell : FGButtonStyleTableViewCell
+typedef NS_ENUM(NSInteger, FGAddRandomStudentTableViewCellButtonState) {
+FGAddRandomStudentTableViewCellButtonStateInitial = 0,
+	FGAddRandomStudentTableViewCellButtonStateLoading,
+	FGAddRandomStudentTableViewCellButtonStateLoaded
+};
+
+@interface FGAddRandomStudentTableViewCell : FGButtonedTableViewCell
+
+@property (nonatomic) FGAddRandomStudentTableViewCellButtonState buttonState;
 
 @end

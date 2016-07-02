@@ -28,4 +28,9 @@
 	return view.tintColor;
 }
 
++ (UIColor *)buttonDisabledTextColor
+{
+	return [UIColor colorWithWhite:0.75 alpha:1.0];
+}
+
 @end

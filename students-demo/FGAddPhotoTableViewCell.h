@@ -6,10 +6,10 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGButtonStyleTableViewCell.h"
+#import "FGButtonedTableViewCell.h"
 
 extern NSString * const FGAddPhotoTableViewCellIdentifier;
 
-@interface FGAddPhotoTableViewCell : FGButtonStyleTableViewCell
+@interface FGAddPhotoTableViewCell : FGButtonedTableViewCell
 
 @end

@@ -8,6 +8,10 @@
 
 #import "FGTransparentTableViewCell.h"
 
-@interface FGButtonStyleTableViewCell : FGTransparentTableViewCell
+#import "FGButton.h"
+
+@interface FGButtonedTableViewCell : FGTransparentTableViewCell
+
+@property (nonatomic, readonly) FGButton *button;
 
 @end
