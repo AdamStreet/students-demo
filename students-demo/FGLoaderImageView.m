@@ -88,6 +88,10 @@
 																	  self.imageView.image = image;
 																  }
 															   completion:nil];
+											  
+											  if (completion) {
+												  completion(error);
+											  }
 										  }];
 	}
 }
