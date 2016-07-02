@@ -16,10 +16,11 @@
 #define FORCE_CONSOLE_LOGGING_IN_DEBUG_MODE 1
 
 #if (0 == LOGGING_LEVEL)
-#define DebugLog(...)
+	#define DebugLog(...)
 #elif (LOGGING_LEVEL == 1 || (DEBUG && FORCE_CONSOLE_LOGGING_IN_DEBUG_MODE))
-#define DebugLog(fmt,...) NSLog((@"%s:%d " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+	#define DebugLog(fmt,...) NSLog((@"%s:%d " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #else
-#import "FGCrashReporter.h"
-//	#define DebugLog(str,...) CLS_LOG(str, ##__VA_ARGS__)	// Log with crashlytics's persistent logger
+	#import "FGCrashReporter.h"
+	#define DebugLog(...)
+	//	#define DebugLog(str,...) CLS_LOG(str, ##__VA_ARGS__)	// Log with crashlytics's persistent logger
 #endif
