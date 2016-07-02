@@ -17,6 +17,8 @@ extern const NSInteger kStatusCodeUnknown;
 
 @interface FGRemoteDataFetcher : NSObject
 
+@property (nonatomic, readonly) FGSessionProvider *sessionProvider;
+
 + (void)initializeSharedFetcherWithSessionProvider:(FGSessionProvider *)sessionProvider;
 + (instancetype)sharedFetcher;
 
