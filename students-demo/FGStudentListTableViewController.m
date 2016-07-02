@@ -18,6 +18,8 @@
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
+#pragma mark - Initialization
+
 - (instancetype)initWithStudents
 {
 	self = [super initWithStyle:UITableViewStyleGrouped
@@ -29,8 +31,12 @@
 	return self;
 }
 
-#pragma mark - Initialization
 #pragma mark - Private methods
+
+- (FGDatabaseManager *)databaseManager
+{
+	return [FGDatabaseManager mainDatabaseManager];
+}
 
 - (FGStudent *)studentAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -66,9 +72,9 @@
 		NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[FGStudent entityName]];
 		request.sortDescriptors = [FGStudent sortDescriptorsByName];
 		
-		_fetchedResultsController = [[FGDatabaseManager mainDatabaseManager] fetchedResultsControllerForFetchRequest:request
-																								  sectionNameKeyPath:nil
-																										   cacheName:nil];
+		_fetchedResultsController = [[self databaseManager] fetchedResultsControllerForFetchRequest:request
+																				 sectionNameKeyPath:nil
+																						  cacheName:nil];
 	}
 	
 	return _fetchedResultsController;
@@ -95,6 +101,23 @@
 #pragma mark - User interaction handlers
 #pragma mark - Notification handlers
 #pragma mark - KVO
+
+#pragma mark - <UITableViewDataSource>
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	FGStudent *student = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	
+	[[self databaseManager] deleteEntity:student];
+	
+	[[self databaseManager] saveContext];
+}
+
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
