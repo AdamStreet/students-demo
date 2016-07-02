@@ -4,7 +4,7 @@
 #import "_FGFile.h"
 
 const struct FGFileAttributes FGFileAttributes = {
-	.path = @"path",
+	.relativePath = @"relativePath",
 };
 
 @implementation FGFileID
@@ -36,7 +36,7 @@ const struct FGFileAttributes FGFileAttributes = {
 	return keyPaths;
 }
 
-@dynamic path;
+@dynamic relativePath;
 
 @end
 

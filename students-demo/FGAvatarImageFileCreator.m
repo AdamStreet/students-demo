@@ -10,22 +10,30 @@
 
 #import "FGLocalPaths.h"
 #import "FGDatabaseManager.h"
-
-static NSString * const kStoragePathComponent = @"saved_avatars";
+#import "FGLogger.h"
 
 @implementation FGAvatarImageFileCreator
+
+#pragma mark - Private methods
+
++ (NSURL *)avatarContainerURL
+{
+	return [FGAvatarImageFile avatarImageFilesContainerURL];
+}
+
+#pragma mark - Public methods
 
 + (FGAvatarImageFile *)avatarImageFileWithImage:(UIImage *)image
 								databaseManager:(FGDatabaseManager *)databaseManager
 {
 	FGAvatarImageFile *imageFile = [databaseManager insertEntity:[FGAvatarImageFile entityName]];
 	NSString *imageFileName = [FGFile uniqueFileName];
-	NSString *declaredPath = [[FGLocalPaths applicationDocumentsDirectoryURL] absoluteString];
-	declaredPath = [declaredPath stringByAppendingPathComponent:kStoragePathComponent];
 	
-	imageFile.path = [FGImageFile persistImage:image
-										onPath:declaredPath
+	NSURL *fileURL = [FGImageFile persistImage:image
+										 onURL:[self avatarContainerURL]
 									  filename:imageFileName];
+	imageFile.relativePath = [fileURL relativePath];
+	
 	return imageFile;
 }
 

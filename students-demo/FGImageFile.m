@@ -10,23 +10,24 @@
 
 - (UIImage *)image
 {
-	return [UIImage imageWithContentsOfFile:self.path];
+	return [UIImage imageWithContentsOfFile:self.relativePath];
 }
 
-+ (NSString *)persistImage:(UIImage *)image
-					onPath:(NSString *)path
-				  filename:(NSString *)filename
++ (NSURL *)persistImage:(UIImage *)image
+				  onURL:(NSURL *)url
+			   filename:(NSString *)filename
 {
 	NSParameterAssert(image);
-	NSParameterAssert(path);
+	NSParameterAssert(url);
 	NSParameterAssert(filename);
 	
 	NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
-	NSString *fullPath = [path stringByAppendingPathComponent:filename];
+	NSURL *fullURL = [url URLByAppendingPathComponent:filename];
 	
-	[imageData writeToFile:fullPath atomically:NO];
+	[imageData writeToFile:[fullURL path]
+				atomically:NO];
 	
-	return fullPath;
+	return fullURL;
 }
 
 @end

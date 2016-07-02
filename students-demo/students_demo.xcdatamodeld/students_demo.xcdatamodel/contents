@@ -4,7 +4,7 @@
         <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="avatarImageFile" inverseEntity="Student" syncable="YES"/>
     </entity>
     <entity name="File" representedClassName="FGFile" syncable="YES">
-        <attribute name="path" attributeType="String" syncable="YES"/>
+        <attribute name="relativePath" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="ImageFile" representedClassName="FGImageFile" parentEntity="File" syncable="YES"/>
     <entity name="Student" representedClassName="FGStudent" syncable="YES">

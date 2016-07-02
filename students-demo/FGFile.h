@@ -4,4 +4,8 @@
 
 + (NSString *)uniqueFileName;
 
++ (NSURL *)fileContainerURL;
+
+- (NSURL *)fileURL;
+
 @end

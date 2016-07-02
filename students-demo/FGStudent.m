@@ -17,9 +17,15 @@
 
 - (NSURL *)avatarImageURL
 {
-	NSString *path = (self.avatarImageFile.path?: self.avatarImageURLString);
+	NSURL *fileURL = [self.avatarImageFile fileURL];
+	if (fileURL)
+		return fileURL;
 	
-	return [NSURL URLWithString:path];
+	NSString *avatarImageURLString = self.avatarImageURLString;
+	if (avatarImageURLString)
+		return [NSURL URLWithString:avatarImageURLString];
+	
+	return nil;
 }
 
 + (NSArray<NSSortDescriptor *> *)sortDescriptorsByName

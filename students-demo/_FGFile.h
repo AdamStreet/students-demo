@@ -4,7 +4,7 @@
 @import CoreData;
 
 extern const struct FGFileAttributes {
-	__unsafe_unretained NSString *path;
+	__unsafe_unretained NSString *relativePath;
 } FGFileAttributes;
 
 @interface FGFileID : NSManagedObjectID {}
@@ -16,15 +16,15 @@ extern const struct FGFileAttributes {
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) FGFileID* objectID;
 
-@property (nonatomic, strong) NSString* path;
+@property (nonatomic, strong) NSString* relativePath;
 
-//- (BOOL)validatePath:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateRelativePath:(id*)value_ error:(NSError**)error_;
 
 @end
 
 @interface _FGFile (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitivePath;
-- (void)setPrimitivePath:(NSString*)value;
+- (NSString*)primitiveRelativePath;
+- (void)setPrimitiveRelativePath:(NSString*)value;
 
 @end
