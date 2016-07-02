@@ -13,7 +13,6 @@
 		66AB09A11D24CD06004985E9 /* students_demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66AB099F1D24CD06004985E9 /* students_demo.xcdatamodeld */; };
 		66AB09A31D24CD06004985E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AB09A21D24CD06004985E9 /* Assets.xcassets */; };
 		66AB09A61D24CD06004985E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66AB09A41D24CD06004985E9 /* LaunchScreen.storyboard */; };
-		66AB09B11D24CD06004985E9 /* students_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09B01D24CD06004985E9 /* students_demoTests.m */; };
 		66AB09CF1D24CFEE004985E9 /* FGDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */; };
 		66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */; };
 		66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D81D24D795004985E9 /* FGTableViewController.m */; };
@@ -84,17 +83,17 @@
 		66AB0AC41D285245004985E9 /* FGBaseStudentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AC31D285245004985E9 /* FGBaseStudentTableViewController.m */; };
 		66AB0AC71D2853E3004985E9 /* FGBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AC61D2853E3004985E9 /* FGBarButtonItem.m */; };
 		66AB0ACC1D285537004985E9 /* FGTextFieldValueChangedHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ACB1D285537004985E9 /* FGTextFieldValueChangedHelper.m */; };
+		66AB0ACE1D285B72004985E9 /* FGNetworkLayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ACD1D285B72004985E9 /* FGNetworkLayerTest.m */; };
+		66AB0AD31D2867F5004985E9 /* FGJSONConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AD21D2867F5004985E9 /* FGJSONConverterTests.m */; };
+		66AB0AD51D286B02004985E9 /* FGDatabaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AD41D286B02004985E9 /* FGDatabaseTests.m */; };
+		66AB0AD71D286F6A004985E9 /* test_image_avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66AB0AD61D286F6A004985E9 /* test_image_avatar.jpg */; };
+		66AB0AD91D2872A6004985E9 /* test_image_avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66AB0AD61D286F6A004985E9 /* test_image_avatar.jpg */; };
+		66AB0ADB1D287E9C004985E9 /* FGImageCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ADA1D287E9C004985E9 /* FGImageCacheTest.m */; };
+		66AB0ADE1D287F20004985E9 /* FGTestResourceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ADD1D287F20004985E9 /* FGTestResourceProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		66AB09AD1D24CD06004985E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AB09881D24CD05004985E9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 66AB098F1D24CD05004985E9;
-			remoteInfo = "students-demo";
-		};
-		66AB09B81D24CD06004985E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 66AB09881D24CD05004985E9 /* Project object */;
 			proxyType = 1;
@@ -115,9 +114,7 @@
 		66AB09A51D24CD06004985E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66AB09A71D24CD06004985E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66AB09AC1D24CD06004985E9 /* students-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "students-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		66AB09B01D24CD06004985E9 /* students_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = students_demoTests.m; sourceTree = "<group>"; };
 		66AB09B21D24CD06004985E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		66AB09B71D24CD06004985E9 /* students-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "students-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AB09CD1D24CFEE004985E9 /* FGDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGDatabaseManager.h; sourceTree = "<group>"; };
 		66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGDatabaseManager.m; sourceTree = "<group>"; };
 		66AB09D41D24D783004985E9 /* FGStudentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentListTableViewController.h; sourceTree = "<group>"; };
@@ -257,6 +254,13 @@
 		66AB0AC61D2853E3004985E9 /* FGBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGBarButtonItem.m; sourceTree = "<group>"; };
 		66AB0ACA1D285537004985E9 /* FGTextFieldValueChangedHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTextFieldValueChangedHelper.h; sourceTree = "<group>"; };
 		66AB0ACB1D285537004985E9 /* FGTextFieldValueChangedHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTextFieldValueChangedHelper.m; sourceTree = "<group>"; };
+		66AB0ACD1D285B72004985E9 /* FGNetworkLayerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGNetworkLayerTest.m; sourceTree = "<group>"; };
+		66AB0AD21D2867F5004985E9 /* FGJSONConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGJSONConverterTests.m; sourceTree = "<group>"; };
+		66AB0AD41D286B02004985E9 /* FGDatabaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGDatabaseTests.m; sourceTree = "<group>"; };
+		66AB0AD61D286F6A004985E9 /* test_image_avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image_avatar.jpg; sourceTree = "<group>"; };
+		66AB0ADA1D287E9C004985E9 /* FGImageCacheTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageCacheTest.m; sourceTree = "<group>"; };
+		66AB0ADC1D287F20004985E9 /* FGTestResourceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTestResourceProvider.h; sourceTree = "<group>"; };
+		66AB0ADD1D287F20004985E9 /* FGTestResourceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTestResourceProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,13 +272,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		66AB09A91D24CD06004985E9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		66AB09B41D24CD06004985E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,7 +295,6 @@
 			children = (
 				66AB09901D24CD05004985E9 /* students-demo.app */,
 				66AB09AC1D24CD06004985E9 /* students-demoTests.xctest */,
-				66AB09B71D24CD06004985E9 /* students-demoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,7 +328,12 @@
 		66AB09AF1D24CD06004985E9 /* students-demoTests */ = {
 			isa = PBXGroup;
 			children = (
-				66AB09B01D24CD06004985E9 /* students_demoTests.m */,
+				66AB0ADF1D287F24004985E9 /* Helpers */,
+				66AB0ACD1D285B72004985E9 /* FGNetworkLayerTest.m */,
+				66AB0AD21D2867F5004985E9 /* FGJSONConverterTests.m */,
+				66AB0AD41D286B02004985E9 /* FGDatabaseTests.m */,
+				66AB0ADA1D287E9C004985E9 /* FGImageCacheTest.m */,
+				66AB0AD81D286F6E004985E9 /* Resources */,
 				66AB09B21D24CD06004985E9 /* Info.plist */,
 			);
 			path = "students-demoTests";
@@ -715,6 +716,23 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		66AB0AD81D286F6E004985E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0AD61D286F6A004985E9 /* test_image_avatar.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		66AB0ADF1D287F24004985E9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0ADC1D287F20004985E9 /* FGTestResourceProvider.h */,
+				66AB0ADD1D287F20004985E9 /* FGTestResourceProvider.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -753,24 +771,6 @@
 			productReference = 66AB09AC1D24CD06004985E9 /* students-demoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		66AB09B61D24CD06004985E9 /* students-demoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 66AB09C61D24CD06004985E9 /* Build configuration list for PBXNativeTarget "students-demoUITests" */;
-			buildPhases = (
-				66AB09B31D24CD06004985E9 /* Sources */,
-				66AB09B41D24CD06004985E9 /* Frameworks */,
-				66AB09B51D24CD06004985E9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				66AB09B91D24CD06004985E9 /* PBXTargetDependency */,
-			);
-			name = "students-demoUITests";
-			productName = "students-demoUITests";
-			productReference = 66AB09B71D24CD06004985E9 /* students-demoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -785,10 +785,6 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					66AB09AB1D24CD06004985E9 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 66AB098F1D24CD05004985E9;
-					};
-					66AB09B61D24CD06004985E9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = 66AB098F1D24CD05004985E9;
 					};
@@ -809,7 +805,6 @@
 			targets = (
 				66AB098F1D24CD05004985E9 /* students-demo */,
 				66AB09AB1D24CD06004985E9 /* students-demoTests */,
-				66AB09B61D24CD06004985E9 /* students-demoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -819,6 +814,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66AB0AD91D2872A6004985E9 /* test_image_avatar.jpg in Resources */,
 				66AB09A61D24CD06004985E9 /* LaunchScreen.storyboard in Resources */,
 				66AB09A31D24CD06004985E9 /* Assets.xcassets in Resources */,
 				66AB0A621D25C7AF004985E9 /* MenuItems.plist in Resources */,
@@ -829,13 +825,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		66AB09B51D24CD06004985E9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				66AB0AD71D286F6A004985E9 /* test_image_avatar.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,14 +916,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66AB09B11D24CD06004985E9 /* students_demoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		66AB09B31D24CD06004985E9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				66AB0ACE1D285B72004985E9 /* FGNetworkLayerTest.m in Sources */,
+				66AB0ADB1D287E9C004985E9 /* FGImageCacheTest.m in Sources */,
+				66AB0AD31D2867F5004985E9 /* FGJSONConverterTests.m in Sources */,
+				66AB0AD51D286B02004985E9 /* FGDatabaseTests.m in Sources */,
+				66AB0ADE1D287F20004985E9 /* FGTestResourceProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,11 +931,6 @@
 			isa = PBXTargetDependency;
 			target = 66AB098F1D24CD05004985E9 /* students-demo */;
 			targetProxy = 66AB09AD1D24CD06004985E9 /* PBXContainerItemProxy */;
-		};
-		66AB09B91D24CD06004985E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 66AB098F1D24CD05004985E9 /* students-demo */;
-			targetProxy = 66AB09B81D24CD06004985E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1076,6 +1058,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"TEST=1",
+					"DEBUG=1",
+				);
 				INFOPLIST_FILE = "students-demoTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "adam.szabo.students-demoTests";
@@ -1088,6 +1074,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = "TEST=1";
 				INFOPLIST_FILE = "students-demoTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "adam.szabo.students-demoTests";
@@ -1096,27 +1083,79 @@
 			};
 			name = Release;
 		};
-		66AB09C71D24CD06004985E9 /* Debug */ = {
+		66AB0ACF1D286697004985E9 /* Testing */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "students-demoUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "adam.szabo.students-demoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "students-demo";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Testing;
 		};
-		66AB09C81D24CD06004985E9 /* Release */ = {
+		66AB0AD01D286697004985E9 /* Testing */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "students-demoUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "adam.szabo.students-demoUITests";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = "TEST=1";
+				INFOPLIST_FILE = "students-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "adam.szabo.students-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "students-demo";
 			};
-			name = Release;
+			name = Testing;
+		};
+		66AB0AD11D286697004985E9 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"TEST=1",
+					"DEBUG=1",
+				);
+				INFOPLIST_FILE = "students-demoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "adam.szabo.students-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/students-demo.app/students-demo";
+			};
+			name = Testing;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1125,6 +1164,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				66AB09BE1D24CD06004985E9 /* Debug */,
+				66AB0ACF1D286697004985E9 /* Testing */,
 				66AB09BF1D24CD06004985E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1134,6 +1174,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				66AB09C11D24CD06004985E9 /* Debug */,
+				66AB0AD01D286697004985E9 /* Testing */,
 				66AB09C21D24CD06004985E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1143,16 +1184,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				66AB09C41D24CD06004985E9 /* Debug */,
+				66AB0AD11D286697004985E9 /* Testing */,
 				66AB09C51D24CD06004985E9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		66AB09C61D24CD06004985E9 /* Build configuration list for PBXNativeTarget "students-demoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				66AB09C71D24CD06004985E9 /* Debug */,
-				66AB09C81D24CD06004985E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

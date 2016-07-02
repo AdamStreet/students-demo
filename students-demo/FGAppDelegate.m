@@ -55,7 +55,7 @@
 
 - (UIViewController *)startViewController
 {
-	return [[FGRootViewController alloc] initWithNibName:nil bundle:nil];
+	return [[FGRootViewController alloc] initWithoutNib];
 }
 
 #pragma mark - <UIApplicationDelegate>
@@ -66,7 +66,14 @@
 	// Prepare UI
 	
 	UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];	// Support iOS 7.x by -initWithFrame:
+#if TEST
+	FGViewController *grayViewController = [[FGViewController alloc] initWithoutNib];
+	grayViewController.view.backgroundColor = [UIColor grayColor];
+	window.rootViewController = grayViewController;
+#else
 	window.rootViewController = [self startViewController];
+#endif
+	
 	self.window = window;
 	
 	[window makeKeyAndVisible];
