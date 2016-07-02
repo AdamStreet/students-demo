@@ -80,9 +80,11 @@ static FGRemoteDataFetcher *sharedInstance = nil;
 											   @(statusCode), @(data.length), error);
 #endif
 									  
-									  if (completion) {
-										  completion(data, response, statusCode, error);
-									  }
+									  dispatch_async(dispatch_get_main_queue(), ^{
+										  if (completion) {
+											  completion(data, response, statusCode, error);
+										  }
+									  });
 								  }];
 	[task resume];
 	
