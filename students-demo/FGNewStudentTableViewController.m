@@ -19,6 +19,8 @@
 #import "FGAvatarImageView.h"
 #import "FGTextField.h"
 #import "FGImagePickerViewController.h"
+#import "FGAlertView.h"
+#import "FGLocalization.h"
 
 @interface FGNewStudentTableViewController ()
 
@@ -73,6 +75,12 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	[self cancelPendingTask];
 	
 	self.pendingSessionTask = [FGStudentFetcher fetchRandomStudentMetadata:^(NSDictionary *studentMetadata, NSError *error) {
+		if (error) {
+			[self showConnectionError:error];
+			
+			return;
+		}
+		
 		[self cancelPendingTask];
 		
 		[self fillStudentDetails:[studentMetadata valueForKeyPath:FGStudentAPIKeysFirstNameKeyPath]
@@ -109,6 +117,16 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 					 completion:nil];
 }
 
+- (void)showConnectionError:(NSError *)error
+{
+	FGAlertView *alertView = [[FGAlertView alloc] initWithTitle:FGLocalizedString(@"Connection Error", @"Connection error title")
+														message:[error localizedDescription]
+											  cancelButtonTitle:FGLocalizedString(@"Okay", @"connection error cancel button title")
+											  otherButtonTitles:nil
+													 completion:nil];
+	[alertView show];
+}
+
 - (void)fillStudentDetails:(NSString *)firstName
 				  lastName:(NSString *)lastName
 		   avatarImagePath:(NSString *)imagePath
@@ -118,7 +136,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	[self.avatarTableViewCell.avatarImageView setImageURL:[NSURL URLWithString:imagePath]
 											   completion:^(NSError *error) {
 												   if (error) {
-													   // TODO Show error
+													   [self showConnectionError:error];
 												   }
 											   }];
 }

@@ -73,6 +73,7 @@
 		66AB0A9D1D260177004985E9 /* FGActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A9C1D260177004985E9 /* FGActivityIndicatorView.m */; };
 		66AB0AA01D2601EA004985E9 /* FGButtonStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0A9F1D2601EA004985E9 /* FGButtonStyleTableViewCell.m */; };
 		66AB0AA51D2603B8004985E9 /* FGImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AA41D2603B8004985E9 /* FGImagePickerViewController.m */; };
+		66AB0AA81D277A43004985E9 /* FGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AA71D277A43004985E9 /* FGAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,8 @@
 		66AB0A9F1D2601EA004985E9 /* FGButtonStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGButtonStyleTableViewCell.m; sourceTree = "<group>"; };
 		66AB0AA31D2603B8004985E9 /* FGImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImagePickerViewController.h; sourceTree = "<group>"; };
 		66AB0AA41D2603B8004985E9 /* FGImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImagePickerViewController.m; sourceTree = "<group>"; };
+		66AB0AA61D277A43004985E9 /* FGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGAlertView.h; sourceTree = "<group>"; };
+		66AB0AA71D277A43004985E9 /* FGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,6 +399,8 @@
 				66AB0A961D25F60B004985E9 /* FGLabel.m */,
 				66AB0A9B1D260177004985E9 /* FGActivityIndicatorView.h */,
 				66AB0A9C1D260177004985E9 /* FGActivityIndicatorView.m */,
+				66AB0AA61D277A43004985E9 /* FGAlertView.h */,
+				66AB0AA71D277A43004985E9 /* FGAlertView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -768,6 +773,7 @@
 				66AB0A971D25F60B004985E9 /* FGLabel.m in Sources */,
 				66AB0A8E1D25EF34004985E9 /* FGLastNameTextFieldTableViewCell.m in Sources */,
 				66AB09F41D24DC2D004985E9 /* FGSessionProvider.m in Sources */,
+				66AB0AA81D277A43004985E9 /* FGAlertView.m in Sources */,
 				66AB0A721D25DF32004985E9 /* FGAddPhotoTableViewCell.m in Sources */,
 				66AB0A651D25C7F4004985E9 /* FGMenuItemProvider.m in Sources */,
 				66AB0AA51D2603B8004985E9 /* FGImagePickerViewController.m in Sources */,
