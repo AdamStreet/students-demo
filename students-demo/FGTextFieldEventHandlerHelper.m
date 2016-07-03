@@ -6,18 +6,18 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGTextFieldValueChangedHelper.h"
+#import "FGTextFieldEventHandlerHelper.h"
 
 #import "FGTextField.h"
 
-@interface FGTextFieldValueChangedHelper ()
+@interface FGTextFieldEventHandlerHelper ()
 
 @property (nonatomic) NSMutableSet<FGTextField *> *registeredTextFieldsInternalSet;
 
 @end
 
 
-@implementation FGTextFieldValueChangedHelper
+@implementation FGTextFieldEventHandlerHelper
 
 #pragma mark - Initialization
 
@@ -39,6 +39,15 @@
 }
 
 #pragma mark - Private methods
+
+- (FGTextField *)castedTextField:(UITextField *)textField
+{
+	if ([textField isKindOfClass:[FGTextField class]])
+		return (FGTextField *)textField;
+	
+	return nil;
+}
+
 #pragma mark Accessors
 
 - (NSMutableSet<FGTextField *> *)registeredTextFieldsInternalSet
@@ -55,11 +64,13 @@
 - (void)registerTextField:(FGTextField *)textField
 {
 	[self.registeredTextFieldsInternalSet addObject:textField];
+	textField.delegate = self;
 }
 
 - (void)foldTextField:(FGTextField *)textField
 {
 	[self.registeredTextFieldsInternalSet removeObject:textField];
+	textField.delegate = nil;
 }
 
 - (NSSet<FGTextField *> *)registeredTextFields
@@ -73,15 +84,30 @@
 
 - (void)handleTextFieldTextDidChangeNotification:(NSNotification *)notification
 {
-	FGTextField *textField = notification.object;
-	
-	NSAssert(textField, @"Missing text field - how is that possible?");
+	FGTextField *textField = [self castedTextField:notification.object];
 	
 	if ([[self registeredTextFields] containsObject:textField]) {
 		if (self.changeHandler) {
 			self.changeHandler(notification.object);
 		}
 	}
+}
+
+#pragma mark - <UITextFieldDelegate>
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	FGTextField *potentionalTextField = [self castedTextField:textField];
+	
+	if ([[self registeredTextFields] containsObject:potentionalTextField]) {
+		if (self.finisingHandler) {
+			if(self.finisingHandler(potentionalTextField)) {
+				[textField resignFirstResponder];
+			}
+		}
+	}
+	
+	return NO;
 }
 
 @end

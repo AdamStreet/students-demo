@@ -23,7 +23,7 @@
 #import "FGLocalization.h"
 #import "FGAvatarImageFileCreator.h"
 #import "FGBarButtonItem.h"
-#import "FGTextFieldValueChangedHelper.h"
+#import "FGTextFieldEventHandlerHelper.h"
 
 @interface FGNewStudentTableViewController ()
 
@@ -31,7 +31,7 @@
 
 @property (nonatomic) FGBarButtonItem *doneButtonItem;
 
-@property (nonatomic) FGTextFieldValueChangedHelper *textFieldValueChangedHelper;
+@property (nonatomic) FGTextFieldEventHandlerHelper *textFieldEventHandlerHelper;
 
 @property (nonatomic) FGAddRandomStudentTableViewCell *addRandomStudentTableViewCell;
 @property (nonatomic) FGFirstNameTextFieldTableViewCell *firstNameTextFieldTableViewCell;
@@ -183,19 +183,28 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	return isValid;
 }
 
+- (void)dismissKeyboard
+{
+	[self.firstNameTextFieldTableViewCell.textField resignFirstResponder];
+	[self.lastNameTextFieldTableViewCell.textField resignFirstResponder];
+}
+
 #pragma mark Accessors
 
-- (FGTextFieldValueChangedHelper *)textFieldValueChangedHelper
+- (FGTextFieldEventHandlerHelper *)textFieldEventHandlerHelper
 {
-	if (!_textFieldValueChangedHelper) {
-		_textFieldValueChangedHelper = [[FGTextFieldValueChangedHelper alloc] init];
+	if (!_textFieldEventHandlerHelper) {
+		_textFieldEventHandlerHelper = [[FGTextFieldEventHandlerHelper alloc] init];
 		__weak FGNewStudentTableViewController *weakSelf = self;
-		_textFieldValueChangedHelper.changeHandler = ^{
+		_textFieldEventHandlerHelper.changeHandler = ^(FGTextField *textField){
 			[weakSelf validateContent];
+		};
+		_textFieldEventHandlerHelper.finisingHandler = ^(FGTextField *textField) {
+			return YES;
 		};
 	}
 	
-	return _textFieldValueChangedHelper;
+	return _textFieldEventHandlerHelper;
 }
 
 - (FGBarButtonItem *)doneButtonItem
@@ -228,7 +237,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	if (!_firstNameTextFieldTableViewCell) {
 		_firstNameTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGFirstNameTextFieldTableViewCellIdentifier
 																				forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowFirstName inSection:kSectionNameTextFields]];
-		[self.textFieldValueChangedHelper registerTextField:_firstNameTextFieldTableViewCell.textField];
+		[self.textFieldEventHandlerHelper registerTextField:_firstNameTextFieldTableViewCell.textField];
 	}
 	
 	return _firstNameTextFieldTableViewCell;
@@ -239,7 +248,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	if (!_lastNameTextFieldTableViewCell) {
 		_lastNameTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGLastNameTextFieldTableViewCellIdentifier
 																			   forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowLastName inSection:kSectionNameTextFields]];
-		[self.textFieldValueChangedHelper registerTextField:_lastNameTextFieldTableViewCell.textField];
+		[self.textFieldEventHandlerHelper registerTextField:_lastNameTextFieldTableViewCell.textField];
 	}
 	
 	return _lastNameTextFieldTableViewCell;
@@ -314,6 +323,8 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 
 - (void)doneButtonTapped:(id)sender
 {
+	[self dismissKeyboard];
+	
 	FGStudent *newStudent = [[self databaseManager] insertEntity:[FGStudent entityName]];
 	newStudent.firstName = self.firstNameTextFieldTableViewCell.textField.text;
 	newStudent.lastName = self.lastNameTextFieldTableViewCell.textField.text;

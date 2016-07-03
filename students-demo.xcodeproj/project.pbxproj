@@ -82,7 +82,7 @@
 		66AB0AC01D2850DF004985E9 /* FGStudentNameContainerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ABF1D2850DF004985E9 /* FGStudentNameContainerTableViewCell.m */; };
 		66AB0AC41D285245004985E9 /* FGBaseStudentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AC31D285245004985E9 /* FGBaseStudentTableViewController.m */; };
 		66AB0AC71D2853E3004985E9 /* FGBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AC61D2853E3004985E9 /* FGBarButtonItem.m */; };
-		66AB0ACC1D285537004985E9 /* FGTextFieldValueChangedHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ACB1D285537004985E9 /* FGTextFieldValueChangedHelper.m */; };
+		66AB0ACC1D285537004985E9 /* FGTextFieldEventHandlerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ACB1D285537004985E9 /* FGTextFieldEventHandlerHelper.m */; };
 		66AB0ACE1D285B72004985E9 /* FGNetworkLayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ACD1D285B72004985E9 /* FGNetworkLayerTest.m */; };
 		66AB0AD31D2867F5004985E9 /* FGJSONConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AD21D2867F5004985E9 /* FGJSONConverterTests.m */; };
 		66AB0AD51D286B02004985E9 /* FGDatabaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AD41D286B02004985E9 /* FGDatabaseTests.m */; };
@@ -252,8 +252,8 @@
 		66AB0AC31D285245004985E9 /* FGBaseStudentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGBaseStudentTableViewController.m; sourceTree = "<group>"; };
 		66AB0AC51D2853E3004985E9 /* FGBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGBarButtonItem.h; sourceTree = "<group>"; };
 		66AB0AC61D2853E3004985E9 /* FGBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGBarButtonItem.m; sourceTree = "<group>"; };
-		66AB0ACA1D285537004985E9 /* FGTextFieldValueChangedHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTextFieldValueChangedHelper.h; sourceTree = "<group>"; };
-		66AB0ACB1D285537004985E9 /* FGTextFieldValueChangedHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTextFieldValueChangedHelper.m; sourceTree = "<group>"; };
+		66AB0ACA1D285537004985E9 /* FGTextFieldEventHandlerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTextFieldEventHandlerHelper.h; sourceTree = "<group>"; };
+		66AB0ACB1D285537004985E9 /* FGTextFieldEventHandlerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTextFieldEventHandlerHelper.m; sourceTree = "<group>"; };
 		66AB0ACD1D285B72004985E9 /* FGNetworkLayerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGNetworkLayerTest.m; sourceTree = "<group>"; };
 		66AB0AD21D2867F5004985E9 /* FGJSONConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGJSONConverterTests.m; sourceTree = "<group>"; };
 		66AB0AD41D286B02004985E9 /* FGDatabaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGDatabaseTests.m; sourceTree = "<group>"; };
@@ -710,8 +710,8 @@
 		66AB0AC91D285513004985E9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				66AB0ACA1D285537004985E9 /* FGTextFieldValueChangedHelper.h */,
-				66AB0ACB1D285537004985E9 /* FGTextFieldValueChangedHelper.m */,
+				66AB0ACA1D285537004985E9 /* FGTextFieldEventHandlerHelper.h */,
+				66AB0ACB1D285537004985E9 /* FGTextFieldEventHandlerHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -842,7 +842,7 @@
 				66AB0A1E1D24F87C004985E9 /* FGRootViewController.m in Sources */,
 				66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */,
 				66AB0A7B1D25E123004985E9 /* FGImageView.m in Sources */,
-				66AB0ACC1D285537004985E9 /* FGTextFieldValueChangedHelper.m in Sources */,
+				66AB0ACC1D285537004985E9 /* FGTextFieldEventHandlerHelper.m in Sources */,
 				66AB0A571D25C38A004985E9 /* FGMainMenuTableViewDataSource.m in Sources */,
 				66AB0AC01D2850DF004985E9 /* FGStudentNameContainerTableViewCell.m in Sources */,
 				66AB09FA1D24DE95004985E9 /* FGStudentFetcher.m in Sources */,

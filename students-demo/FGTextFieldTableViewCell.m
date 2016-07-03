@@ -32,6 +32,7 @@ static const CGFloat kPrefixLabelWidth = 50.0;
 		self.prefixLabel = label;
 		
 		FGTextField *textField = [[FGTextField alloc] initWithFrame:CGRectZero];
+		textField.returnKeyType = UIReturnKeyDone;
 		[contentView addSubview:textField];
 		self.textField = textField;
 		
