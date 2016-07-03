@@ -9,11 +9,11 @@
 #import "FGViewController.h"
 
 @class FGNavigationController;
-@class FGStudentListTableViewController;
+@class FGStudentCardsCollectionViewController;
 
 @interface FGRootViewController : FGViewController
 
 @property (nonatomic, readonly) FGNavigationController *navigationController;
-@property (nonatomic, readonly) FGStudentListTableViewController *studentListViewController;
+@property (nonatomic, readonly) FGStudentCardsCollectionViewController *studentListViewController;
 
 @end

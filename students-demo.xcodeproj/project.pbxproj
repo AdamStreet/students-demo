@@ -14,7 +14,7 @@
 		66AB09A31D24CD06004985E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AB09A21D24CD06004985E9 /* Assets.xcassets */; };
 		66AB09A61D24CD06004985E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66AB09A41D24CD06004985E9 /* LaunchScreen.storyboard */; };
 		66AB09CF1D24CFEE004985E9 /* FGDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */; };
-		66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */; };
+		66AB09D61D24D783004985E9 /* FGStudentCardsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D51D24D783004985E9 /* FGStudentCardsCollectionViewController.m */; };
 		66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09D81D24D795004985E9 /* FGTableViewController.m */; };
 		66AB09DC1D24D7D3004985E9 /* FGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09DB1D24D7D3004985E9 /* FGNavigationController.m */; };
 		66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB09DE1D24D835004985E9 /* FGTableView.m */; };
@@ -92,6 +92,12 @@
 		66AB0ADE1D287F20004985E9 /* FGTestResourceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ADD1D287F20004985E9 /* FGTestResourceProvider.m */; };
 		66AB0AE21D28A957004985E9 /* FGCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AE11D28A957004985E9 /* FGCollectionViewController.m */; };
 		66AB0AE51D28A972004985E9 /* FGCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AE41D28A972004985E9 /* FGCollectionView.m */; };
+		66AB0AEC1D28D535004985E9 /* FGFetchedResultsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AEB1D28D535004985E9 /* FGFetchedResultsCollectionViewController.m */; };
+		66AB0AEF1D28DAEC004985E9 /* FGCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AEE1D28DAEC004985E9 /* FGCollectionViewCell.m */; };
+		66AB0AF21D28DB05004985E9 /* FGBaseStudentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AF11D28DB05004985E9 /* FGBaseStudentCollectionViewCell.m */; };
+		66AB0AF51D28DB59004985E9 /* FGStudentCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AF41D28DB59004985E9 /* FGStudentCardCollectionViewCell.m */; };
+		66AB0AF81D28E46A004985E9 /* FGGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AF71D28E46A004985E9 /* FGGradientView.m */; };
+		66AB0AFE1D28EDE0004985E9 /* FGStudentCardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AFD1D28EDE0004985E9 /* FGStudentCardDetailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,8 +125,8 @@
 		66AB09B21D24CD06004985E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66AB09CD1D24CFEE004985E9 /* FGDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGDatabaseManager.h; sourceTree = "<group>"; };
 		66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGDatabaseManager.m; sourceTree = "<group>"; };
-		66AB09D41D24D783004985E9 /* FGStudentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentListTableViewController.h; sourceTree = "<group>"; };
-		66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentListTableViewController.m; sourceTree = "<group>"; };
+		66AB09D41D24D783004985E9 /* FGStudentCardsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentCardsCollectionViewController.h; sourceTree = "<group>"; };
+		66AB09D51D24D783004985E9 /* FGStudentCardsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentCardsCollectionViewController.m; sourceTree = "<group>"; };
 		66AB09D71D24D795004985E9 /* FGTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTableViewController.h; sourceTree = "<group>"; };
 		66AB09D81D24D795004985E9 /* FGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTableViewController.m; sourceTree = "<group>"; };
 		66AB09DA1D24D7D3004985E9 /* FGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGNavigationController.h; sourceTree = "<group>"; };
@@ -267,6 +273,18 @@
 		66AB0AE11D28A957004985E9 /* FGCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGCollectionViewController.m; sourceTree = "<group>"; };
 		66AB0AE31D28A972004985E9 /* FGCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGCollectionView.h; sourceTree = "<group>"; };
 		66AB0AE41D28A972004985E9 /* FGCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGCollectionView.m; sourceTree = "<group>"; };
+		66AB0AEA1D28D535004985E9 /* FGFetchedResultsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGFetchedResultsCollectionViewController.h; sourceTree = "<group>"; };
+		66AB0AEB1D28D535004985E9 /* FGFetchedResultsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGFetchedResultsCollectionViewController.m; sourceTree = "<group>"; };
+		66AB0AED1D28DAEC004985E9 /* FGCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGCollectionViewCell.h; sourceTree = "<group>"; };
+		66AB0AEE1D28DAEC004985E9 /* FGCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGCollectionViewCell.m; sourceTree = "<group>"; };
+		66AB0AF01D28DB05004985E9 /* FGBaseStudentCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGBaseStudentCollectionViewCell.h; sourceTree = "<group>"; };
+		66AB0AF11D28DB05004985E9 /* FGBaseStudentCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGBaseStudentCollectionViewCell.m; sourceTree = "<group>"; };
+		66AB0AF31D28DB59004985E9 /* FGStudentCardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentCardCollectionViewCell.h; sourceTree = "<group>"; };
+		66AB0AF41D28DB59004985E9 /* FGStudentCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentCardCollectionViewCell.m; sourceTree = "<group>"; };
+		66AB0AF61D28E46A004985E9 /* FGGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGGradientView.h; sourceTree = "<group>"; };
+		66AB0AF71D28E46A004985E9 /* FGGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGGradientView.m; sourceTree = "<group>"; };
+		66AB0AFC1D28EDE0004985E9 /* FGStudentCardDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentCardDetailView.h; sourceTree = "<group>"; };
+		66AB0AFD1D28EDE0004985E9 /* FGStudentCardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentCardDetailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +391,8 @@
 				66AB0A901D25F4C1004985E9 /* FGScrollViewController.m */,
 				66AB0AE01D28A957004985E9 /* FGCollectionViewController.h */,
 				66AB0AE11D28A957004985E9 /* FGCollectionViewController.m */,
+				66AB0AEA1D28D535004985E9 /* FGFetchedResultsCollectionViewController.h */,
+				66AB0AEB1D28D535004985E9 /* FGFetchedResultsCollectionViewController.m */,
 			);
 			name = Bases;
 			sourceTree = "<group>";
@@ -442,6 +462,8 @@
 				66AB0A9C1D260177004985E9 /* FGActivityIndicatorView.m */,
 				66AB0AA61D277A43004985E9 /* FGAlertView.h */,
 				66AB0AA71D277A43004985E9 /* FGAlertView.m */,
+				66AB0AF61D28E46A004985E9 /* FGGradientView.h */,
+				66AB0AF71D28E46A004985E9 /* FGGradientView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -472,9 +494,10 @@
 		66AB09E91D24DAF9004985E9 /* StudentList */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0AFF1D28EDE4004985E9 /* Views */,
 				66AB0A501D25BA03004985E9 /* Cells */,
-				66AB09D41D24D783004985E9 /* FGStudentListTableViewController.h */,
-				66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */,
+				66AB09D41D24D783004985E9 /* FGStudentCardsCollectionViewController.h */,
+				66AB09D51D24D783004985E9 /* FGStudentCardsCollectionViewController.m */,
 			);
 			name = StudentList;
 			sourceTree = "<group>";
@@ -565,6 +588,10 @@
 			children = (
 				66AB0A4D1D25B9FF004985E9 /* FGStudentTableViewCell.h */,
 				66AB0A4E1D25B9FF004985E9 /* FGStudentTableViewCell.m */,
+				66AB0AF01D28DB05004985E9 /* FGBaseStudentCollectionViewCell.h */,
+				66AB0AF11D28DB05004985E9 /* FGBaseStudentCollectionViewCell.m */,
+				66AB0AF31D28DB59004985E9 /* FGStudentCardCollectionViewCell.h */,
+				66AB0AF41D28DB59004985E9 /* FGStudentCardCollectionViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -747,8 +774,19 @@
 			children = (
 				66AB0AE31D28A972004985E9 /* FGCollectionView.h */,
 				66AB0AE41D28A972004985E9 /* FGCollectionView.m */,
+				66AB0AED1D28DAEC004985E9 /* FGCollectionViewCell.h */,
+				66AB0AEE1D28DAEC004985E9 /* FGCollectionViewCell.m */,
 			);
 			name = "CollectionView & Cells";
+			sourceTree = "<group>";
+		};
+		66AB0AFF1D28EDE4004985E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0AFC1D28EDE0004985E9 /* FGStudentCardDetailView.h */,
+				66AB0AFD1D28EDE0004985E9 /* FGStudentCardDetailView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -866,12 +904,15 @@
 				66AB09FA1D24DE95004985E9 /* FGStudentFetcher.m in Sources */,
 				66AB0A361D259D03004985E9 /* FGAvatarImageFile.m in Sources */,
 				66AB0A001D24E48A004985E9 /* FGAnalytics.m in Sources */,
-				66AB09D61D24D783004985E9 /* FGStudentListTableViewController.m in Sources */,
+				66AB0AF51D28DB59004985E9 /* FGStudentCardCollectionViewCell.m in Sources */,
+				66AB09D61D24D783004985E9 /* FGStudentCardsCollectionViewController.m in Sources */,
 				66AB0A4F1D25B9FF004985E9 /* FGStudentTableViewCell.m in Sources */,
 				66AB0A6F1D25DF1B004985E9 /* FGAvatarTableViewCell.m in Sources */,
 				66AB09A11D24CD06004985E9 /* students_demo.xcdatamodeld in Sources */,
+				66AB0AF21D28DB05004985E9 /* FGBaseStudentCollectionViewCell.m in Sources */,
 				66AB0A9A1D25FAEE004985E9 /* FGSeparatedTableViewCell.m in Sources */,
 				66AB0A381D259D03004985E9 /* FGImageFile.m in Sources */,
+				66AB0AFE1D28EDE0004985E9 /* FGStudentCardDetailView.m in Sources */,
 				66AB0A781D25DFFB004985E9 /* FGTextField.m in Sources */,
 				66AB0A8B1D25EF2B004985E9 /* FGFirstNameTextFieldTableViewCell.m in Sources */,
 				66AB09EC1D24DB1B004985E9 /* FGTableViewCell.m in Sources */,
@@ -904,6 +945,7 @@
 				66AB0AC41D285245004985E9 /* FGBaseStudentTableViewController.m in Sources */,
 				66AB0A7E1D25E1D1004985E9 /* FGView.m in Sources */,
 				66AB0AA01D2601EA004985E9 /* FGButtonedTableViewCell.m in Sources */,
+				66AB0AEC1D28D535004985E9 /* FGFetchedResultsCollectionViewController.m in Sources */,
 				66AB0A461D25A88F004985E9 /* FGLocalPaths.m in Sources */,
 				66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */,
 				66AB0AC71D2853E3004985E9 /* FGBarButtonItem.m in Sources */,
@@ -914,7 +956,9 @@
 				66AB09E31D24D966004985E9 /* UIColor+CustomColors.m in Sources */,
 				66AB099B1D24CD06004985E9 /* FGViewController.m in Sources */,
 				66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */,
+				66AB0AEF1D28DAEC004985E9 /* FGCollectionViewCell.m in Sources */,
 				66AB09981D24CD06004985E9 /* FGAppDelegate.m in Sources */,
+				66AB0AF81D28E46A004985E9 /* FGGradientView.m in Sources */,
 				66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */,
 				66AB0A2B1D259C96004985E9 /* _FGFile.m in Sources */,
 				66AB09FD1D24E198004985E9 /* FGJSONConverter.m in Sources */,

@@ -33,4 +33,28 @@
 	return [UIColor colorWithWhite:0.75 alpha:1.0];
 }
 
++ (UIColor *)cardBackgroundColor
+{
+	return [UIColor colorWithRed:(192.0 / 255.0)
+						   green:(232.0 / 255.0)
+							blue:(229.0 / 255.0)
+						   alpha:1.0];
+}
+
++ (UIColor *)shadowStartColor
+{
+	return [UIColor colorWithRed:(167.0 / 255.0)
+						   green:(223.0 / 255.0)
+							blue:(224.0 / 255.0)
+						   alpha:1.0];
+}
+
++ (UIColor *)shadowEndColor
+{
+	return [UIColor colorWithRed:(167.0 / 255.0)
+						   green:(223.0 / 255.0)
+							blue:(224.0 / 255.0)
+						   alpha:0.0];
+}
+
 @end

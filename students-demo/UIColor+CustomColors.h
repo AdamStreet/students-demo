@@ -17,4 +17,9 @@
 + (UIColor *)buttonTextColor;
 + (UIColor *)buttonDisabledTextColor;
 
++ (UIColor *)cardBackgroundColor;
+
++ (UIColor *)shadowStartColor;
++ (UIColor *)shadowEndColor;
+
 @end

@@ -6,9 +6,9 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGFetchedResultsTableViewController.h"
+#import "FGFetchedResultsCollectionViewController.h"
 
-@interface FGStudentListTableViewController : FGFetchedResultsTableViewController
+@interface FGStudentCardsCollectionViewController : FGFetchedResultsCollectionViewController
 
 - (instancetype)initWithStudents;
 

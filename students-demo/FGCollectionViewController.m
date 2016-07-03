@@ -63,6 +63,7 @@
 	if (!_collectionView) {
 		_collectionView = [[FGCollectionView alloc] initWithFrame:CGRectZero
 											 collectionViewLayout:self.collectionViewLayout];
+		_collectionView.backgroundColor = [UIColor clearColor];
 		_collectionView.dataSource = self;
 		_collectionView.delegate = self;
 	}

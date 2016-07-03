@@ -12,7 +12,7 @@
 #import "FGMainMenuTableViewDataSource.h"
 #import "FGMenuItemProvider.h"
 #import "FGNavigationController.h"
-#import "FGStudentListTableViewController.h"
+#import "FGStudentCardsCollectionViewController.h"
 #import "FGNewStudentTableViewController.h"
 
 @interface FGMainMenuTableViewController ()
@@ -47,7 +47,7 @@
 
 - (void)showStudentListViewController
 {
-	FGViewController *viewController = [[FGStudentListTableViewController alloc] initWithStudents];
+	FGViewController *viewController = [[FGStudentCardsCollectionViewController alloc] initWithStudents];
 	
 	[self.navigationController pushViewController:viewController
 										 animated:YES];
