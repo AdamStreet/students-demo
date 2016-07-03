@@ -90,6 +90,8 @@
 		66AB0AD91D2872A6004985E9 /* test_image_avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66AB0AD61D286F6A004985E9 /* test_image_avatar.jpg */; };
 		66AB0ADB1D287E9C004985E9 /* FGImageCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ADA1D287E9C004985E9 /* FGImageCacheTest.m */; };
 		66AB0ADE1D287F20004985E9 /* FGTestResourceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0ADD1D287F20004985E9 /* FGTestResourceProvider.m */; };
+		66AB0AE21D28A957004985E9 /* FGCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AE11D28A957004985E9 /* FGCollectionViewController.m */; };
+		66AB0AE51D28A972004985E9 /* FGCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AE41D28A972004985E9 /* FGCollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +263,10 @@
 		66AB0ADA1D287E9C004985E9 /* FGImageCacheTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImageCacheTest.m; sourceTree = "<group>"; };
 		66AB0ADC1D287F20004985E9 /* FGTestResourceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTestResourceProvider.h; sourceTree = "<group>"; };
 		66AB0ADD1D287F20004985E9 /* FGTestResourceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTestResourceProvider.m; sourceTree = "<group>"; };
+		66AB0AE01D28A957004985E9 /* FGCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGCollectionViewController.h; sourceTree = "<group>"; };
+		66AB0AE11D28A957004985E9 /* FGCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGCollectionViewController.m; sourceTree = "<group>"; };
+		66AB0AE31D28A972004985E9 /* FGCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGCollectionView.h; sourceTree = "<group>"; };
+		66AB0AE41D28A972004985E9 /* FGCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGCollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +371,8 @@
 				66AB0A4B1D25B321004985E9 /* FGFetchedResultsTableViewController.m */,
 				66AB0A8F1D25F4C1004985E9 /* FGScrollViewController.h */,
 				66AB0A901D25F4C1004985E9 /* FGScrollViewController.m */,
+				66AB0AE01D28A957004985E9 /* FGCollectionViewController.h */,
+				66AB0AE11D28A957004985E9 /* FGCollectionViewController.m */,
 			);
 			name = Bases;
 			sourceTree = "<group>";
@@ -415,6 +423,7 @@
 		66AB09E01D24D839004985E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0AE61D28A975004985E9 /* CollectionView & Cells */,
 				66AB0AC81D2853E7004985E9 /* Buttons */,
 				66AB09ED1D24DB26004985E9 /* TableViews & Cells */,
 				66AB0A761D25DFFB004985E9 /* FGTextField.h */,
@@ -733,6 +742,15 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		66AB0AE61D28A975004985E9 /* CollectionView & Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0AE31D28A972004985E9 /* FGCollectionView.h */,
+				66AB0AE41D28A972004985E9 /* FGCollectionView.m */,
+			);
+			name = "CollectionView & Cells";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -862,6 +880,7 @@
 				66AB0A5F1D25C4FC004985E9 /* FGMenuItem.m in Sources */,
 				66AB0A971D25F60B004985E9 /* FGLabel.m in Sources */,
 				66AB0A8E1D25EF34004985E9 /* FGLastNameTextFieldTableViewCell.m in Sources */,
+				66AB0AE51D28A972004985E9 /* FGCollectionView.m in Sources */,
 				66AB09F41D24DC2D004985E9 /* FGSessionProvider.m in Sources */,
 				66AB0AAE1D278DAB004985E9 /* FGAvatarImageFileCreator.m in Sources */,
 				66AB0AA81D277A43004985E9 /* FGAlertView.m in Sources */,
@@ -879,6 +898,7 @@
 				66AB0A911D25F4C1004985E9 /* FGScrollViewController.m in Sources */,
 				66AB0A3C1D25A551004985E9 /* FGJSONObjectFetcher.m in Sources */,
 				66AB09E71D24DAEA004985E9 /* FGStudentDetailTableViewController.m in Sources */,
+				66AB0AE21D28A957004985E9 /* FGCollectionViewController.m in Sources */,
 				66AB0A2C1D259C96004985E9 /* _FGImageFile.m in Sources */,
 				66AB0A751D25DF6A004985E9 /* FGTextFieldTableViewCell.m in Sources */,
 				66AB0AC41D285245004985E9 /* FGBaseStudentTableViewController.m in Sources */,
