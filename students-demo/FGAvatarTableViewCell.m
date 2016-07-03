@@ -35,8 +35,6 @@ NSString * const FGAvatarTableViewCellIdentifier = @"FGAvatarTableViewCell";
 		self.avatarImageView = avatarImageView;
 		
 		avatarImageView.translatesAutoresizingMaskIntoConstraints = NO;
-		
-		[self setNeedsUpdateConstraints];
 	}
 	
 	return self;

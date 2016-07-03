@@ -17,6 +17,18 @@
 
 @implementation FGView
 
+#pragma mark - Initialization
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+	self = [super initWithFrame:frame];
+	if (self) {
+		[self setNeedsUpdateConstraints];
+	}
+	
+	return self;
+}
+
 #pragma mark - View lifecycle
 
 - (void)updateConstraints

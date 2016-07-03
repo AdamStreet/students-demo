@@ -38,8 +38,6 @@ static const CGFloat kPrefixLabelWidth = 50.0;
 		
 		label.translatesAutoresizingMaskIntoConstraints = NO;
 		textField.translatesAutoresizingMaskIntoConstraints = NO;
-		
-		[self setNeedsUpdateConstraints];
 	}
 	
 	return self;

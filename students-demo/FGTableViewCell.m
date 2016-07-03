@@ -17,6 +17,20 @@
 
 @implementation FGTableViewCell
 
+#pragma mark - Initialization 
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+	if (self) {
+		[self setNeedsUpdateConstraints];
+	}
+	
+	return self;
+}
+
+#pragma mark - View lifecycle
+
 - (void)updateConstraints
 {
 	if (!self.hasAddedInitialConstraints) {
