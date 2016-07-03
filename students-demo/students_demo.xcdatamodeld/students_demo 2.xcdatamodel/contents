@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+    <entity name="AvatarImageFile" representedClassName="FGAvatarImageFile" parentEntity="ImageFile" syncable="YES">
+        <relationship name="member" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Member" inverseName="avatarImageFile" inverseEntity="Member" syncable="YES"/>
+    </entity>
+    <entity name="Department" representedClassName="FGDepartment" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Teacher" inverseName="department" inverseEntity="Teacher" syncable="YES"/>
+    </entity>
+    <entity name="File" representedClassName="FGFile" syncable="YES">
+        <attribute name="relativePath" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ImageFile" representedClassName="FGImageFile" parentEntity="File" syncable="YES"/>
+    <entity name="Member" representedClassName="FGMember" isAbstract="YES" syncable="YES">
+        <attribute name="avatarImageURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cell" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="avatarImageFile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AvatarImageFile" inverseName="member" inverseEntity="AvatarImageFile" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName="FGStudent" parentEntity="Member" syncable="YES">
+        <attribute name="averageGrade" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="students" inverseEntity="Teacher" syncable="YES"/>
+    </entity>
+    <entity name="Teacher" representedClassName="FGTeacher" parentEntity="Member" syncable="YES">
+        <relationship name="department" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Department" inverseName="teachers" inverseEntity="Department" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="teachers" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AvatarImageFile" positionX="72" positionY="-120" width="128" height="58"/>
+        <element name="File" positionX="70" positionY="-324" width="128" height="58"/>
+        <element name="ImageFile" positionX="70" positionY="-216" width="128" height="45"/>
+        <element name="Student" positionX="-36" positionY="9" width="128" height="73"/>
+        <element name="Teacher" positionX="-234" positionY="9" width="128" height="73"/>
+        <element name="Member" positionX="-153" positionY="-211" width="128" height="148"/>
+        <element name="Department" positionX="-414" positionY="-180" width="128" height="75"/>
+    </elements>
+</model>
