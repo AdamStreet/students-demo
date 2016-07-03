@@ -12,6 +12,8 @@
 
 @interface FGStudentCardView : FGView
 
+@property (nonatomic, readonly) FGView *contentView;
+
 @property (nonatomic, readonly) FGGradientView *topShadow;
 @property (nonatomic, readonly) FGGradientView *bottomShadow;
 

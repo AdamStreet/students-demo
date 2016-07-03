@@ -28,7 +28,7 @@
 {
 	self = [super initWithFrame:frame];
 	if (self) {
-		UIView *containerView = self;
+		UIView *containerView = self.contentView;
 		
 		FGLabel *nameLabel = self.nameLabel;
 		[containerView addSubview:nameLabel];
@@ -63,7 +63,7 @@
 {
 	[super setupInitialConstraints];
 	
-	UIView *containerView = self;
+	UIView *containerView = self.contentView;
 	
 	UIView *nameLabel = self.nameLabel;
 	UIView *phoneLabel = self.phoneLabel;

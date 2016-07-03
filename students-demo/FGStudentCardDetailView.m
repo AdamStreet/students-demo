@@ -28,7 +28,7 @@
 {
 	self = [super initWithFrame:frame];
 	if (self) {
-		UIView *contentView = self;
+		UIView *contentView = self.contentView;
 		
 		FGAvatarImageView *avatarImageView = self.avatarImageView;
 		[contentView addSubview:avatarImageView];
@@ -59,7 +59,7 @@
 {
 	[super setupInitialConstraints];
 	
-	UIView *contentView = self;
+	UIView *contentView = self.contentView;
 	
 	UIView *avatarImageView = self.avatarImageView;
 	UIView *nameLabel = self.nameLabel;
