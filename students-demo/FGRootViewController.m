@@ -9,7 +9,7 @@
 #import "FGRootViewController.h"
 
 #import "FGNavigationController.h"
-#import "FGMainMenuTableViewController.h"
+#import "FGStudentCardsCollectionViewController.h"
 
 @interface FGRootViewController ()
 
@@ -58,7 +58,7 @@
 - (UIViewController *)mainViewController
 {
 	if (!_mainViewController) {
-		_mainViewController = [[FGMainMenuTableViewController alloc] initWithMainOptions];
+		_mainViewController = [[FGStudentCardsCollectionViewController alloc] initWithStudents];
 	}
 	
 	return _mainViewController;

@@ -13,8 +13,13 @@
 #import "FGStudentCardCollectionViewCell.h"
 #import "FGStudent.h"
 #import "FGAlertView.h"
+#import "FGBarButtonItem.h"
+#import "FGNewStudentTableViewController.h"
+#import "FGNavigationController.h"
 
 @interface FGStudentCardsCollectionViewController ()
+
+@property (nonatomic) FGBarButtonItem *addButtonItem;
 
 @property (nonatomic) NSIndexPath *flippedCellIndexPath;
 
@@ -80,8 +85,51 @@ static const CGFloat kGapAroundElements = 5.0;
 	[self.deletionConfirmationAlertView show];
 }
 
+- (void)showAddStudentViewController
+{
+	FGNewStudentTableViewController *newStudentTableViewController = [[FGNewStudentTableViewController alloc] initWithNewStudent];
+	
+	// Wrap in NavigationController
+	FGNavigationController *navigationController = [[FGNavigationController alloc] initWithRootViewController:newStudentTableViewController];
+	navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+	
+	newStudentTableViewController.cancellationHandler = ^(__kindof UIViewController *presentingViewController){
+		[navigationController.presentingViewController dismissViewControllerAnimated:YES
+																		  completion:nil];
+	};
+	newStudentTableViewController.completionHandler = ^(FGStudent *student) {
+		[navigationController.presentingViewController dismissViewControllerAnimated:YES
+																		  completion:nil];
+	};
+	
+	[self presentViewController:navigationController
+					   animated:YES
+					 completion:nil];
+}
+
 #pragma mark Accessors
+
+- (FGBarButtonItem *)addButtonItem
+{
+	if (!_addButtonItem) {
+		_addButtonItem = [[FGBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+																	   target:self
+																	   action:@selector(addBarButtonTapped:)];
+	}
+	
+	return _addButtonItem;
+}
+
 #pragma mark - View lifecycle
+
+- (UINavigationItem *)navigationItem
+{
+	UINavigationItem *navigationItem = [super navigationItem];
+	
+	navigationItem.rightBarButtonItem = self.addButtonItem;
+	
+	return navigationItem;
+}
 
 #pragma mark - Public methods
 #pragma mark Accessors
@@ -145,6 +193,12 @@ static const CGFloat kGapAroundElements = 5.0;
 }
 
 #pragma mark - User interaction handlers
+
+- (void)addBarButtonTapped:(id)sender
+{
+	[self showAddStudentViewController];
+}
+
 #pragma mark - Notification handlers
 #pragma mark - KVO
 
