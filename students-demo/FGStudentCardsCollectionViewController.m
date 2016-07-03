@@ -16,6 +16,9 @@
 #import "FGBarButtonItem.h"
 #import "FGNewStudentTableViewController.h"
 #import "FGNavigationController.h"
+#import "FGNewStudentActionSheet.h"
+#import "FGStudentFetcher.h"
+#import "FGStatusBarNotification.h"
 
 @interface FGStudentCardsCollectionViewController ()
 
@@ -107,6 +110,33 @@ static const CGFloat kGapAroundElements = 5.0;
 					 completion:nil];
 }
 
+- (void)addRandomStudent
+{
+	[FGStatusBarNotification showWithTitle:FGLocalizedString(@"Loading Random Student...", @"StatusBar label title")];
+	__block FGButtonTapHandler tapHandler = nil;
+	
+	[FGStudentFetcher fetchAndInsertRandomStudent:^(FGStudent *student, NSError *error) {
+		NSString *statusTitle = nil;
+		if (error) {
+			statusTitle = [error localizedDescription];
+		} else {
+			statusTitle = [NSString stringWithFormat:@"%@ %@",
+						   FGLocalizedString(@"Added Random Student:", @"Student added status bar title prefix"),
+						   [student fullName]];
+			tapHandler = ^{
+				[self.collectionView scrollToItemAtIndexPath:[self.fetchedResultsController indexPathForObject:student]
+											atScrollPosition:UICollectionViewScrollPositionCenteredVertically
+													animated:YES];
+			};
+		}
+		
+		[FGStatusBarNotification setTitle:statusTitle
+		 tapHandler:tapHandler];
+		
+		[FGStatusBarNotification dismissAfterDelay:3.5];
+	}];
+}
+
 #pragma mark Accessors
 
 - (FGBarButtonItem *)addButtonItem
@@ -196,7 +226,26 @@ static const CGFloat kGapAroundElements = 5.0;
 
 - (void)addBarButtonTapped:(id)sender
 {
-	[self showAddStudentViewController];
+	UIAlertController *actionSheet =
+	[FGNewStudentActionSheet newStudentActionSheetAlertController:^(FGNewStudentActionSheetAction action) {
+		if (action == FGNewStudentActionSheetActionCancel)
+			return;
+		
+		if (action == FGNewStudentActionSheetActionAddCustomStudent) {
+			[self showAddStudentViewController];
+			
+			return;
+		}
+		
+		if (action == FGNewStudentActionSheetActionAddRandomStudent) {
+			[self addRandomStudent];
+			
+			return;
+		}
+	}];
+	[self presentViewController:actionSheet
+					   animated:YES
+					 completion:nil];
 }
 
 #pragma mark - Notification handlers

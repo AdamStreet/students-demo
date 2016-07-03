@@ -90,6 +90,8 @@
 		66AB0B031D298AE1004985E9 /* FGStudentCardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B021D298AE1004985E9 /* FGStudentCardBackgroundView.m */; };
 		66AB0B061D298AF4004985E9 /* FGStudentCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B051D298AF4004985E9 /* FGStudentCardView.m */; };
 		66AB0B091D299231004985E9 /* FGImagedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B081D299231004985E9 /* FGImagedLabel.m */; };
+		66AB0B0F1D29A714004985E9 /* FGNewStudentActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B0E1D29A714004985E9 /* FGNewStudentActionSheet.m */; };
+		66AB0B121D29AB82004985E9 /* FGStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B111D29AB82004985E9 /* FGStatusBarNotification.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -262,6 +264,10 @@
 		66AB0B051D298AF4004985E9 /* FGStudentCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentCardView.m; sourceTree = "<group>"; };
 		66AB0B071D299231004985E9 /* FGImagedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImagedLabel.h; sourceTree = "<group>"; };
 		66AB0B081D299231004985E9 /* FGImagedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImagedLabel.m; sourceTree = "<group>"; };
+		66AB0B0D1D29A714004985E9 /* FGNewStudentActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGNewStudentActionSheet.h; sourceTree = "<group>"; };
+		66AB0B0E1D29A714004985E9 /* FGNewStudentActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGNewStudentActionSheet.m; sourceTree = "<group>"; };
+		66AB0B101D29AB82004985E9 /* FGStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStatusBarNotification.h; sourceTree = "<group>"; };
+		66AB0B111D29AB82004985E9 /* FGStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStatusBarNotification.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +462,7 @@
 		66AB09E91D24DAF9004985E9 /* StudentList */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0B131D29AFDC004985E9 /* Helpers */,
 				66AB0AFF1D28EDE4004985E9 /* Views */,
 				66AB0A501D25BA03004985E9 /* Cells */,
 				66AB09D41D24D783004985E9 /* FGStudentCardsCollectionViewController.h */,
@@ -691,8 +698,19 @@
 				66AB0AFD1D28EDE0004985E9 /* FGStudentCardDetailView.m */,
 				66AB0B011D298AE1004985E9 /* FGStudentCardBackgroundView.h */,
 				66AB0B021D298AE1004985E9 /* FGStudentCardBackgroundView.m */,
+				66AB0B0D1D29A714004985E9 /* FGNewStudentActionSheet.h */,
+				66AB0B0E1D29A714004985E9 /* FGNewStudentActionSheet.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		66AB0B131D29AFDC004985E9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0B101D29AB82004985E9 /* FGStatusBarNotification.h */,
+				66AB0B111D29AB82004985E9 /* FGStatusBarNotification.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -862,12 +880,14 @@
 				66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */,
 				66AB0A2B1D259C96004985E9 /* _FGFile.m in Sources */,
 				66AB09FD1D24E198004985E9 /* FGJSONConverter.m in Sources */,
+				66AB0B121D29AB82004985E9 /* FGStatusBarNotification.m in Sources */,
 				66AB0A6B1D25DEFC004985E9 /* FGAddRandomStudentTableViewCell.m in Sources */,
 				66AB09F71D24DE01004985E9 /* FGRemoteDataFetcher.m in Sources */,
 				66AB0ABA1D279063004985E9 /* FGBaseStudentTableViewCell.m in Sources */,
 				66AB0A491D25B002004985E9 /* FGImageLoader.m in Sources */,
 				66AB0A2A1D259C96004985E9 /* _FGAvatarImageFile.m in Sources */,
 				66AB0A171D24EDC5004985E9 /* FGStudentAPIKeys.m in Sources */,
+				66AB0B0F1D29A714004985E9 /* FGNewStudentActionSheet.m in Sources */,
 				66AB0A391D259D03004985E9 /* FGStudent.m in Sources */,
 				66AB09951D24CD06004985E9 /* main.m in Sources */,
 				66AB0A431D25A705004985E9 /* FGImageCache.m in Sources */,
@@ -997,7 +1017,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "students-demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "adam.szabo.students-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1009,7 +1029,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "students-demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "adam.szabo.students-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1096,7 +1116,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREPROCESSOR_DEFINITIONS = "TEST=1";
 				INFOPLIST_FILE = "students-demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "adam.szabo.students-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

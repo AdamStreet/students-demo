@@ -22,4 +22,7 @@
 + (UIColor *)shadowStartColor;
 + (UIColor *)shadowEndColor;
 
++ (UIColor *)statusNotificationTitleColor;
++ (UIColor *)statusNotificationBackgroundColor;
+
 @end

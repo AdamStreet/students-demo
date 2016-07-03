@@ -57,4 +57,14 @@
 						   alpha:0.0];
 }
 
++ (UIColor *)statusNotificationTitleColor
+{
+	return [UIColor darkTextColor];
+}
+
++ (UIColor *)statusNotificationBackgroundColor
+{
+	return [self shadowStartColor];
+}
+
 @end
