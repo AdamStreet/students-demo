@@ -68,9 +68,9 @@ static NSTimeInterval kFlipAnimationDuration = 0.5;
 	// Background
 	
 	self.studentCardBackgroundView.nameLabel.text = studentFullName;
-	self.studentCardBackgroundView.phoneLabel.label.text = @"phone";
-	self.studentCardBackgroundView.cellLabel.label.text = @"cell";
-	self.studentCardBackgroundView.emailLabel.label.text = @"email@email.ca";
+	self.studentCardBackgroundView.phoneLabel.label.text = self.student.phone;
+	self.studentCardBackgroundView.cellLabel.label.text = self.student.cell;
+	self.studentCardBackgroundView.emailLabel.label.text = self.student.email;
 	
 	self.studentCardBackgroundView.trashButton.tapHandler = ^{
 		if (self.trashButtonTapHandler) {
