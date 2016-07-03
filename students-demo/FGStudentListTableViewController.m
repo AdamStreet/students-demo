@@ -16,6 +16,7 @@
 
 @implementation FGStudentListTableViewController
 
+@synthesize tableView = _tableView;
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 #pragma mark - Initialization
@@ -53,18 +54,21 @@
 #pragma mark Accessors
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
-	[super viewDidLoad];
-	
-	// Register cells
-	[self.tableView registerClass:[FGStudentTableViewCell class]
-		   forCellReuseIdentifier:FGStudentTableViewCellIdentifier];
-}
-
 #pragma mark - Public methods
 #pragma mark Accessors
 #pragma mark Overrides
+
+- (FGTableView *)tableView
+{
+	if (!_tableView) {
+		_tableView = [super tableView];
+		
+		[self.tableView registerClass:[FGStudentTableViewCell class]
+			   forCellReuseIdentifier:FGStudentTableViewCellIdentifier];
+	}
+	
+	return _tableView;
+}
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
