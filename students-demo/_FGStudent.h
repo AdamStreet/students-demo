@@ -2,58 +2,58 @@
 // Make changes to FGStudent.h instead.
 
 @import CoreData;
+#import "FGMember.h"
 
 extern const struct FGStudentAttributes {
-	__unsafe_unretained NSString *avatarImageURLString;
-	__unsafe_unretained NSString *firstName;
-	__unsafe_unretained NSString *lastName;
+	__unsafe_unretained NSString *averageGrade;
 } FGStudentAttributes;
 
 extern const struct FGStudentRelationships {
-	__unsafe_unretained NSString *avatarImageFile;
+	__unsafe_unretained NSString *teachers;
 } FGStudentRelationships;
 
-@class FGAvatarImageFile;
+@class FGTeacher;
 
-@interface FGStudentID : NSManagedObjectID {}
+@interface FGStudentID : FGMemberID {}
 @end
 
-@interface _FGStudent : NSManagedObject {}
+@interface _FGStudent : FGMember {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) FGStudentID* objectID;
 
-@property (nonatomic, strong) NSString* avatarImageURLString;
+@property (nonatomic, strong) NSNumber* averageGrade;
 
-//- (BOOL)validateAvatarImageURLString:(id*)value_ error:(NSError**)error_;
+@property (atomic) float averageGradeValue;
+- (float)averageGradeValue;
+- (void)setAverageGradeValue:(float)value_;
 
-@property (nonatomic, strong) NSString* firstName;
+//- (BOOL)validateAverageGrade:(id*)value_ error:(NSError**)error_;
 
-//- (BOOL)validateFirstName:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong) NSSet *teachers;
 
-@property (nonatomic, strong) NSString* lastName;
+- (NSMutableSet*)teachersSet;
 
-//- (BOOL)validateLastName:(id*)value_ error:(NSError**)error_;
+@end
 
-@property (nonatomic, strong) FGAvatarImageFile *avatarImageFile;
-
-//- (BOOL)validateAvatarImageFile:(id*)value_ error:(NSError**)error_;
+@interface _FGStudent (TeachersCoreDataGeneratedAccessors)
+- (void)addTeachers:(NSSet*)value_;
+- (void)removeTeachers:(NSSet*)value_;
+- (void)addTeachersObject:(FGTeacher*)value_;
+- (void)removeTeachersObject:(FGTeacher*)value_;
 
 @end
 
 @interface _FGStudent (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveAvatarImageURLString;
-- (void)setPrimitiveAvatarImageURLString:(NSString*)value;
+- (NSNumber*)primitiveAverageGrade;
+- (void)setPrimitiveAverageGrade:(NSNumber*)value;
 
-- (NSString*)primitiveFirstName;
-- (void)setPrimitiveFirstName:(NSString*)value;
+- (float)primitiveAverageGradeValue;
+- (void)setPrimitiveAverageGradeValue:(float)value_;
 
-- (NSString*)primitiveLastName;
-- (void)setPrimitiveLastName:(NSString*)value;
-
-- (FGAvatarImageFile*)primitiveAvatarImageFile;
-- (void)setPrimitiveAvatarImageFile:(FGAvatarImageFile*)value;
+- (NSMutableSet*)primitiveTeachers;
+- (void)setPrimitiveTeachers:(NSMutableSet*)value;
 
 @end

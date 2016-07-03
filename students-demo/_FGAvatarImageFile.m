@@ -4,7 +4,7 @@
 #import "_FGAvatarImageFile.h"
 
 const struct FGAvatarImageFileRelationships FGAvatarImageFileRelationships = {
-	.student = @"student",
+	.member = @"member",
 };
 
 @implementation FGAvatarImageFileID
@@ -36,7 +36,7 @@ const struct FGAvatarImageFileRelationships FGAvatarImageFileRelationships = {
 	return keyPaths;
 }
 
-@dynamic student;
+@dynamic member;
 
 @end
 

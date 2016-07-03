@@ -30,9 +30,9 @@
 
 + (NSArray<NSSortDescriptor *> *)sortDescriptorsByName
 {
-	return @[[NSSortDescriptor sortDescriptorWithKey:FGStudentAttributes.firstName
+	return @[[NSSortDescriptor sortDescriptorWithKey:FGMemberAttributes.firstName
 										   ascending:YES],
-			 [NSSortDescriptor sortDescriptorWithKey:FGStudentAttributes.lastName
+			 [NSSortDescriptor sortDescriptorWithKey:FGMemberAttributes.lastName
 										   ascending:YES]];
 }
 

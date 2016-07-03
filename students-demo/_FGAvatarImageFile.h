@@ -5,10 +5,10 @@
 #import "FGImageFile.h"
 
 extern const struct FGAvatarImageFileRelationships {
-	__unsafe_unretained NSString *student;
+	__unsafe_unretained NSString *member;
 } FGAvatarImageFileRelationships;
 
-@class FGStudent;
+@class FGMember;
 
 @interface FGAvatarImageFileID : FGImageFileID {}
 @end
@@ -19,15 +19,15 @@ extern const struct FGAvatarImageFileRelationships {
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) FGAvatarImageFileID* objectID;
 
-@property (nonatomic, strong) FGStudent *student;
+@property (nonatomic, strong) FGMember *member;
 
-//- (BOOL)validateStudent:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateMember:(id*)value_ error:(NSError**)error_;
 
 @end
 
 @interface _FGAvatarImageFile (CoreDataGeneratedPrimitiveAccessors)
 
-- (FGStudent*)primitiveStudent;
-- (void)setPrimitiveStudent:(FGStudent*)value;
+- (FGMember*)primitiveMember;
+- (void)setPrimitiveMember:(FGMember*)value;
 
 @end

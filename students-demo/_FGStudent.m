@@ -4,13 +4,11 @@
 #import "_FGStudent.h"
 
 const struct FGStudentAttributes FGStudentAttributes = {
-	.avatarImageURLString = @"avatarImageURLString",
-	.firstName = @"firstName",
-	.lastName = @"lastName",
+	.averageGrade = @"averageGrade",
 };
 
 const struct FGStudentRelationships FGStudentRelationships = {
-	.avatarImageFile = @"avatarImageFile",
+	.teachers = @"teachers",
 };
 
 @implementation FGStudentID
@@ -39,16 +37,45 @@ const struct FGStudentRelationships FGStudentRelationships = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
+	if ([key isEqualToString:@"averageGradeValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"averageGrade"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+
 	return keyPaths;
 }
 
-@dynamic avatarImageURLString;
+@dynamic averageGrade;
 
-@dynamic firstName;
+- (float)averageGradeValue {
+	NSNumber *result = [self averageGrade];
+	return [result floatValue];
+}
 
-@dynamic lastName;
+- (void)setAverageGradeValue:(float)value_ {
+	[self setAverageGrade:@(value_)];
+}
 
-@dynamic avatarImageFile;
+- (float)primitiveAverageGradeValue {
+	NSNumber *result = [self primitiveAverageGrade];
+	return [result floatValue];
+}
+
+- (void)setPrimitiveAverageGradeValue:(float)value_ {
+	[self setPrimitiveAverageGrade:@(value_)];
+}
+
+@dynamic teachers;
+
+- (NSMutableSet*)teachersSet {
+	[self willAccessValueForKey:@"teachers"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"teachers"];
+
+	[self didAccessValueForKey:@"teachers"];
+	return result;
+}
 
 @end
 
