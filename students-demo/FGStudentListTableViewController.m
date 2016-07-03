@@ -63,8 +63,8 @@
 	if (!_tableView) {
 		_tableView = [super tableView];
 		
-		[self.tableView registerClass:[FGStudentTableViewCell class]
-			   forCellReuseIdentifier:FGStudentTableViewCellIdentifier];
+		[_tableView registerClass:[FGStudentTableViewCell class]
+		   forCellReuseIdentifier:FGStudentTableViewCellIdentifier];
 	}
 	
 	return _tableView;
