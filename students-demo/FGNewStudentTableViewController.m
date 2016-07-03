@@ -11,7 +11,6 @@
 #import "FGStudentFetcher.h"
 #import "FGStudentAPIKeys.h"
 #import "FGDatabaseManager.h"
-#import "FGAddRandomStudentTableViewCell.h"
 #import "FGAvatarTableViewCell.h"
 #import "FGAddPhotoTableViewCell.h"
 #import "FGFirstNameTextFieldTableViewCell.h"
@@ -27,13 +26,10 @@
 
 @interface FGNewStudentTableViewController ()
 
-@property (nonatomic, weak) NSURLSessionTask *pendingSessionTask;
-
 @property (nonatomic) FGBarButtonItem *doneButtonItem;
 
 @property (nonatomic) FGTextFieldEventHandlerHelper *textFieldEventHandlerHelper;
 
-@property (nonatomic) FGAddRandomStudentTableViewCell *addRandomStudentTableViewCell;
 @property (nonatomic) FGFirstNameTextFieldTableViewCell *firstNameTextFieldTableViewCell;
 @property (nonatomic) FGLastNameTextFieldTableViewCell *lastNameTextFieldTableViewCell;
 @property (nonatomic) FGAvatarTableViewCell *avatarTableViewCell;
@@ -42,11 +38,10 @@
 @end
 
 typedef NS_ENUM(NSUInteger, Sections) {
-	kSectionAddRandomUser = 0,
-	kSectionAvatar = 1,
-	kSectionAddPhoto = 2,
-	kSectionNameTextFields = 3,
-	kNumberOfSections = 4,
+	kSectionAvatar = 0,
+	kSectionAddPhoto = 1,
+	kSectionNameTextFields = 2,
+	kNumberOfSections = 3,
 };
 
 typedef NS_ENUM(NSUInteger, TextFieldsRows) {
@@ -70,67 +65,11 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	return self;
 };
 
-- (void)dealloc
-{
-	[self cancelPendingTask];
-}
-
 #pragma mark - Private methods
 
 - (FGDatabaseManager *)databaseManager
 {
 	return [FGDatabaseManager mainDatabaseManager];
-}
-
-- (void)fetchRandomUser
-{
-	[self clearInputValues];
-	[self setInputValuesEnabled:NO];
-	
-	[self cancelPendingTask];
-	
-	self.addRandomStudentTableViewCell.buttonState = FGAddRandomStudentTableViewCellButtonStateLoading;
-	
-	self.pendingSessionTask = [FGStudentFetcher fetchRandomStudentMetadata:^(NSDictionary *studentMetadata, NSError *error) {
-		if (error) {
-			[self showConnectionError:error];
-			
-			[self clearInputValues];
-			[self setInputValuesEnabled:YES];
-		} else {
-		
-			self.addRandomStudentTableViewCell.buttonState = FGAddRandomStudentTableViewCellButtonStateLoaded;
-			
-			[self cancelPendingTask];
-			
-			[self fillStudentDetails:[studentMetadata valueForKeyPath:FGStudentAPIKeysFirstNameKeyPath]
-							lastName:[studentMetadata valueForKeyPath:FGStudentAPIKeysLastNameKeyPath]
-					 avatarImagePath:[studentMetadata valueForKeyPath:FGStudentAPIKeysLargeAvatarKeyPath]];
-		}
-		
-		[self validateContent];
-	}];
-}
-
-- (void)cancelPendingTask
-{
-	[self.pendingSessionTask cancel], self.pendingSessionTask = nil;
-}
-
-- (void)clearInputValues
-{
-	self.firstNameTextFieldTableViewCell.textField.text = nil;
-	self.lastNameTextFieldTableViewCell.textField.text = nil;
-	[self.avatarTableViewCell.avatarImageView clear];
-	
-	[self validateContent];
-}
-
-- (void)setInputValuesEnabled:(BOOL)enabled
-{
-	self.firstNameTextFieldTableViewCell.textField.enabled = enabled;
-	self.lastNameTextFieldTableViewCell.textField.enabled = enabled;
-	self.addPhotoTableViewCell.button.enabled = enabled;
 }
 
 - (void)addPhoto
@@ -147,30 +86,6 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	[self presentViewController:imagePickerViewController
 					   animated:YES
 					 completion:nil];
-}
-
-- (void)showConnectionError:(NSError *)error
-{
-	FGAlertView *alertView = [[FGAlertView alloc] initWithTitle:FGLocalizedString(@"Connection Error", @"Connection error title")
-														message:[error localizedDescription]
-											  cancelButtonTitle:FGLocalizedString(@"Okay", @"connection error cancel button title")
-											  otherButtonTitles:nil
-													 completion:nil];
-	[alertView show];
-}
-
-- (void)fillStudentDetails:(NSString *)firstName
-				  lastName:(NSString *)lastName
-		   avatarImagePath:(NSString *)imagePath
-{
-	self.firstNameTextFieldTableViewCell.textField.text = firstName;
-	self.lastNameTextFieldTableViewCell.textField.text = lastName;
-	[self.avatarTableViewCell.avatarImageView setImageURL:[NSURL URLWithString:imagePath]
-											   completion:^(NSError *error) {
-												   if (error) {
-													   [self showConnectionError:error];
-												   }
-											   }];
 }
 
 - (BOOL)validateContent
@@ -217,19 +132,6 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	}
 	
 	return _doneButtonItem;
-}
-
-- (FGAddRandomStudentTableViewCell *)addRandomStudentTableViewCell
-{
-	if (!_addRandomStudentTableViewCell) {
-		_addRandomStudentTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGAddRandomStudentTableViewCellIdentifier
-																			  forIndexPath:[NSIndexPath indexPathForRow:0 inSection:kSectionAddRandomUser]];
-		_addRandomStudentTableViewCell.button.tapHandler = ^{
-			[self fetchRandomUser];
-		};
-	}
-	
-	return _addRandomStudentTableViewCell;
 }
 
 - (FGFirstNameTextFieldTableViewCell *)firstNameTextFieldTableViewCell
@@ -304,8 +206,6 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	if (!_tableView) {
 		_tableView = [super tableView];
 		
-		[_tableView registerClass:[FGAddRandomStudentTableViewCell class]
-		   forCellReuseIdentifier:FGAddRandomStudentTableViewCellIdentifier];
 		[_tableView registerClass:[FGAvatarTableViewCell class]
 		   forCellReuseIdentifier:FGAvatarTableViewCellIdentifier];
 		[_tableView registerClass:[FGAddPhotoTableViewCell class]
@@ -360,9 +260,6 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	switch (section) {
-		case kSectionAddRandomUser:
-			return 1;
-			
 		case kSectionAvatar:
 			return 1;
 			
@@ -386,10 +283,6 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	__kindof UITableViewCell *cell = nil;
 	
 	switch (indexPath.section) {
-		case kSectionAddRandomUser:
-			cell = self.addRandomStudentTableViewCell;
-			
-			break;
 		case kSectionAvatar:
 			cell = self.avatarTableViewCell;
 			
