@@ -10,11 +10,12 @@
 
 #import "FGAvatarImageView.h"
 #import "FGLabel.h"
+#import "FGButton.h"
 
 @interface FGStudentCardDetailView : FGStudentCardView
 
 @property (nonatomic, readonly) FGAvatarImageView *avatarImageView;
 @property (nonatomic, readonly) FGLabel *nameLabel;
-@property (nonatomic, readonly) FGLabel *majorLabel;
+@property (nonatomic, readonly) FGButton *fakeInfoButton;
 
 @end

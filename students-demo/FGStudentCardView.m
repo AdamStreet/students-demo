@@ -28,17 +28,11 @@
 	if (self) {
 		UIView *contentView = self;
 		
-		FGGradientView *topShadow = [[FGGradientView alloc] initWithFrame:CGRectZero];
-		[topShadow setColors:@[[UIColor shadowStartColor],
-							   [UIColor shadowEndColor]]];
+		FGGradientView *topShadow = self.topShadow;
 		[contentView addSubview:topShadow];
-		self.topShadow = topShadow;
 		
-		FGGradientView *bottomShadow = [[FGGradientView alloc] initWithFrame:CGRectZero];
-		[bottomShadow setColors:@[[UIColor shadowEndColor],
-								  [UIColor shadowStartColor]]];
+		FGGradientView *bottomShadow = self.bottomShadow;
 		[contentView addSubview:bottomShadow];
-		self.bottomShadow = bottomShadow;
 		
 		// Prepare for autolayout
 		
@@ -81,5 +75,36 @@
 																		metrics:@{@"height" : @(kShadowHeight)}
 																		  views:subviews]];
 }
+
+#pragma mark - Public methods
+#pragma mark Accessors
+
+- (FGGradientView *)topShadow
+{
+	if (!_topShadow) {
+		_topShadow = [[FGGradientView alloc] initWithFrame:CGRectZero];
+		[_topShadow setColors:@[[UIColor shadowStartColor],
+								[UIColor shadowEndColor]]];
+	}
+	
+	return _topShadow;
+}
+
+- (FGGradientView *)bottomShadow
+{
+	if (!_bottomShadow) {
+		_bottomShadow = [[FGGradientView alloc] initWithFrame:CGRectZero];
+		[_bottomShadow setColors:@[[UIColor shadowEndColor],
+								   [UIColor shadowStartColor]]];
+	}
+	
+	return _bottomShadow;
+}
+
+#pragma mark Overrides
+#pragma mark - User interaction handlers
+#pragma mark - Notification handlers
+#pragma mark - KVO
+#pragma mark - <>
 
 @end

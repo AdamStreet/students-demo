@@ -10,7 +10,6 @@
 
 #import "FGGradientView.h"
 #import "UIColor+CustomColors.h"
-#import "FGButton.h"
 
 @interface FGStudentCardDetailView ()
 
@@ -31,20 +30,14 @@
 	if (self) {
 		UIView *contentView = self;
 		
-		FGAvatarImageView *avatarImageView = [[FGAvatarImageView alloc] initWithFrame:CGRectZero];
+		FGAvatarImageView *avatarImageView = self.avatarImageView;
 		[contentView addSubview:avatarImageView];
-		self.avatarImageView = avatarImageView;
 		
-		FGLabel *nameLabel = [[FGLabel alloc] initWithFrame:CGRectZero];
-		nameLabel.textAlignment = NSTextAlignmentCenter;
+		FGLabel *nameLabel = self.nameLabel;
 		[contentView addSubview:nameLabel];
-		self.nameLabel = nameLabel;
 		
-		FGButton *fakeInfoButton = [[FGButton alloc] initWithFrame:CGRectZero];
-		[fakeInfoButton setImage:[UIImage imageNamed:@"icon_button_info"]
-						forState:UIControlStateNormal];
+		FGButton *fakeInfoButton = self.fakeInfoButton;
 		[contentView addSubview:fakeInfoButton];
-		self.fakeInfoButton = fakeInfoButton;
 		
 		// Bring back shadows (optional)
 		[contentView bringSubviewToFront:self.topShadow];
@@ -117,5 +110,45 @@
 																		metrics:@{@"gap" : @(kGapBetweenElements)}
 																		  views:subviews]];
 }
+
+#pragma mark - Public methods
+#pragma mark Accessors
+
+- (FGAvatarImageView *)avatarImageView
+{
+	if (!_avatarImageView) {
+		_avatarImageView = [[FGAvatarImageView alloc] initWithFrame:CGRectZero];
+	}
+	
+	return _avatarImageView;
+}
+
+- (FGLabel *)nameLabel
+{
+	if (!_nameLabel) {
+		_nameLabel = [[FGLabel alloc] initWithFrame:CGRectZero];
+		_nameLabel.textAlignment = NSTextAlignmentCenter;
+	}
+	
+	return _nameLabel;
+}
+
+- (FGButton *)fakeInfoButton
+{
+	if (!_fakeInfoButton) {
+		_fakeInfoButton = [[FGButton alloc] initWithFrame:CGRectZero];
+		[_fakeInfoButton setImage:[UIImage imageNamed:@"icon_button_info"]
+						 forState:UIControlStateNormal];
+		_fakeInfoButton.userInteractionEnabled = NO;
+	}
+	
+	return _fakeInfoButton;
+}
+
+#pragma mark Overrides
+#pragma mark - User interaction handlers
+#pragma mark - Notification handlers
+#pragma mark - KVO
+#pragma mark - <>
 
 @end
