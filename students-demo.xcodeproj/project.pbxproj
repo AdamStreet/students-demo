@@ -344,8 +344,8 @@
 			children = (
 				66AB09CA1D24CE71004985E9 /* Bases */,
 				66AB0A541D25C1A5004985E9 /* MainMenu */,
-				66AB09E91D24DAF9004985E9 /* MainList */,
-				66AB0AC11D285224004985E9 /* Student */,
+				66AB09E91D24DAF9004985E9 /* StudentList */,
+				66AB0AC11D285224004985E9 /* StudentDetail */,
 				66AB0A1C1D24F87C004985E9 /* FGRootViewController.h */,
 				66AB0A1D1D24F87C004985E9 /* FGRootViewController.m */,
 			);
@@ -460,14 +460,14 @@
 			name = NewStudent;
 			sourceTree = "<group>";
 		};
-		66AB09E91D24DAF9004985E9 /* MainList */ = {
+		66AB09E91D24DAF9004985E9 /* StudentList */ = {
 			isa = PBXGroup;
 			children = (
 				66AB0A501D25BA03004985E9 /* Cells */,
 				66AB09D41D24D783004985E9 /* FGStudentListTableViewController.h */,
 				66AB09D51D24D783004985E9 /* FGStudentListTableViewController.m */,
 			);
-			name = MainList;
+			name = StudentList;
 			sourceTree = "<group>";
 		};
 		66AB09ED1D24DB26004985E9 /* TableViews & Cells */ = {
@@ -658,14 +658,14 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		66AB0AB01D278FB3004985E9 /* StudentDetail */ = {
+		66AB0AB01D278FB3004985E9 /* StudentDetails */ = {
 			isa = PBXGroup;
 			children = (
 				66AB0AB71D278FFD004985E9 /* Cells */,
 				66AB09E51D24DAEA004985E9 /* FGStudentDetailTableViewController.h */,
 				66AB09E61D24DAEA004985E9 /* FGStudentDetailTableViewController.m */,
 			);
-			name = StudentDetail;
+			name = StudentDetails;
 			sourceTree = "<group>";
 		};
 		66AB0AB71D278FFD004985E9 /* Cells */ = {
@@ -685,15 +685,15 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		66AB0AC11D285224004985E9 /* Student */ = {
+		66AB0AC11D285224004985E9 /* StudentDetail */ = {
 			isa = PBXGroup;
 			children = (
-				66AB0AB01D278FB3004985E9 /* StudentDetail */,
+				66AB0AB01D278FB3004985E9 /* StudentDetails */,
 				66AB09E81D24DAF2004985E9 /* NewStudent */,
 				66AB0AC21D285245004985E9 /* FGBaseStudentTableViewController.h */,
 				66AB0AC31D285245004985E9 /* FGBaseStudentTableViewController.m */,
 			);
-			name = Student;
+			name = StudentDetail;
 			sourceTree = "<group>";
 		};
 		66AB0AC81D2853E7004985E9 /* Buttons */ = {
