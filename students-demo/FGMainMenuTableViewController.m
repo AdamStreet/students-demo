@@ -68,6 +68,7 @@
 	
 	// Wrap in NavigationController
 	FGNavigationController *navigationController = [[FGNavigationController alloc] initWithRootViewController:newStudentTableViewController];
+	navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
 	
 	[self presentViewController:navigationController
 					   animated:YES
