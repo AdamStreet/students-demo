@@ -6,12 +6,12 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGView.h"
+#import "FGStudentCardView.h"
 
 #import "FGAvatarImageView.h"
 #import "FGLabel.h"
 
-@interface FGStudentCardDetailView : FGView
+@interface FGStudentCardDetailView : FGStudentCardView
 
 @property (nonatomic, readonly) FGAvatarImageView *avatarImageView;
 @property (nonatomic, readonly) FGLabel *nameLabel;

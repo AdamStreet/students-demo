@@ -98,6 +98,8 @@
 		66AB0AF51D28DB59004985E9 /* FGStudentCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AF41D28DB59004985E9 /* FGStudentCardCollectionViewCell.m */; };
 		66AB0AF81D28E46A004985E9 /* FGGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AF71D28E46A004985E9 /* FGGradientView.m */; };
 		66AB0AFE1D28EDE0004985E9 /* FGStudentCardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AFD1D28EDE0004985E9 /* FGStudentCardDetailView.m */; };
+		66AB0B031D298AE1004985E9 /* FGStudentCardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B021D298AE1004985E9 /* FGStudentCardBackgroundView.m */; };
+		66AB0B061D298AF4004985E9 /* FGStudentCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B051D298AF4004985E9 /* FGStudentCardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +287,10 @@
 		66AB0AF71D28E46A004985E9 /* FGGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGGradientView.m; sourceTree = "<group>"; };
 		66AB0AFC1D28EDE0004985E9 /* FGStudentCardDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentCardDetailView.h; sourceTree = "<group>"; };
 		66AB0AFD1D28EDE0004985E9 /* FGStudentCardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentCardDetailView.m; sourceTree = "<group>"; };
+		66AB0B011D298AE1004985E9 /* FGStudentCardBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentCardBackgroundView.h; sourceTree = "<group>"; };
+		66AB0B021D298AE1004985E9 /* FGStudentCardBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentCardBackgroundView.m; sourceTree = "<group>"; };
+		66AB0B041D298AF4004985E9 /* FGStudentCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentCardView.h; sourceTree = "<group>"; };
+		66AB0B051D298AF4004985E9 /* FGStudentCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentCardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -783,8 +789,12 @@
 		66AB0AFF1D28EDE4004985E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0B041D298AF4004985E9 /* FGStudentCardView.h */,
+				66AB0B051D298AF4004985E9 /* FGStudentCardView.m */,
 				66AB0AFC1D28EDE0004985E9 /* FGStudentCardDetailView.h */,
 				66AB0AFD1D28EDE0004985E9 /* FGStudentCardDetailView.m */,
+				66AB0B011D298AE1004985E9 /* FGStudentCardBackgroundView.h */,
+				66AB0B021D298AE1004985E9 /* FGStudentCardBackgroundView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -929,6 +939,7 @@
 				66AB0A651D25C7F4004985E9 /* FGMenuItemProvider.m in Sources */,
 				66AB0ABD1D279374004985E9 /* FGStudentAvatarTableViewCell.m in Sources */,
 				66AB0AA51D2603B8004985E9 /* FGImagePickerViewController.m in Sources */,
+				66AB0B031D298AE1004985E9 /* FGStudentCardBackgroundView.m in Sources */,
 				66AB0A531D25C1A1004985E9 /* FGMainMenuTableViewController.m in Sources */,
 				66AB0A371D259D03004985E9 /* FGFile.m in Sources */,
 				66AB0A941D25F4DA004985E9 /* FGScrollView.m in Sources */,
@@ -942,6 +953,7 @@
 				66AB0AE21D28A957004985E9 /* FGCollectionViewController.m in Sources */,
 				66AB0A2C1D259C96004985E9 /* _FGImageFile.m in Sources */,
 				66AB0A751D25DF6A004985E9 /* FGTextFieldTableViewCell.m in Sources */,
+				66AB0B061D298AF4004985E9 /* FGStudentCardView.m in Sources */,
 				66AB0AC41D285245004985E9 /* FGBaseStudentTableViewController.m in Sources */,
 				66AB0A7E1D25E1D1004985E9 /* FGView.m in Sources */,
 				66AB0AA01D2601EA004985E9 /* FGButtonedTableViewCell.m in Sources */,
