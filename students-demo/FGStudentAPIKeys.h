@@ -13,6 +13,9 @@ extern NSString * const FGStudentAPIKeysResultsKey;
 extern NSString * const FGStudentAPIKeysFirstNameKeyPath;
 extern NSString * const FGStudentAPIKeysLastNameKeyPath;
 extern NSString * const FGStudentAPIKeysLargeAvatarKeyPath;
+extern NSString * const FGStudentAPIKeysEmailKeyPath;
+extern NSString * const FGStudentAPIKeysCellKeyPath;
+extern NSString * const FGStudentAPIKeysPhoneKeyPath;
 
 @interface FGStudentAPIKeys : NSObject
 

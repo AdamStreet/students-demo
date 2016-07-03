@@ -38,6 +38,9 @@ static NSString * const kRandomStudentAPIEndPoint = @"https://randomuser.me/api"
 	student.lastName = [studentMetadata valueForKeyPath:FGStudentAPIKeysLastNameKeyPath];
 	student.firstName = [studentMetadata valueForKeyPath:FGStudentAPIKeysFirstNameKeyPath];
 	student.avatarImageURLString = [studentMetadata valueForKeyPath:FGStudentAPIKeysLargeAvatarKeyPath];
+	student.cell = [studentMetadata valueForKeyPath:FGStudentAPIKeysCellKeyPath];
+	student.phone = [studentMetadata valueForKeyPath:FGStudentAPIKeysPhoneKeyPath];
+	student.email = [studentMetadata valueForKeyPath:FGStudentAPIKeysEmailKeyPath];
 	
 	return student;
 }

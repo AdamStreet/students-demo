@@ -13,6 +13,9 @@ NSString * const FGStudentAPIKeysResultsKey = @"results";
 NSString * const FGStudentAPIKeysFirstNameKeyPath = @"name.first";
 NSString * const FGStudentAPIKeysLastNameKeyPath = @"name.last";
 NSString * const FGStudentAPIKeysLargeAvatarKeyPath = @"picture.large";
+NSString * const FGStudentAPIKeysEmailKeyPath = @"email";
+NSString * const FGStudentAPIKeysCellKeyPath = @"cell";
+NSString * const FGStudentAPIKeysPhoneKeyPath = @"phone";
 
 @implementation FGStudentAPIKeys
 
