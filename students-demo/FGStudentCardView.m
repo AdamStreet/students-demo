@@ -28,6 +28,8 @@
 	if (self) {
 		UIView *contentView = self;
 		
+		self.backgroundColor = [UIColor cardBackgroundColor];
+		
 		FGGradientView *topShadow = self.topShadow;
 		[contentView addSubview:topShadow];
 		

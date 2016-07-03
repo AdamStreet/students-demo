@@ -15,7 +15,7 @@ const CGSize FGStudentCardCollectionViewCellSuggestedSize = {300.0, 200.0};
 @interface FGStudentCardCollectionViewCell ()
 
 @property (nonatomic) FGStudentCardDetailView *studentCardDetailView;
-@property (nonatomic) FGView *backgroundCardView;
+@property (nonatomic) FGStudentCardBackgroundView *studentCardBackgroundView;
 
 @end
 
@@ -34,11 +34,21 @@ static NSTimeInterval kFlipAnimationDuration = 0.5;
 		self.layer.cornerRadius = 5.0;
 		self.clipsToBounds = YES;
 		
+		self.backgroundColor = [UIColor clearColor];
+		
 		UIView *contentView = self.contentView;
-		FGStudentCardDetailView *studentCardDetailView = [[FGStudentCardDetailView alloc] initWithFrame:contentView.bounds];
+		
+		FGView *studentCardDetailView = self.studentCardDetailView;
 		studentCardDetailView.frame = contentView.bounds;
-		[self addSubview:studentCardDetailView];
-		self.studentCardDetailView = studentCardDetailView;
+		studentCardDetailView.autoresizingMask = (UIViewAutoresizingFlexibleWidth |
+												  UIViewAutoresizingFlexibleHeight);
+		[contentView addSubview:studentCardDetailView];
+		
+		FGView *studentCardBackgroundView = self.studentCardBackgroundView;
+		studentCardBackgroundView.frame = contentView.bounds;
+		studentCardBackgroundView.autoresizingMask = (UIViewAutoresizingFlexibleWidth |
+													  UIViewAutoresizingFlexibleHeight);
+		//[contentView addSubview:studentCardBackgroundView]; - Hidden by default
 	}
 	
 	return self;
@@ -51,16 +61,22 @@ static NSTimeInterval kFlipAnimationDuration = 0.5;
 	[self.studentCardDetailView.avatarImageView setImageURL:[self.student avatarImageURL]
 												 completion:nil];
 	
-	self.studentCardDetailView.nameLabel.text = [self.student fullName];
-}
-
-- (FGView *)backgroundCardView
-{
-	if (!_backgroundCardView) {
-		_backgroundCardView = [[FGView alloc] initWithFrame:self.bounds];
-	}
+	NSString *studentFullName = [self.student fullName];
 	
-	return _backgroundCardView;
+	self.studentCardDetailView.nameLabel.text = studentFullName;
+	
+	// Background
+	
+	self.studentCardBackgroundView.nameLabel.text = studentFullName;
+	self.studentCardBackgroundView.phoneLabel.label.text = @"phone";
+	self.studentCardBackgroundView.cellLabel.label.text = @"cell";
+	self.studentCardBackgroundView.emailLabel.label.text = @"email@email.ca";
+	
+	self.studentCardBackgroundView.trashButton.tapHandler = ^{
+		if (self.trashButtonTapHandler) {
+			self.trashButtonTapHandler();
+		}
+	};
 }
 
 #pragma mark Accessors
@@ -71,11 +87,11 @@ static NSTimeInterval kFlipAnimationDuration = 0.5;
 {
 	UIViewAnimationOptions direction = UIViewAnimationOptionTransitionFlipFromRight;
 	UIView *fromView = self.studentCardDetailView;
-	UIView *toView = self.backgroundCardView;
+	UIView *toView = self.studentCardBackgroundView;
 	
 	if (self.isFlipped) {
 		direction = UIViewAnimationOptionTransitionFlipFromLeft;
-		fromView = self.backgroundCardView;
+		fromView = self.studentCardBackgroundView;
 		toView = self.studentCardDetailView;
 	}
 	
@@ -87,6 +103,25 @@ static NSTimeInterval kFlipAnimationDuration = 0.5;
 }
 
 #pragma mark Accessors
+
+- (FGStudentCardDetailView *)studentCardDetailView
+{
+	if (!_studentCardDetailView) {
+		_studentCardDetailView = [[FGStudentCardDetailView alloc] initWithFrame:CGRectZero];
+	}
+	
+	return _studentCardDetailView;
+}
+
+- (FGStudentCardBackgroundView *)studentCardBackgroundView
+{
+	if (!_studentCardBackgroundView) {
+		_studentCardBackgroundView = [[FGStudentCardBackgroundView alloc] initWithFrame:CGRectZero];
+	}
+	
+	return _studentCardBackgroundView;
+}
+
 
 - (void)setStudent:(FGStudent *)student
 {

@@ -12,10 +12,13 @@
 #import "FGDatabaseManager.h"
 #import "FGStudentCardCollectionViewCell.h"
 #import "FGStudent.h"
+#import "FGAlertView.h"
 
 @interface FGStudentCardsCollectionViewController ()
 
 @property (nonatomic) NSIndexPath *flippedCellIndexPath;
+
+@property (nonatomic) FGAlertView *deletionConfirmationAlertView;
 
 @end
 
@@ -48,6 +51,33 @@ static const CGFloat kGapAroundElements = 5.0;
 - (FGStudent *)studentAtIndexPath:(NSIndexPath *)indexPath
 {
 	return [self.fetchedResultsController objectAtIndexPath:indexPath];
+}
+
+- (void)deleteStudent:(FGStudent *)student
+{
+	[[self databaseManager] deleteEntity:student];
+	[[self databaseManager] saveContext];
+}
+
+- (void)showDeleteConfirmationAlert:(FGStudent *)student
+{
+	NSAssert(!self.deletionConfirmationAlertView, @"Should exist deletionConfirmationAlertView");
+	
+	self.deletionConfirmationAlertView =
+	[[FGAlertView alloc] initWithTitle:FGLocalizedString(@"Are you sure?", @"Student deletion confirmation alert title")
+							   message:FGLocalizedString(@"This action cannot be undone.", @"Student deletion confirmation alert message")
+					 cancelButtonTitle:FGLocalizedString(@"Cancel", @"Cancel button title")
+					 otherButtonTitles:@[FGLocalizedString(@"Delete", @"Delete button title")]
+							completion:^(NSInteger tappedButtonIndex, NSInteger cancelButtonIndex) {
+								self.deletionConfirmationAlertView = nil;
+								
+								if (tappedButtonIndex == cancelButtonIndex)
+									return;
+								
+								[self deleteStudent:student];
+							}];
+	
+	[self.deletionConfirmationAlertView show];
 }
 
 #pragma mark Accessors
@@ -95,8 +125,14 @@ static const CGFloat kGapAroundElements = 5.0;
 - (void)updateCell:(__kindof UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
 	if ([cell isKindOfClass:[FGStudentCardCollectionViewCell class]]){
+		FGStudent *student = [self studentAtIndexPath:indexPath];
+		
 		FGStudentCardCollectionViewCell *castedCell = (FGStudentCardCollectionViewCell *)cell;
-		castedCell.student = [self studentAtIndexPath:indexPath];
+		castedCell.student = student;
+		__weak FGStudentCardsCollectionViewController *weakSelf = self;
+		castedCell.trashButtonTapHandler = ^{
+			[weakSelf showDeleteConfirmationAlert:student];
+		};
 		
 		const BOOL invalidState = ( ([indexPath isEqual:self.flippedCellIndexPath] && !castedCell.isFlipped) ||
 								   (![indexPath isEqual:self.flippedCellIndexPath] && castedCell.isFlipped));

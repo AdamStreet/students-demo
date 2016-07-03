@@ -9,14 +9,20 @@
 #import "FGBaseStudentCollectionViewCell.h"
 
 #import "FGStudentCardDetailView.h"
+#import "FGStudentCardBackgroundView.h"
 
 extern NSString * const FGStudentCardCollectionViewCellIdentifier;
 
 extern const CGSize FGStudentCardCollectionViewCellSuggestedSize;
 
+typedef void(^FGStudentCardCollectionViewCellButtonTapHandler)();
+
 @interface FGStudentCardCollectionViewCell : FGBaseStudentCollectionViewCell
 
-@property (nonatomic, readonly) FGStudentCardDetailView *studentCardDetailView;
+//@property (nonatomic, readonly) FGStudentCardDetailView *studentCardDetailView;
+//@property (nonatomic, readonly) FGStudentCardBackgroundView *studentCardBackgroundView;
+
+@property (nonatomic, copy) FGStudentCardCollectionViewCellButtonTapHandler trashButtonTapHandler;
 
 @property (nonatomic, readonly, getter=isFlipped) BOOL flipped;
 

@@ -95,6 +95,7 @@
 		66AB0AFE1D28EDE0004985E9 /* FGStudentCardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AFD1D28EDE0004985E9 /* FGStudentCardDetailView.m */; };
 		66AB0B031D298AE1004985E9 /* FGStudentCardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B021D298AE1004985E9 /* FGStudentCardBackgroundView.m */; };
 		66AB0B061D298AF4004985E9 /* FGStudentCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B051D298AF4004985E9 /* FGStudentCardView.m */; };
+		66AB0B091D299231004985E9 /* FGImagedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B081D299231004985E9 /* FGImagedLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,6 +277,8 @@
 		66AB0B021D298AE1004985E9 /* FGStudentCardBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentCardBackgroundView.m; sourceTree = "<group>"; };
 		66AB0B041D298AF4004985E9 /* FGStudentCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStudentCardView.h; sourceTree = "<group>"; };
 		66AB0B051D298AF4004985E9 /* FGStudentCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStudentCardView.m; sourceTree = "<group>"; };
+		66AB0B071D299231004985E9 /* FGImagedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGImagedLabel.h; sourceTree = "<group>"; };
+		66AB0B081D299231004985E9 /* FGImagedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGImagedLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -740,6 +743,8 @@
 		66AB0AFF1D28EDE4004985E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66AB0B071D299231004985E9 /* FGImagedLabel.h */,
+				66AB0B081D299231004985E9 /* FGImagedLabel.m */,
 				66AB0B041D298AF4004985E9 /* FGStudentCardView.h */,
 				66AB0B051D298AF4004985E9 /* FGStudentCardView.m */,
 				66AB0AFC1D28EDE0004985E9 /* FGStudentCardDetailView.h */,
@@ -916,6 +921,7 @@
 				66AB099B1D24CD06004985E9 /* FGViewController.m in Sources */,
 				66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */,
 				66AB0AEF1D28DAEC004985E9 /* FGCollectionViewCell.m in Sources */,
+				66AB0B091D299231004985E9 /* FGImagedLabel.m in Sources */,
 				66AB09981D24CD06004985E9 /* FGAppDelegate.m in Sources */,
 				66AB0AF81D28E46A004985E9 /* FGGradientView.m in Sources */,
 				66AB09D91D24D795004985E9 /* FGTableViewController.m in Sources */,
