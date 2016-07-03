@@ -88,6 +88,16 @@ static const CGFloat kGapAroundElements = 5.0;
 	[self.deletionConfirmationAlertView show];
 }
 
+- (void)scrollToStudent:(FGStudent *)student
+{
+	if (!student)
+		return;
+	
+	[self.collectionView scrollToItemAtIndexPath:[self.fetchedResultsController indexPathForObject:student]
+								atScrollPosition:UICollectionViewScrollPositionCenteredVertically
+										animated:YES];
+}
+
 - (void)showAddStudentViewController
 {
 	FGNewStudentTableViewController *newStudentTableViewController = [[FGNewStudentTableViewController alloc] initWithNewStudent];
@@ -103,6 +113,8 @@ static const CGFloat kGapAroundElements = 5.0;
 	newStudentTableViewController.completionHandler = ^(FGStudent *student) {
 		[navigationController.presentingViewController dismissViewControllerAnimated:YES
 																		  completion:nil];
+		
+		[self scrollToStudent:student];
 	};
 	
 	[self presentViewController:navigationController
@@ -124,9 +136,7 @@ static const CGFloat kGapAroundElements = 5.0;
 						   FGLocalizedString(@"Added Random Student:", @"Student added status bar title prefix"),
 						   [student fullName]];
 			tapHandler = ^{
-				[self.collectionView scrollToItemAtIndexPath:[self.fetchedResultsController indexPathForObject:student]
-											atScrollPosition:UICollectionViewScrollPositionCenteredVertically
-													animated:YES];
+				[self scrollToStudent:student];
 			};
 		}
 		
