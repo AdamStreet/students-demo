@@ -30,7 +30,6 @@ NSString * const FGAvatarTableViewCellIdentifier = @"FGAvatarTableViewCell";
 		UIView *contentView = self.contentView;
 		
 		FGAvatarImageView *avatarImageView = [[FGAvatarImageView alloc] initWithFrame:CGRectZero];
-		avatarImageView.backgroundColor = [UIColor whiteColor];
 		[contentView addSubview:avatarImageView];
 		self.avatarImageView = avatarImageView;
 		
