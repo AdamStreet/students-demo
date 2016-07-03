@@ -8,6 +8,13 @@
 
 #import "FGTableViewController.h"
 
+@interface FGTableViewController ()
+
+@property (nonatomic) NSLayoutConstraint *tableViewHeightConstraint;
+
+@end
+
+
 @implementation FGTableViewController
 
 @synthesize tableView = _tableView;
@@ -21,12 +28,53 @@
 		_tableViewStyle = tableViewStyle;
 		
 		self.deselectTableViewRowOnDidAppear = YES;
+		self.resizeTableViewOnKeyboardAppear = YES;
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(handleKeyboardWillShowNotification:)
+													 name:UIKeyboardWillShowNotification
+												   object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(handleKeyboardWillHideNotification:)
+													 name:UIKeyboardWillHideNotification
+												   object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(handleKeyboardWillChangeFrameNotification:)
+													 name:UIKeyboardWillChangeFrameNotification
+												   object:nil];
 	}
 	
 	return self;
 }
 
+- (void)dealloc
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Private methods
+
+- (void)updateTableViewSize:(CGRect)keyboardRectOnWindow
+		  animationDuration:(NSTimeInterval)animationDuration
+{
+	if (!self.resizeTableViewOnKeyboardAppear)
+		return;
+	
+	const CGRect keyboardNetRect = [self.view.window convertRect:keyboardRectOnWindow
+														  toView:self.tableView];
+	
+	CGFloat coveredBottomFrameHeight = (keyboardNetRect.origin.y - self.view.frame.size.height);
+	const BOOL isKeyboardOutOfCurrentView = (0.0 < coveredBottomFrameHeight);
+	if (isKeyboardOutOfCurrentView) {
+		coveredBottomFrameHeight = 0.0;
+	}
+	
+	[UIView animateWithDuration:animationDuration
+					 animations:^{
+						 self.tableViewHeightConstraint.constant = -coveredBottomFrameHeight;
+					 }];
+}
+
 #pragma mark Accessors
 #pragma mark - View lifecycle
 
@@ -37,9 +85,34 @@
 	UIView *contentView = self.view;
 	
 	UIView *tableView = self.tableView;
-	tableView.frame = contentView.bounds;
-	tableView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	[contentView addSubview:tableView];
+	
+	// Autolayout
+	
+	tableView.translatesAutoresizingMaskIntoConstraints = NO;
+	
+	NSDictionary *subviews = NSDictionaryOfVariableBindings(tableView);
+	
+	[contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|"
+																		options:kNilOptions
+																		metrics:nil
+																		  views:subviews]];
+	[contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableView]"
+																		options:kNilOptions
+																		metrics:nil
+																		  views:subviews]];
+	NSLayoutConstraint *tableViewHeightConstraint =
+	[NSLayoutConstraint constraintWithItem:tableView
+								 attribute:NSLayoutAttributeHeight
+								 relatedBy:NSLayoutRelationEqual
+									toItem:contentView
+								 attribute:NSLayoutAttributeHeight
+								multiplier:1.0
+								  constant:0.0];
+	[contentView addConstraint:tableViewHeightConstraint];
+	self.tableViewHeightConstraint = tableViewHeightConstraint;
+	
+	[contentView layoutIfNeeded];	// Avoid invalid cell sizes
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -70,6 +143,31 @@
 #pragma mark Overrides
 #pragma mark - User interaction handlers
 #pragma mark - Notification handlers
+
+- (void)handleKeyboardWillShowNotification:(NSNotification *)notification
+{
+	const CGRect keyboardRect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+	const NSTimeInterval animationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+	
+	[self updateTableViewSize:keyboardRect animationDuration:animationDuration];
+}
+
+- (void)handleKeyboardWillHideNotification:(NSNotification *)notification
+{
+	const CGRect keyboardRect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+	const NSTimeInterval animationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+	
+	[self updateTableViewSize:keyboardRect animationDuration:animationDuration];
+}
+
+- (void)handleKeyboardWillChangeFrameNotification:(NSNotification *)notification
+{
+	const CGRect keyboardRect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+	const NSTimeInterval animationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+	
+	[self updateTableViewSize:keyboardRect animationDuration:animationDuration];
+}
+
 #pragma mark - KVO
 #pragma mark - <UITableViewDataSource>
 

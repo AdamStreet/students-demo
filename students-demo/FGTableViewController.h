@@ -19,6 +19,10 @@
  YES by default.
  */
 @property (nonatomic) BOOL deselectTableViewRowOnDidAppear;
+/**
+ YES by default.
+ */
+@property (nonatomic) BOOL resizeTableViewOnKeyboardAppear;
 
 - (instancetype)initWithStyle:(UITableViewStyle)tableViewStyle;
 
