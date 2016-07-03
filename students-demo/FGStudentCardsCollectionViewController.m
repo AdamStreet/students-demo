@@ -12,7 +12,6 @@
 #import "FGDatabaseManager.h"
 #import "FGStudentCardCollectionViewCell.h"
 #import "FGStudent.h"
-#import "FGStudentDetailTableViewController.h"
 
 @interface FGStudentCardsCollectionViewController ()
 
@@ -49,13 +48,6 @@ static const CGFloat kGapAroundElements = 5.0;
 - (FGStudent *)studentAtIndexPath:(NSIndexPath *)indexPath
 {
 	return [self.fetchedResultsController objectAtIndexPath:indexPath];
-}
-
-- (void)showStudentDetails:(FGStudent *)student
-{
-	FGStudentDetailTableViewController *detailViewController = [[FGStudentDetailTableViewController alloc] initWithStudent:student];
-	
-	[self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark Accessors
@@ -106,9 +98,9 @@ static const CGFloat kGapAroundElements = 5.0;
 		FGStudentCardCollectionViewCell *castedCell = (FGStudentCardCollectionViewCell *)cell;
 		castedCell.student = [self studentAtIndexPath:indexPath];
 		
-		if ([indexPath isEqual:self.flippedCellIndexPath] && !castedCell.isFlipped) {
-			[cell flipCard:NO];
-		} else if (![indexPath isEqual:self.flippedCellIndexPath] && castedCell.isFlipped) {
+		const BOOL invalidState = ( ([indexPath isEqual:self.flippedCellIndexPath] && !castedCell.isFlipped) ||
+								   (![indexPath isEqual:self.flippedCellIndexPath] && castedCell.isFlipped));
+		if (invalidState) {
 			[cell flipCard:NO];
 		}
 	} else {
@@ -170,14 +162,16 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
 	FGStudentCardCollectionViewCell *cell = (FGStudentCardCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
 	
-	if ([self.flippedCellIndexPath isEqual:indexPath]) {
+	const BOOL isJustAFlipBack = [self.flippedCellIndexPath isEqual:indexPath];
+	if (isJustAFlipBack) {
 		self.flippedCellIndexPath = nil;
 	} else {
-		if (self.flippedCellIndexPath &&
-			[collectionView.indexPathsForVisibleItems containsObject:self.flippedCellIndexPath]) {
-			FGStudentCardCollectionViewCell *oldFlippedCell = (FGStudentCardCollectionViewCell *)[collectionView cellForItemAtIndexPath:self.flippedCellIndexPath];
-			if (oldFlippedCell.isFlipped) {
-				[oldFlippedCell flipCard:YES];
+		const BOOL isPreviouslyFlippedCellVisible = (self.flippedCellIndexPath &&
+													 [collectionView.indexPathsForVisibleItems containsObject:self.flippedCellIndexPath]);
+		if (isPreviouslyFlippedCellVisible) {
+			FGStudentCardCollectionViewCell *currentlyFlippedCell = (FGStudentCardCollectionViewCell *)[collectionView cellForItemAtIndexPath:self.flippedCellIndexPath];
+			if (currentlyFlippedCell.isFlipped) {
+				[currentlyFlippedCell flipCard:YES];
 			}
 		}
 		
