@@ -23,6 +23,9 @@
 static NSString * const kTestStudentLastName = @"williams";
 static NSString * const kTestStudentFirstName = @"alexander";
 static NSString * const kTestStudentAvatarURLString = @"https://randomuser.me/api/portraits/men/0.jpg";
+static NSString * const kTestStudentEmail = @"email@address.ca";
+static NSString * const kTestStudentCell = @"213 4213 32132";
+static NSString * const kTestStudentPhone = @"0649 213 4322";
 
 @implementation FGDatabaseTests
 
@@ -56,6 +59,9 @@ static NSString * const kTestStudentAvatarURLString = @"https://randomuser.me/ap
 	insertedStudent.lastName = kTestStudentLastName;
 	insertedStudent.firstName = kTestStudentFirstName;
 	insertedStudent.avatarImageURLString = kTestStudentAvatarURLString;
+	insertedStudent.email = kTestStudentEmail;
+	insertedStudent.cell = kTestStudentCell;
+	insertedStudent.phone = kTestStudentPhone;
 	
 	[self.databaseManager saveContext];
 	
@@ -63,6 +69,9 @@ static NSString * const kTestStudentAvatarURLString = @"https://randomuser.me/ap
 	XCTAssertEqual(insertedStudent.lastName, kTestStudentLastName);
 	XCTAssertEqual(insertedStudent.firstName, kTestStudentFirstName);
 	XCTAssertEqual(insertedStudent.avatarImageURLString, kTestStudentAvatarURLString);
+	XCTAssertEqual(insertedStudent.email, kTestStudentEmail);
+	XCTAssertEqual(insertedStudent.cell, kTestStudentCell);
+	XCTAssertEqual(insertedStudent.phone, kTestStudentPhone);
 	
 	XCTAssertNotNil([insertedStudent avatarImageURL]);
 	
