@@ -142,6 +142,8 @@ static const NSUInteger kNumberOfColumnsOnIPadIdiom = 2;
 						   FGLocalizedString(@"Added Random Student:", @"Student added status bar title prefix"),
 						   [student fullName]];
 			tapHandler = ^{
+				[FGStatusBarNotification dismiss];
+				
 				[self scrollToStudent:student];
 			};
 		}
