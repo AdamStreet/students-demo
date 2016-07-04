@@ -72,6 +72,12 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	self = [super initWithStyle:UITableViewStyleGrouped];
 	if (self) {
 		self.student = student;
+		
+		if (student) {
+			self.title = FGLocalizedString(@"Change Student Details", @"Student manipulator screen title");
+		} else {
+			self.title = FGLocalizedString(@"Add Student", @"Student manipulator screen title");
+		}
 	}
 	return self;
 }
