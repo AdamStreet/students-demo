@@ -165,6 +165,9 @@ autoDismissAfterDelay:(NSTimeInterval)afterDelay
 						  forState:UIControlStateNormal];
 		_alertLabel.autoresizingMask = (UIViewAutoresizingFlexibleWidth);
 		_alertLabel.backgroundColor = [UIColor statusNotificationBackgroundColor];
+		
+		_alertLabel.titleLabel.adjustsFontSizeToFitWidth = YES;
+		_alertLabel.titleLabel.minimumScaleFactor = (12.0 / _alertLabel.titleLabel.font.pointSize);
 	}
 	
 	return _alertLabel;
