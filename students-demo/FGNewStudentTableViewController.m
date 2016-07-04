@@ -109,8 +109,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 
 - (void)dismissKeyboard
 {
-	[self.firstNameTextFieldTableViewCell.textField resignFirstResponder];
-	[self.lastNameTextFieldTableViewCell.textField resignFirstResponder];
+	[self.view endEditing:YES];
 }
 
 #pragma mark Accessors
