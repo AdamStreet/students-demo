@@ -105,6 +105,7 @@
 {
 	[self cancelPendingTask];
 	
+	self.imageURL = nil;
 	self.imageView.image = nil;
 }
 
