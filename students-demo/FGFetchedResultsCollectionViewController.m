@@ -8,7 +8,7 @@
 
 #import "FGFetchedResultsCollectionViewController.h"
 
-@interface FGFetchedResultsCollectionViewController () <NSFetchedResultsControllerDelegate>
+@interface FGFetchedResultsCollectionViewController ()
 
 @property (nonatomic) NSFetchedResultsController *fetchedResultsController;
 

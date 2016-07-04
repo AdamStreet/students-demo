@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface FGFetchedResultsCollectionViewController : FGCollectionViewController
+@interface FGFetchedResultsCollectionViewController : FGCollectionViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
 
