@@ -349,9 +349,8 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		[FGAvatarImageFileHelper clearAvatarImageFile:student.avatarImageFile
 									  databaseManager:[self databaseManager]];
 		
-		if (avatarURL) {
-			student.avatarImageURLString = [avatarURL absoluteString];
-		} else {
+		student.avatarImageURLString = [avatarURL absoluteString];
+		if (!student.avatarImageURLString) {
 			UIImage *createdImage = self.avatarTableViewCell.avatarImageView.imageView.image;
 			if (createdImage) {
 				FGAvatarImageFile *avatarImageFile = [FGAvatarImageFileHelper avatarImageFileWithImage:createdImage
