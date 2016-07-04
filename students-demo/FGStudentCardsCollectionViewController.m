@@ -33,6 +33,9 @@
 
 static const CGFloat kGapAroundElements = 5.0;
 
+static const NSUInteger kNumberOfColumnsOnIPhoneIdiom = 1;
+static const NSUInteger kNumberOfColumnsOnIPadIdiom = 2;
+
 @implementation FGStudentCardsCollectionViewController
 
 @synthesize collectionView = _collectionView;
@@ -197,6 +200,13 @@ static const CGFloat kGapAroundElements = 5.0;
 	return navigationItem;
 }
 
+#pragma mark Rotation
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+	[self.collectionView performBatchUpdates:nil completion:nil];
+}
+
 #pragma mark - Public methods
 #pragma mark Accessors
 #pragma mark Overrides
@@ -260,7 +270,7 @@ static const CGFloat kGapAroundElements = 5.0;
 
 #pragma mark - User interaction handlers
 
-- (void)addBarButtonTapped:(id)sender
+- (void)addBarButtonTapped:(UIBarButtonItem *)sender
 {
 	UIAlertController *actionSheet =
 	[FGNewStudentActionSheet newStudentActionSheetAlertController:^(FGNewStudentActionSheetAction action) {
@@ -294,13 +304,17 @@ static const CGFloat kGapAroundElements = 5.0;
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	const CGFloat totalWidth = collectionView.frame.size.width;
-	const CGFloat availableWidthForCards = (totalWidth - (kGapAroundElements * 2));
+	const NSUInteger numberOfColumns = ([FGUIKitUtilities isIPadLayout]?
+										kNumberOfColumnsOnIPadIdiom : kNumberOfColumnsOnIPhoneIdiom);
+	
+	const CGFloat availableWidthForCards = (totalWidth - (kGapAroundElements * (CGFloat)(numberOfColumns + 1)));
+	const CGFloat cardWidth = (availableWidthForCards / (CGFloat)numberOfColumns);
 	
 	const CGFloat cardRatio = (FGStudentCardCollectionViewCellSuggestedSize.height /
 							   FGStudentCardCollectionViewCellSuggestedSize.width);
 	
-	return CGSizeMake(availableWidthForCards,
-					  availableWidthForCards * cardRatio);
+	return CGSizeMake(cardWidth,
+					  cardWidth * cardRatio);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
