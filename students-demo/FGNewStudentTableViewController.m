@@ -238,6 +238,13 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	[self validateContent];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	
+	[self dismissKeyboard];
+}
+
 #pragma mark - Public methods
 #pragma mark Accessors
 #pragma mark Overrides
