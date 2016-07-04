@@ -454,6 +454,8 @@
 				66AB0A481D25B002004985E9 /* FGImageLoader.m */,
 				66AB0B3C1D29F8F4004985E9 /* FGUIKitUtilities.h */,
 				66AB0B3D1D29F8F4004985E9 /* FGUIKitUtilities.m */,
+				66AB0B101D29AB82004985E9 /* FGStatusBarNotification.h */,
+				66AB0B111D29AB82004985E9 /* FGStatusBarNotification.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -743,8 +745,6 @@
 				66AB0AFD1D28EDE0004985E9 /* FGStudentCardDetailView.m */,
 				66AB0B011D298AE1004985E9 /* FGStudentCardBackgroundView.h */,
 				66AB0B021D298AE1004985E9 /* FGStudentCardBackgroundView.m */,
-				66AB0B0D1D29A714004985E9 /* FGNewStudentActionSheet.h */,
-				66AB0B0E1D29A714004985E9 /* FGNewStudentActionSheet.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -752,8 +752,8 @@
 		66AB0B131D29AFDC004985E9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				66AB0B101D29AB82004985E9 /* FGStatusBarNotification.h */,
-				66AB0B111D29AB82004985E9 /* FGStatusBarNotification.m */,
+				66AB0B0D1D29A714004985E9 /* FGNewStudentActionSheet.h */,
+				66AB0B0E1D29A714004985E9 /* FGNewStudentActionSheet.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
