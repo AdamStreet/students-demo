@@ -63,6 +63,8 @@ static const CGFloat kGapAroundElements = 5.0;
 
 - (void)deleteStudent:(FGStudent *)student
 {
+	self.flippedCellIndexPath = nil;
+	
 	[[self databaseManager] deleteEntity:student];
 	[[self databaseManager] saveContext];
 }
