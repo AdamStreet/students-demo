@@ -16,6 +16,7 @@
 @property (nonatomic) FGImagedLabel *emailLabel;
 
 @property (nonatomic) FGButton *trashButton;
+@property (nonatomic) FGButton *editButton;
 
 @end
 
@@ -45,11 +46,15 @@
 		FGButton *trashButton = self.trashButton;
 		[containerView addSubview:trashButton];
 		
+		FGButton *editButton = self.editButton;
+		[containerView addSubview:editButton];
+		
 		nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		phoneLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		cellLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		emailLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		trashButton.translatesAutoresizingMaskIntoConstraints = NO;
+		editButton.translatesAutoresizingMaskIntoConstraints = NO;
 	}
 	
 	return self;
@@ -70,10 +75,11 @@
 	UIView *cellLabel = self.cellLabel;
 	UIView *emailLabel = self.emailLabel;
 	UIView *trashButton = self.trashButton;
+	UIView *editButton = self.editButton;
 	
 	NSDictionary *subviews = NSDictionaryOfVariableBindings(nameLabel,
 															phoneLabel, cellLabel, emailLabel,
-															trashButton);
+															trashButton, editButton);
 	
 	[containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[nameLabel]-|"
 																		  options:kNilOptions
@@ -116,6 +122,15 @@
 																		  metrics:nil
 																			views:subviews]];
 	[containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[trashButton]-|"
+																		  options:kNilOptions
+																		  metrics:nil
+																			views:subviews]];
+	
+	[containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[trashButton]-[editButton]"
+																		  options:kNilOptions
+																		  metrics:nil
+																			views:subviews]];
+	[containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[editButton]-|"
 																		  options:kNilOptions
 																		  metrics:nil
 																			views:subviews]];
@@ -173,6 +188,17 @@
 	}
 	
 	return _trashButton;
+}
+
+- (FGButton *)editButton
+{
+	if (!_editButton) {
+		_editButton = [[FGButton alloc] initWithFrame:CGRectZero];
+		[_editButton setImage:[UIImage imageNamed:@"icon_button_edit"]
+					 forState:UIControlStateNormal];
+	}
+	
+	return _editButton;
 }
 
 #pragma mark Overrides

@@ -8,8 +8,16 @@
 
 #import "FGButtonedTableViewCell.h"
 
+typedef NS_ENUM(NSInteger, FGAddPhotoTableViewCellAvatarState)
+{
+	FGAddPhotoTableViewCellAvatarStateNoAvatar = 0,
+	FGAddPhotoTableViewCellAvatarStateAssignedAvatar
+};
+
 extern NSString * const FGAddPhotoTableViewCellIdentifier;
 
 @interface FGAddPhotoTableViewCell : FGButtonedTableViewCell
+
+@property (nonatomic) FGAddPhotoTableViewCellAvatarState avatarState;
 
 @end

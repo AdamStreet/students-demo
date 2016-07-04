@@ -20,7 +20,7 @@
 #import "FGImagePickerViewController.h"
 #import "FGAlertView.h"
 #import "FGLocalization.h"
-#import "FGAvatarImageFileCreator.h"
+#import "FGAvatarImageFileHelper.h"
 #import "FGBarButtonItem.h"
 #import "FGTextFieldEventHandlerHelper.h"
 #import "FGCellTextFieldTableViewCell.h"
@@ -28,6 +28,8 @@
 #import "FGEmailTextFieldTableViewCell.h"
 
 @interface FGNewStudentTableViewController ()
+
+@property (nonatomic) FGStudent *student;
 
 @property (nonatomic) FGBarButtonItem *doneButtonItem;
 
@@ -65,13 +67,18 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 
 #pragma mark - Initialization
 
-- (id)initWithNewStudent
+- (instancetype)initWithStudent:(FGStudent *)student
 {
 	self = [super initWithStyle:UITableViewStyleGrouped];
-//	if (self) {
-//	}
-	
+	if (self) {
+		self.student = student;
+	}
 	return self;
+}
+
+- (id)initWithNewStudent	// Convenience initializes
+{
+	return [self initWithStudent:nil];
 };
 
 #pragma mark - Private methods
@@ -81,14 +88,37 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	return [FGDatabaseManager mainDatabaseManager];
 }
 
+- (BOOL)hasAddedPhoto
+{
+	return (self.avatarTableViewCell.avatarImageView.imageURL ||
+			self.avatarTableViewCell.avatarImageView.imageView.image);
+}
+
+- (void)removePhoto
+{
+	[self.avatarTableViewCell.avatarImageView clear];
+	
+	[self updateAddPhotoCellState];
+}
+
+- (void)updateAddPhotoCellState
+{
+	self.addPhotoTableViewCell.avatarState = ([self hasAddedPhoto]?
+											  FGAddPhotoTableViewCellAvatarStateAssignedAvatar : FGAddPhotoTableViewCellAvatarStateNoAvatar);
+}
+
 - (void)addPhoto
 {
 	FGImagePickerViewController *imagePickerViewController = [[FGImagePickerViewController alloc] initWithoutNib];
 	__weak FGImagePickerViewController *weakImagePickerViewController = imagePickerViewController;
 	imagePickerViewController.completion = ^(UIImage *image){
 		if (image) {
+			[self.avatarTableViewCell.avatarImageView clear];
 			self.avatarTableViewCell.avatarImageView.imageView.image = image;
 		}
+		
+		[self updateAddPhotoCellState];
+		
 		[weakImagePickerViewController.presentingViewController dismissViewControllerAnimated:YES
 																			   completion:nil];
 	};
@@ -148,6 +178,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		_firstNameTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGFirstNameTextFieldTableViewCellIdentifier
 																				forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowFirstName inSection:kSectionInputTextFields]];
 		[self.textFieldEventHandlerHelper registerTextField:_firstNameTextFieldTableViewCell.textField];
+		_firstNameTextFieldTableViewCell.textField.text = self.student.firstName;
 	}
 	
 	return _firstNameTextFieldTableViewCell;
@@ -159,6 +190,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		_lastNameTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGLastNameTextFieldTableViewCellIdentifier
 																			   forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowLastName inSection:kSectionInputTextFields]];
 		[self.textFieldEventHandlerHelper registerTextField:_lastNameTextFieldTableViewCell.textField];
+		_lastNameTextFieldTableViewCell.textField.text = self.student.lastName;
 	}
 	
 	return _lastNameTextFieldTableViewCell;
@@ -170,6 +202,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		_phoneTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGPhoneTextFieldTableViewCellIdentifier
 																			forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowPhone inSection:kSectionInputTextFields]];
 		[self.textFieldEventHandlerHelper registerTextField:_phoneTextFieldTableViewCell.textField];
+		_phoneTextFieldTableViewCell.textField.text = self.student.phone;
 	}
 	
 	return _phoneTextFieldTableViewCell;
@@ -181,6 +214,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		_cellTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGCellTextFieldTableViewCellIdentifier
 																		   forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowCell inSection:kSectionInputTextFields]];
 		[self.textFieldEventHandlerHelper registerTextField:_cellTextFieldTableViewCell.textField];
+		_cellTextFieldTableViewCell.textField.text = self.student.cell;
 	}
 	
 	return _cellTextFieldTableViewCell;
@@ -192,6 +226,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		_emailTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGEmailTextFieldTableViewCellIdentifier
 																			forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowEmail inSection:kSectionInputTextFields]];
 		[self.textFieldEventHandlerHelper registerTextField:_emailTextFieldTableViewCell.textField];
+		_emailTextFieldTableViewCell.textField.text = self.student.email;
 	}
 	
 	return _emailTextFieldTableViewCell;
@@ -202,6 +237,8 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	if (!_avatarTableViewCell) {
 		_avatarTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGAvatarTableViewCellIdentifier
 																	forIndexPath:[NSIndexPath indexPathForRow:0 inSection:kSectionAvatar]];
+		[_avatarTableViewCell.avatarImageView setImageURL:[self.student avatarImageURL]
+											   completion:nil];
 	}
 	
 	return _avatarTableViewCell;
@@ -213,7 +250,11 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		_addPhotoTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGAddPhotoTableViewCellIdentifier
 																	  forIndexPath:[NSIndexPath indexPathForRow:0 inSection:kSectionAddPhoto]];
 		_addPhotoTableViewCell.button.tapHandler = ^{
-			[self addPhoto];
+			if (![self hasAddedPhoto]) {
+				[self addPhoto];
+			} else {
+				[self removePhoto];
+			}
 		};
 	}
 	
@@ -236,6 +277,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	[super viewWillAppear:animated];
 	
 	[self validateContent];
+	[self updateAddPhotoCellState];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -281,29 +323,42 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	
 	[self dismissKeyboard];
 	
-	FGStudent *newStudent = [[self databaseManager] insertEntity:[FGStudent entityName]];
-	newStudent.firstName = self.firstNameTextFieldTableViewCell.textField.text;
-	newStudent.lastName = self.lastNameTextFieldTableViewCell.textField.text;
-	newStudent.email = self.emailTextFieldTableViewCell.textField.text;
-	newStudent.phone = self.phoneTextFieldTableViewCell.textField.text;
-	newStudent.cell = self.cellTextFieldTableViewCell.textField.text;
+	FGStudent *student = self.student;
+	if (!student) {
+		student = [[self databaseManager] insertEntity:[FGStudent entityName]];
+	}
+	
+	student.firstName = self.firstNameTextFieldTableViewCell.textField.text;
+	student.lastName = self.lastNameTextFieldTableViewCell.textField.text;
+	student.email = self.emailTextFieldTableViewCell.textField.text;
+	student.phone = self.phoneTextFieldTableViewCell.textField.text;
+	student.cell = self.cellTextFieldTableViewCell.textField.text;
 	
 	NSURL *avatarURL = self.avatarTableViewCell.avatarImageView.imageURL;
-	if (avatarURL) {
-		newStudent.avatarImageURLString = [avatarURL absoluteString];
-	} else {
-		UIImage *createdImage = self.avatarTableViewCell.avatarImageView.imageView.image;
-		if (createdImage) {
-			FGAvatarImageFile *avatarImageFile = [FGAvatarImageFileCreator avatarImageFileWithImage:createdImage
-																			  databaseManager:[self databaseManager]];
-			newStudent.avatarImageFile = avatarImageFile;
+	
+	const BOOL isExistingStudent = !!self.student;
+	const BOOL hasChangedAvatarImage = ![self.avatarTableViewCell.avatarImageView.imageURL isFileURL];
+	
+	if (!isExistingStudent || hasChangedAvatarImage) {
+		[FGAvatarImageFileHelper clearAvatarImageFile:student.avatarImageFile
+									  databaseManager:[self databaseManager]];
+		
+		if (avatarURL) {
+			student.avatarImageURLString = [avatarURL absoluteString];
+		} else {
+			UIImage *createdImage = self.avatarTableViewCell.avatarImageView.imageView.image;
+			if (createdImage) {
+				FGAvatarImageFile *avatarImageFile = [FGAvatarImageFileHelper avatarImageFileWithImage:createdImage
+																					   databaseManager:[self databaseManager]];
+				student.avatarImageFile = avatarImageFile;
+			}
 		}
 	}
 
 	[[self databaseManager] saveContext];
 	
 	if (self.completionHandler) {
-		self.completionHandler(newStudent);
+		self.completionHandler(student);
 	}
 }
 

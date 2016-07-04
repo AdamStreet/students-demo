@@ -23,6 +23,7 @@ typedef void(^FGStudentCardCollectionViewCellButtonTapHandler)();
 //@property (nonatomic, readonly) FGStudentCardBackgroundView *studentCardBackgroundView;
 
 @property (nonatomic, copy) FGStudentCardCollectionViewCellButtonTapHandler trashButtonTapHandler;
+@property (nonatomic, copy) FGStudentCardCollectionViewCellButtonTapHandler editButtonTapHandler;
 
 @property (nonatomic, readonly, getter=isFlipped) BOOL flipped;
 

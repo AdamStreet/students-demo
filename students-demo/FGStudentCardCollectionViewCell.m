@@ -77,6 +77,11 @@ static NSTimeInterval kFlipAnimationDuration = 0.5;
 			self.trashButtonTapHandler();
 		}
 	};
+	self.studentCardBackgroundView.editButton.tapHandler = ^{
+		if (self.editButtonTapHandler) {
+			self.editButtonTapHandler();
+		}
+	};
 }
 
 #pragma mark Accessors

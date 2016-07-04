@@ -102,9 +102,9 @@ static const NSUInteger kNumberOfColumnsOnIPadIdiom = 2;
 										animated:YES];
 }
 
-- (void)showAddStudentViewController
+- (void)showAddStudentViewController:(FGStudent *)student
 {
-	FGNewStudentTableViewController *newStudentTableViewController = [[FGNewStudentTableViewController alloc] initWithNewStudent];
+	FGNewStudentTableViewController *newStudentTableViewController = [[FGNewStudentTableViewController alloc] initWithStudent:student];
 	
 	// Wrap in NavigationController
 	FGNavigationController *navigationController = [[FGNavigationController alloc] initWithRootViewController:newStudentTableViewController];
@@ -259,6 +259,9 @@ static const NSUInteger kNumberOfColumnsOnIPadIdiom = 2;
 		castedCell.trashButtonTapHandler = ^{
 			[weakSelf showDeleteConfirmationAlert:student];
 		};
+		castedCell.editButtonTapHandler = ^{
+			[self showAddStudentViewController:student];
+		};
 		
 		const BOOL invalidState = ( ([indexPath isEqual:self.flippedCellIndexPath] && !castedCell.isFlipped) ||
 								   (![indexPath isEqual:self.flippedCellIndexPath] && castedCell.isFlipped));
@@ -280,7 +283,7 @@ static const NSUInteger kNumberOfColumnsOnIPadIdiom = 2;
 			return;
 		
 		if (action == FGNewStudentActionSheetActionAddCustomStudent) {
-			[self showAddStudentViewController];
+			[self showAddStudentViewController:nil];
 			
 			return;
 		}

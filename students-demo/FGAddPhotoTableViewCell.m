@@ -18,11 +18,39 @@ NSString * const FGAddPhotoTableViewCellIdentifier = @"FGAddPhotoTableViewCell";
 {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self) {
-		[self.button setTitle:FGLocalizedString(@"Add Profile Photo", @"Add photo button title")
-					 forState:UIControlStateNormal];
+		[self updateLabel];
 	}
 	
 	return self;
+}
+
+- (void)updateLabel
+{
+	NSString *title = nil;
+	switch (self.avatarState) {
+		case FGAddPhotoTableViewCellAvatarStateNoAvatar:
+			title = FGLocalizedString(@"Add Profile Photo", @"Manipulate Photo button title");
+			
+			break;
+			
+		case FGAddPhotoTableViewCellAvatarStateAssignedAvatar:
+			title = FGLocalizedString(@"Remove Profile Photo", @"Manipulate Photo button title");
+			
+			break;
+			
+		default:
+			break;
+	}
+	
+	[self.button setTitle:title
+				 forState:UIControlStateNormal];
+}
+
+- (void)setAvatarState:(FGAddPhotoTableViewCellAvatarState)avatarState
+{
+	_avatarState = avatarState;
+	
+	[self updateLabel];
 }
 
 @end

@@ -16,6 +16,8 @@ typedef void(^FGNewStudentTableViewControllerCompletion)(FGStudent *student);
 
 @property (nonatomic, copy) FGNewStudentTableViewControllerCompletion completionHandler;
 
-- (id)initWithNewStudent;
+- (instancetype)initWithStudent:(FGStudent *)student;
+
+- (id)initWithNewStudent;	// Calls initWithStudent: with nil parameter
 
 @end

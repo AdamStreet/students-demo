@@ -6,13 +6,14 @@
 //  Copyright © 2016 Adam Szabo. All rights reserved.
 //
 
-#import "FGAvatarImageFileCreator.h"
+#import "FGAvatarImageFileHelper.h"
 
 #import "FGLocalPaths.h"
 #import "FGDatabaseManager.h"
 #import "FGLogger.h"
+#import "FGStudent.h"
 
-@implementation FGAvatarImageFileCreator
+@implementation FGAvatarImageFileHelper
 
 #pragma mark - Private methods
 
@@ -26,6 +27,8 @@
 + (FGAvatarImageFile *)avatarImageFileWithImage:(UIImage *)image
 								databaseManager:(FGDatabaseManager *)databaseManager
 {
+	NSParameterAssert(databaseManager);
+	
 	FGAvatarImageFile *imageFile = [databaseManager insertEntity:[FGAvatarImageFile entityName]];
 	NSString *imageFileName = [FGFile uniqueFileName];
 	
@@ -35,6 +38,17 @@
 	imageFile.relativePath = [fileURL relativePath];
 	
 	return imageFile;
+}
+
++ (void)clearAvatarImageFile:(FGAvatarImageFile *)avatarImageFile
+			 databaseManager:(FGDatabaseManager *)databaseManager
+{
+	NSParameterAssert(databaseManager);
+	
+	if (!avatarImageFile)
+		return;
+	
+	[databaseManager deleteEntity:avatarImageFile];
 }
 
 @end

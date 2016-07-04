@@ -66,7 +66,7 @@
 		66AB0AA51D2603B8004985E9 /* FGImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AA41D2603B8004985E9 /* FGImagePickerViewController.m */; };
 		66AB0AA81D277A43004985E9 /* FGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AA71D277A43004985E9 /* FGAlertView.m */; };
 		66AB0AAB1D2781E3004985E9 /* FGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AAA1D2781E3004985E9 /* FGButton.m */; };
-		66AB0AAE1D278DAB004985E9 /* FGAvatarImageFileCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AAD1D278DAB004985E9 /* FGAvatarImageFileCreator.m */; };
+		66AB0AAE1D278DAB004985E9 /* FGAvatarImageFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AAD1D278DAB004985E9 /* FGAvatarImageFileHelper.m */; };
 		66AB0ABA1D279063004985E9 /* FGBaseStudentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AB91D279063004985E9 /* FGBaseStudentTableViewCell.m */; };
 		66AB0AC41D285245004985E9 /* FGBaseStudentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AC31D285245004985E9 /* FGBaseStudentTableViewController.m */; };
 		66AB0AC71D2853E3004985E9 /* FGBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0AC61D2853E3004985E9 /* FGBarButtonItem.m */; };
@@ -234,8 +234,8 @@
 		66AB0AA71D277A43004985E9 /* FGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAlertView.m; sourceTree = "<group>"; };
 		66AB0AA91D2781E3004985E9 /* FGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGButton.h; sourceTree = "<group>"; };
 		66AB0AAA1D2781E3004985E9 /* FGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGButton.m; sourceTree = "<group>"; };
-		66AB0AAC1D278DAB004985E9 /* FGAvatarImageFileCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGAvatarImageFileCreator.h; sourceTree = "<group>"; };
-		66AB0AAD1D278DAB004985E9 /* FGAvatarImageFileCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAvatarImageFileCreator.m; sourceTree = "<group>"; };
+		66AB0AAC1D278DAB004985E9 /* FGAvatarImageFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGAvatarImageFileHelper.h; sourceTree = "<group>"; };
+		66AB0AAD1D278DAB004985E9 /* FGAvatarImageFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGAvatarImageFileHelper.m; sourceTree = "<group>"; };
 		66AB0AB81D279063004985E9 /* FGBaseStudentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGBaseStudentTableViewCell.h; sourceTree = "<group>"; };
 		66AB0AB91D279063004985E9 /* FGBaseStudentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGBaseStudentTableViewCell.m; sourceTree = "<group>"; };
 		66AB0AC21D285245004985E9 /* FGBaseStudentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGBaseStudentTableViewController.h; sourceTree = "<group>"; };
@@ -661,8 +661,8 @@
 		66AB0AAF1D278E9E004985E9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				66AB0AAC1D278DAB004985E9 /* FGAvatarImageFileCreator.h */,
-				66AB0AAD1D278DAB004985E9 /* FGAvatarImageFileCreator.m */,
+				66AB0AAC1D278DAB004985E9 /* FGAvatarImageFileHelper.h */,
+				66AB0AAD1D278DAB004985E9 /* FGAvatarImageFileHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -923,7 +923,7 @@
 				66AB0A8E1D25EF34004985E9 /* FGLastNameTextFieldTableViewCell.m in Sources */,
 				66AB0AE51D28A972004985E9 /* FGCollectionView.m in Sources */,
 				66AB09F41D24DC2D004985E9 /* FGSessionProvider.m in Sources */,
-				66AB0AAE1D278DAB004985E9 /* FGAvatarImageFileCreator.m in Sources */,
+				66AB0AAE1D278DAB004985E9 /* FGAvatarImageFileHelper.m in Sources */,
 				66AB0AA81D277A43004985E9 /* FGAlertView.m in Sources */,
 				66AB0A721D25DF32004985E9 /* FGAddPhotoTableViewCell.m in Sources */,
 				66AB0AA51D2603B8004985E9 /* FGImagePickerViewController.m in Sources */,

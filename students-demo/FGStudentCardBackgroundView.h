@@ -19,5 +19,6 @@
 @property (nonatomic, readonly) FGImagedLabel *emailLabel;
 
 @property (nonatomic, readonly) FGButton *trashButton;
+@property (nonatomic, readonly) FGButton *editButton;
 
 @end

@@ -12,9 +12,12 @@
 
 @class FGDatabaseManager;
 
-@interface FGAvatarImageFileCreator : NSObject
+@interface FGAvatarImageFileHelper : NSObject
 
 + (FGAvatarImageFile *)avatarImageFileWithImage:(UIImage *)image
 								databaseManager:(FGDatabaseManager *)databaseManager;
+
++ (void)clearAvatarImageFile:(FGAvatarImageFile *)avatarImageFile
+			 databaseManager:(FGDatabaseManager *)databaseManager;
 
 @end
