@@ -61,7 +61,7 @@
 		return;
 	
 	const CGRect keyboardNetRect = [self.view.window convertRect:keyboardRectOnWindow
-														  toView:self.tableView];
+														  toView:self.view];
 	
 	CGFloat coveredBottomFrameHeight = (keyboardNetRect.origin.y - self.view.frame.size.height);
 	const BOOL isKeyboardOutOfCurrentView = (0.0 < coveredBottomFrameHeight);
@@ -71,7 +71,7 @@
 	
 	[UIView animateWithDuration:animationDuration
 					 animations:^{
-						 self.tableViewHeightConstraint.constant = -coveredBottomFrameHeight;
+						 self.tableViewHeightConstraint.constant = coveredBottomFrameHeight;
 					 }];
 }
 
