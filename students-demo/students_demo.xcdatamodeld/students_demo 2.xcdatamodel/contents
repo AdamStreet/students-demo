@@ -18,7 +18,7 @@
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="avatarImageFile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AvatarImageFile" inverseName="member" inverseEntity="AvatarImageFile" syncable="YES"/>
+        <relationship name="avatarImageFile" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="AvatarImageFile" inverseName="member" inverseEntity="AvatarImageFile" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="FGStudent" parentEntity="Member" syncable="YES">
         <attribute name="averageGrade" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -30,11 +30,11 @@
     </entity>
     <elements>
         <element name="AvatarImageFile" positionX="72" positionY="-120" width="128" height="58"/>
+        <element name="Department" positionX="-414" positionY="-180" width="128" height="75"/>
         <element name="File" positionX="70" positionY="-324" width="128" height="58"/>
-        <element name="ImageFile" positionX="70" positionY="-216" width="128" height="45"/>
+        <element name="ImageFile" positionX="70" positionY="-216" width="128" height="43"/>
+        <element name="Member" positionX="-153" positionY="-211" width="128" height="148"/>
         <element name="Student" positionX="-36" positionY="9" width="128" height="73"/>
         <element name="Teacher" positionX="-234" positionY="9" width="128" height="73"/>
-        <element name="Member" positionX="-153" positionY="-211" width="128" height="148"/>
-        <element name="Department" positionX="-414" positionY="-180" width="128" height="75"/>
     </elements>
 </model>
