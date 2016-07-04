@@ -102,6 +102,7 @@
 		66AB0B341D29EEEA004985E9 /* FGPhoneTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B331D29EEEA004985E9 /* FGPhoneTextFieldTableViewCell.m */; };
 		66AB0B371D29EEF8004985E9 /* FGCellTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B361D29EEF8004985E9 /* FGCellTextFieldTableViewCell.m */; };
 		66AB0B3A1D29EF50004985E9 /* FGEmailTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B391D29EF50004985E9 /* FGEmailTextFieldTableViewCell.m */; };
+		66AB0B3E1D29F8F4004985E9 /* FGUIKitUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B3D1D29F8F4004985E9 /* FGUIKitUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -298,6 +299,8 @@
 		66AB0B361D29EEF8004985E9 /* FGCellTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGCellTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		66AB0B381D29EF50004985E9 /* FGEmailTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGEmailTextFieldTableViewCell.h; sourceTree = "<group>"; };
 		66AB0B391D29EF50004985E9 /* FGEmailTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGEmailTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		66AB0B3C1D29F8F4004985E9 /* FGUIKitUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGUIKitUtilities.h; sourceTree = "<group>"; };
+		66AB0B3D1D29F8F4004985E9 /* FGUIKitUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGUIKitUtilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +452,8 @@
 				66AB0A421D25A705004985E9 /* FGImageCache.m */,
 				66AB0A471D25B002004985E9 /* FGImageLoader.h */,
 				66AB0A481D25B002004985E9 /* FGImageLoader.m */,
+				66AB0B3C1D29F8F4004985E9 /* FGUIKitUtilities.h */,
+				66AB0B3D1D29F8F4004985E9 /* FGUIKitUtilities.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -924,6 +929,7 @@
 				66AB0AA51D2603B8004985E9 /* FGImagePickerViewController.m in Sources */,
 				66AB0B031D298AE1004985E9 /* FGStudentCardBackgroundView.m in Sources */,
 				66AB0A371D259D03004985E9 /* FGFile.m in Sources */,
+				66AB0B3E1D29F8F4004985E9 /* FGUIKitUtilities.m in Sources */,
 				66AB0A941D25F4DA004985E9 /* FGScrollView.m in Sources */,
 				66AB0A841D25E5C4004985E9 /* FGAvatarImageView.m in Sources */,
 				66AB0A401D25A56A004985E9 /* FGImageFetcher.m in Sources */,

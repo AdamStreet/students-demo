@@ -10,6 +10,7 @@
 
 #import "FGNavigationController.h"
 #import "FGStudentCardsCollectionViewController.h"
+#import "FGUIKitUtilities.h"
 
 @interface FGRootViewController ()
 
@@ -41,6 +42,13 @@
 	[contentView addSubview:mainViewControllerView];
 	
 	[mainViewController didMoveToParentViewController:self];
+}
+
+#pragma mark Rotation
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+	return [FGUIKitUtilities defaultSupportedInterfaceOrientations];
 }
 
 #pragma mark - Public methods

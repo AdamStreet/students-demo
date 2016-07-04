@@ -19,6 +19,7 @@
 #import "FGNewStudentActionSheet.h"
 #import "FGStudentFetcher.h"
 #import "FGStatusBarNotification.h"
+#import "FGUIKitUtilities.h"
 
 @interface FGStudentCardsCollectionViewController ()
 
