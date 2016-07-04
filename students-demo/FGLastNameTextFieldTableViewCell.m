@@ -18,8 +18,8 @@ NSString * const FGLastNameTextFieldTableViewCellIdentifier = @"FGLastNameTextFi
 {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self) {
-		self.textField.placeholder = FGLocalizedString(@"Last name", @"Last name placeholder");
-		self.prefixLabel.text = FGLocalizedString(@"Last", @"Last name prefix");
+		self.textField.placeholder = FGLocalizedString(@"Last name", @"Student input placeholder");
+		self.prefixLabel.text = FGLocalizedString(@"Last", @"Student input prefix");
 	}
 	
 	return self;

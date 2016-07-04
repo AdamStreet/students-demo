@@ -98,6 +98,10 @@
 		66AB0B261D29C70F004985E9 /* FGDepartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B251D29C70F004985E9 /* FGDepartment.m */; };
 		66AB0B291D29C71D004985E9 /* FGTeacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B281D29C71D004985E9 /* FGTeacher.m */; };
 		66AB0B2C1D29C72B004985E9 /* FGMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B2B1D29C72B004985E9 /* FGMember.m */; };
+		66AB0B2F1D29EE24004985E9 /* FGPhonePadTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B2E1D29EE24004985E9 /* FGPhonePadTextFieldTableViewCell.m */; };
+		66AB0B341D29EEEA004985E9 /* FGPhoneTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B331D29EEEA004985E9 /* FGPhoneTextFieldTableViewCell.m */; };
+		66AB0B371D29EEF8004985E9 /* FGCellTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B361D29EEF8004985E9 /* FGCellTextFieldTableViewCell.m */; };
+		66AB0B3A1D29EF50004985E9 /* FGEmailTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B391D29EF50004985E9 /* FGEmailTextFieldTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,6 +290,14 @@
 		66AB0B281D29C71D004985E9 /* FGTeacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTeacher.m; sourceTree = "<group>"; };
 		66AB0B2A1D29C72B004985E9 /* FGMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGMember.h; sourceTree = "<group>"; };
 		66AB0B2B1D29C72B004985E9 /* FGMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGMember.m; sourceTree = "<group>"; };
+		66AB0B2D1D29EE24004985E9 /* FGPhonePadTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGPhonePadTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		66AB0B2E1D29EE24004985E9 /* FGPhonePadTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGPhonePadTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		66AB0B321D29EEEA004985E9 /* FGPhoneTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGPhoneTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		66AB0B331D29EEEA004985E9 /* FGPhoneTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGPhoneTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		66AB0B351D29EEF8004985E9 /* FGCellTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGCellTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		66AB0B361D29EEF8004985E9 /* FGCellTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGCellTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		66AB0B381D29EF50004985E9 /* FGEmailTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGEmailTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		66AB0B391D29EF50004985E9 /* FGEmailTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGEmailTextFieldTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -632,10 +644,9 @@
 			children = (
 				66AB0A731D25DF6A004985E9 /* FGTextFieldTableViewCell.h */,
 				66AB0A741D25DF6A004985E9 /* FGTextFieldTableViewCell.m */,
-				66AB0A891D25EF2B004985E9 /* FGFirstNameTextFieldTableViewCell.h */,
-				66AB0A8A1D25EF2B004985E9 /* FGFirstNameTextFieldTableViewCell.m */,
-				66AB0A8C1D25EF34004985E9 /* FGLastNameTextFieldTableViewCell.h */,
-				66AB0A8D1D25EF34004985E9 /* FGLastNameTextFieldTableViewCell.m */,
+				66AB0B3B1D29EF53004985E9 /* Email */,
+				66AB0B311D29EE4E004985E9 /* TextInput */,
+				66AB0B301D29EE31004985E9 /* NumberInput */,
 			);
 			name = TextFields;
 			sourceTree = "<group>";
@@ -740,6 +751,39 @@
 				66AB0B111D29AB82004985E9 /* FGStatusBarNotification.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		66AB0B301D29EE31004985E9 /* NumberInput */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0B2D1D29EE24004985E9 /* FGPhonePadTextFieldTableViewCell.h */,
+				66AB0B2E1D29EE24004985E9 /* FGPhonePadTextFieldTableViewCell.m */,
+				66AB0B321D29EEEA004985E9 /* FGPhoneTextFieldTableViewCell.h */,
+				66AB0B331D29EEEA004985E9 /* FGPhoneTextFieldTableViewCell.m */,
+				66AB0B351D29EEF8004985E9 /* FGCellTextFieldTableViewCell.h */,
+				66AB0B361D29EEF8004985E9 /* FGCellTextFieldTableViewCell.m */,
+			);
+			name = NumberInput;
+			sourceTree = "<group>";
+		};
+		66AB0B311D29EE4E004985E9 /* TextInput */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0A891D25EF2B004985E9 /* FGFirstNameTextFieldTableViewCell.h */,
+				66AB0A8A1D25EF2B004985E9 /* FGFirstNameTextFieldTableViewCell.m */,
+				66AB0A8C1D25EF34004985E9 /* FGLastNameTextFieldTableViewCell.h */,
+				66AB0A8D1D25EF34004985E9 /* FGLastNameTextFieldTableViewCell.m */,
+			);
+			name = TextInput;
+			sourceTree = "<group>";
+		};
+		66AB0B3B1D29EF53004985E9 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				66AB0B381D29EF50004985E9 /* FGEmailTextFieldTableViewCell.h */,
+				66AB0B391D29EF50004985E9 /* FGEmailTextFieldTableViewCell.m */,
+			);
+			name = Email;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -898,6 +942,7 @@
 				66AB0A461D25A88F004985E9 /* FGLocalPaths.m in Sources */,
 				66AB0B231D29C6FE004985E9 /* _FGTeacher.m in Sources */,
 				66AB0A031D24E506004985E9 /* FGCrashReporter.m in Sources */,
+				66AB0B371D29EEF8004985E9 /* FGCellTextFieldTableViewCell.m in Sources */,
 				66AB0AC71D2853E3004985E9 /* FGBarButtonItem.m in Sources */,
 				66AB0A211D24FAAC004985E9 /* FGLocalization.m in Sources */,
 				66AB0A9D1D260177004985E9 /* FGActivityIndicatorView.m in Sources */,
@@ -905,6 +950,7 @@
 				66AB0A4C1D25B321004985E9 /* FGFetchedResultsTableViewController.m in Sources */,
 				66AB09E31D24D966004985E9 /* UIColor+CustomColors.m in Sources */,
 				66AB099B1D24CD06004985E9 /* FGViewController.m in Sources */,
+				66AB0B341D29EEEA004985E9 /* FGPhoneTextFieldTableViewCell.m in Sources */,
 				66AB09DF1D24D835004985E9 /* FGTableView.m in Sources */,
 				66AB0AEF1D28DAEC004985E9 /* FGCollectionViewCell.m in Sources */,
 				66AB0B091D299231004985E9 /* FGImagedLabel.m in Sources */,
@@ -917,11 +963,13 @@
 				66AB09F71D24DE01004985E9 /* FGRemoteDataFetcher.m in Sources */,
 				66AB0B1A1D29C49E004985E9 /* Model.xcmappingmodel in Sources */,
 				66AB0ABA1D279063004985E9 /* FGBaseStudentTableViewCell.m in Sources */,
+				66AB0B3A1D29EF50004985E9 /* FGEmailTextFieldTableViewCell.m in Sources */,
 				66AB0A491D25B002004985E9 /* FGImageLoader.m in Sources */,
 				66AB0A2A1D259C96004985E9 /* _FGAvatarImageFile.m in Sources */,
 				66AB0B261D29C70F004985E9 /* FGDepartment.m in Sources */,
 				66AB0A171D24EDC5004985E9 /* FGStudentAPIKeys.m in Sources */,
 				66AB0B291D29C71D004985E9 /* FGTeacher.m in Sources */,
+				66AB0B2F1D29EE24004985E9 /* FGPhonePadTextFieldTableViewCell.m in Sources */,
 				66AB0B0F1D29A714004985E9 /* FGNewStudentActionSheet.m in Sources */,
 				66AB0A391D259D03004985E9 /* FGStudent.m in Sources */,
 				66AB09951D24CD06004985E9 /* main.m in Sources */,

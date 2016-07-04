@@ -23,6 +23,9 @@
 #import "FGAvatarImageFileCreator.h"
 #import "FGBarButtonItem.h"
 #import "FGTextFieldEventHandlerHelper.h"
+#import "FGCellTextFieldTableViewCell.h"
+#import "FGPhoneTextFieldTableViewCell.h"
+#import "FGEmailTextFieldTableViewCell.h"
 
 @interface FGNewStudentTableViewController ()
 
@@ -32,6 +35,9 @@
 
 @property (nonatomic) FGFirstNameTextFieldTableViewCell *firstNameTextFieldTableViewCell;
 @property (nonatomic) FGLastNameTextFieldTableViewCell *lastNameTextFieldTableViewCell;
+@property (nonatomic) FGPhoneTextFieldTableViewCell *phoneTextFieldTableViewCell;
+@property (nonatomic) FGCellTextFieldTableViewCell *cellTextFieldTableViewCell;
+@property (nonatomic) FGEmailTextFieldTableViewCell *emailTextFieldTableViewCell;
 @property (nonatomic) FGAvatarTableViewCell *avatarTableViewCell;
 @property (nonatomic) FGAddPhotoTableViewCell *addPhotoTableViewCell;
 
@@ -40,14 +46,17 @@
 typedef NS_ENUM(NSUInteger, Sections) {
 	kSectionAvatar = 0,
 	kSectionAddPhoto = 1,
-	kSectionNameTextFields = 2,
+	kSectionInputTextFields = 2,
 	kNumberOfSections = 3,
 };
 
 typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 	kTextFieldRowFirstName = 0,
 	kTextFieldRowLastName = 1,
-	kNumberOfTextFieldsRows = 2,
+	kTextFieldRowEmail = 2,
+	kTextFieldRowCell = 3,
+	kTextFieldRowPhone = 4,
+	kNumberOfTextFieldsRows = 5,
 };
 
 @implementation FGNewStudentTableViewController
@@ -138,7 +147,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 {
 	if (!_firstNameTextFieldTableViewCell) {
 		_firstNameTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGFirstNameTextFieldTableViewCellIdentifier
-																				forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowFirstName inSection:kSectionNameTextFields]];
+																				forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowFirstName inSection:kSectionInputTextFields]];
 		[self.textFieldEventHandlerHelper registerTextField:_firstNameTextFieldTableViewCell.textField];
 	}
 	
@@ -149,11 +158,44 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 {
 	if (!_lastNameTextFieldTableViewCell) {
 		_lastNameTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGLastNameTextFieldTableViewCellIdentifier
-																			   forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowLastName inSection:kSectionNameTextFields]];
+																			   forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowLastName inSection:kSectionInputTextFields]];
 		[self.textFieldEventHandlerHelper registerTextField:_lastNameTextFieldTableViewCell.textField];
 	}
 	
 	return _lastNameTextFieldTableViewCell;
+}
+
+- (FGPhoneTextFieldTableViewCell *)phoneTextFieldTableViewCell
+{
+	if (!_phoneTextFieldTableViewCell) {
+		_phoneTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGPhoneTextFieldTableViewCellIdentifier
+																			forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowPhone inSection:kSectionInputTextFields]];
+		[self.textFieldEventHandlerHelper registerTextField:_phoneTextFieldTableViewCell.textField];
+	}
+	
+	return _phoneTextFieldTableViewCell;
+}
+
+- (FGCellTextFieldTableViewCell *)cellTextFieldTableViewCell
+{
+	if (!_cellTextFieldTableViewCell) {
+		_cellTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGCellTextFieldTableViewCellIdentifier
+																		   forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowCell inSection:kSectionInputTextFields]];
+		[self.textFieldEventHandlerHelper registerTextField:_cellTextFieldTableViewCell.textField];
+	}
+	
+	return _cellTextFieldTableViewCell;
+}
+
+- (FGEmailTextFieldTableViewCell *)emailTextFieldTableViewCell
+{
+	if (!_emailTextFieldTableViewCell) {
+		_emailTextFieldTableViewCell = [self.tableView dequeueReusableCellWithIdentifier:FGEmailTextFieldTableViewCellIdentifier
+																			forIndexPath:[NSIndexPath indexPathForRow:kTextFieldRowEmail inSection:kSectionInputTextFields]];
+		[self.textFieldEventHandlerHelper registerTextField:_emailTextFieldTableViewCell.textField];
+	}
+	
+	return _emailTextFieldTableViewCell;
 }
 
 - (FGAvatarTableViewCell *)avatarTableViewCell
@@ -214,6 +256,12 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		   forCellReuseIdentifier:FGFirstNameTextFieldTableViewCellIdentifier];
 		[_tableView registerClass:[FGLastNameTextFieldTableViewCell class]
 		   forCellReuseIdentifier:FGLastNameTextFieldTableViewCellIdentifier];
+		[_tableView registerClass:[FGPhoneTextFieldTableViewCell class]
+		   forCellReuseIdentifier:FGPhoneTextFieldTableViewCellIdentifier];
+		[_tableView registerClass:[FGCellTextFieldTableViewCell class]
+		   forCellReuseIdentifier:FGCellTextFieldTableViewCellIdentifier];
+		[_tableView registerClass:[FGEmailTextFieldTableViewCell class]
+		   forCellReuseIdentifier:FGEmailTextFieldTableViewCellIdentifier];
 	}
 	
 	return _tableView;
@@ -223,11 +271,16 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 
 - (void)doneButtonTapped:(id)sender
 {
+	NSAssert([self validateContent], @"Content is not valid: button should be disabled");
+	
 	[self dismissKeyboard];
 	
 	FGStudent *newStudent = [[self databaseManager] insertEntity:[FGStudent entityName]];
 	newStudent.firstName = self.firstNameTextFieldTableViewCell.textField.text;
 	newStudent.lastName = self.lastNameTextFieldTableViewCell.textField.text;
+	newStudent.email = self.emailTextFieldTableViewCell.textField.text;
+	newStudent.phone = self.phoneTextFieldTableViewCell.textField.text;
+	newStudent.cell = self.cellTextFieldTableViewCell.textField.text;
 	
 	NSURL *avatarURL = self.avatarTableViewCell.avatarImageView.imageURL;
 	if (avatarURL) {
@@ -266,7 +319,7 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 		case kSectionAddPhoto:
 			return 1;
 			
-		case kSectionNameTextFields:
+		case kSectionInputTextFields:
 			return kNumberOfTextFieldsRows;
 			
 		default:
@@ -280,45 +333,56 @@ typedef NS_ENUM(NSUInteger, TextFieldsRows) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	__kindof UITableViewCell *cell = nil;
+	__kindof FGSeparatedTableViewCell *cell = nil;
 	
 	switch (indexPath.section) {
 		case kSectionAvatar:
 			cell = self.avatarTableViewCell;
+			cell.topSeparator.hidden = YES;
+			cell.bottomSeparator.hidden = YES;
 			
 			break;
+			
 		case kSectionAddPhoto:
 			cell = self.addPhotoTableViewCell;
+			cell.topSeparator.hidden = YES;
+			cell.bottomSeparator.hidden = YES;
 			
 			break;
-		case kSectionNameTextFields:
-			if (indexPath.row == 0) {
-				cell = self.firstNameTextFieldTableViewCell;
-			} else {
-				cell = self.lastNameTextFieldTableViewCell;
+			
+		case kSectionInputTextFields: {
+			switch (indexPath.row) {
+				case kTextFieldRowFirstName:
+					cell = self.firstNameTextFieldTableViewCell;
+					cell.bottomSeparator.hidden = YES;
+					
+					break;
+					
+				case kTextFieldRowLastName:
+					cell = self.lastNameTextFieldTableViewCell;
+					cell.bottomSeparator.hidden = YES;
+					
+					break;
+				case kTextFieldRowEmail:
+					cell = self.emailTextFieldTableViewCell;
+					cell.bottomSeparator.hidden = YES;
+					
+					break;
+				case kTextFieldRowCell:
+					cell = self.cellTextFieldTableViewCell;
+					cell.bottomSeparator.hidden = YES;
+					
+					break;
+				case kTextFieldRowPhone:
+					cell = self.phoneTextFieldTableViewCell;
+					
+					break;
+				default:
+					break;
 			}
 			
 			break;
-			
-		default:
-			break;
-	}
-	
-	// Bind required elements
-	switch (indexPath.section) {
-		case kSectionAvatar:
-			self.avatarTableViewCell = cell;
-			
-			break;
-
-		case kSectionNameTextFields:
-			if (indexPath.row == 0) {
-				self.firstNameTextFieldTableViewCell = cell;
-			} else {
-				self.lastNameTextFieldTableViewCell = cell;
-			}
-			
-			break;
+		}
 			
 		default:
 			break;

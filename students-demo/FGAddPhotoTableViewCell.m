@@ -20,9 +20,6 @@ NSString * const FGAddPhotoTableViewCellIdentifier = @"FGAddPhotoTableViewCell";
 	if (self) {
 		[self.button setTitle:FGLocalizedString(@"Add Profile Photo", @"Add photo button title")
 					 forState:UIControlStateNormal];
-		
-		self.topSeparator.hidden = YES;
-		self.bottomSeparator.hidden = YES;
 	}
 	
 	return self;
