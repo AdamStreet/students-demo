@@ -91,7 +91,7 @@
 		66AB0B091D299231004985E9 /* FGImagedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B081D299231004985E9 /* FGImagedLabel.m */; };
 		66AB0B0F1D29A714004985E9 /* FGNewStudentActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B0E1D29A714004985E9 /* FGNewStudentActionSheet.m */; };
 		66AB0B121D29AB82004985E9 /* FGStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B111D29AB82004985E9 /* FGStatusBarNotification.m */; };
-		66AB0B1A1D29C49E004985E9 /* Model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B191D29C49E004985E9 /* Model.xcmappingmodel */; };
+		66AB0B1A1D29C49E004985E9 /* students_demo_mapping_model1to2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B191D29C49E004985E9 /* students_demo_mapping_model1to2.xcmappingmodel */; };
 		66AB0B211D29C6FE004985E9 /* _FGDepartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B1C1D29C6FE004985E9 /* _FGDepartment.m */; };
 		66AB0B221D29C6FE004985E9 /* _FGMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B1E1D29C6FE004985E9 /* _FGMember.m */; };
 		66AB0B231D29C6FE004985E9 /* _FGTeacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AB0B201D29C6FE004985E9 /* _FGTeacher.m */; };
@@ -278,7 +278,7 @@
 		66AB0B101D29AB82004985E9 /* FGStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGStatusBarNotification.h; sourceTree = "<group>"; };
 		66AB0B111D29AB82004985E9 /* FGStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGStatusBarNotification.m; sourceTree = "<group>"; };
 		66AB0B141D29C136004985E9 /* students_demo 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "students_demo 2.xcdatamodel"; sourceTree = "<group>"; };
-		66AB0B191D29C49E004985E9 /* Model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model.xcmappingmodel; sourceTree = "<group>"; };
+		66AB0B191D29C49E004985E9 /* students_demo_mapping_model1to2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = students_demo_mapping_model1to2.xcmappingmodel; sourceTree = "<group>"; };
 		66AB0B1B1D29C6FE004985E9 /* _FGDepartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGDepartment.h; sourceTree = "<group>"; };
 		66AB0B1C1D29C6FE004985E9 /* _FGDepartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FGDepartment.m; sourceTree = "<group>"; };
 		66AB0B1D1D29C6FE004985E9 /* _FGMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FGMember.h; sourceTree = "<group>"; };
@@ -425,7 +425,7 @@
 			children = (
 				66AB0A041D24E7FE004985E9 /* Models */,
 				66AB099F1D24CD06004985E9 /* students_demo.xcdatamodeld */,
-				66AB0B191D29C49E004985E9 /* Model.xcmappingmodel */,
+				66AB0B191D29C49E004985E9 /* students_demo_mapping_model1to2.xcmappingmodel */,
 				66AB09CD1D24CFEE004985E9 /* FGDatabaseManager.h */,
 				66AB09CE1D24CFEE004985E9 /* FGDatabaseManager.m */,
 			);
@@ -967,7 +967,7 @@
 				66AB09FD1D24E198004985E9 /* FGJSONConverter.m in Sources */,
 				66AB0B121D29AB82004985E9 /* FGStatusBarNotification.m in Sources */,
 				66AB09F71D24DE01004985E9 /* FGRemoteDataFetcher.m in Sources */,
-				66AB0B1A1D29C49E004985E9 /* Model.xcmappingmodel in Sources */,
+				66AB0B1A1D29C49E004985E9 /* students_demo_mapping_model1to2.xcmappingmodel in Sources */,
 				66AB0ABA1D279063004985E9 /* FGBaseStudentTableViewCell.m in Sources */,
 				66AB0B3A1D29EF50004985E9 /* FGEmailTextFieldTableViewCell.m in Sources */,
 				66AB0A491D25B002004985E9 /* FGImageLoader.m in Sources */,
