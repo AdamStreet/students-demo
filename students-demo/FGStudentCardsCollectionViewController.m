@@ -63,8 +63,6 @@ static const CGFloat kGapAroundElements = 5.0;
 
 - (void)deleteStudent:(FGStudent *)student
 {
-	self.flippedCellIndexPath = nil;
-	
 	[[self databaseManager] deleteEntity:student];
 	[[self databaseManager] saveContext];
 }
@@ -134,6 +132,8 @@ static const CGFloat kGapAroundElements = 5.0;
 		if (error) {
 			statusTitle = [error localizedDescription];
 		} else {
+			[[self databaseManager] saveContext];
+			
 			statusTitle = [NSString stringWithFormat:@"%@ %@",
 						   FGLocalizedString(@"Added Random Student:", @"Student added status bar title prefix"),
 						   [student fullName]];
@@ -147,6 +147,29 @@ static const CGFloat kGapAroundElements = 5.0;
 		
 		[FGStatusBarNotification dismissAfterDelay:3.5];
 	}];
+}
+
+- (FGStudentCardCollectionViewCell *)visibleCell:(UICollectionView *)collectionView
+									 atIndexPath:(NSIndexPath *)indexPath
+{
+	if (!indexPath)
+		return nil;
+	
+	if (![collectionView.indexPathsForVisibleItems containsObject:self.flippedCellIndexPath])
+		return nil;
+	
+	return (FGStudentCardCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+}
+
+- (void)restoreFlippedCell
+{
+	FGStudentCardCollectionViewCell *previouslyFlippedVisibleCell = [self visibleCell:self.collectionView
+																		  atIndexPath:self.flippedCellIndexPath];
+	if (previouslyFlippedVisibleCell.isFlipped) {
+		[previouslyFlippedVisibleCell flipCard:YES];
+	}
+	
+	self.flippedCellIndexPath = nil;
 }
 
 #pragma mark Accessors
@@ -317,19 +340,23 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 	if (isJustAFlipBack) {
 		self.flippedCellIndexPath = nil;
 	} else {
-		const BOOL isPreviouslyFlippedCellVisible = (self.flippedCellIndexPath &&
-													 [collectionView.indexPathsForVisibleItems containsObject:self.flippedCellIndexPath]);
-		if (isPreviouslyFlippedCellVisible) {
-			FGStudentCardCollectionViewCell *currentlyFlippedCell = (FGStudentCardCollectionViewCell *)[collectionView cellForItemAtIndexPath:self.flippedCellIndexPath];
-			if (currentlyFlippedCell.isFlipped) {
-				[currentlyFlippedCell flipCard:YES];
-			}
-		}
+		[self restoreFlippedCell];
 		
 		self.flippedCellIndexPath = indexPath;
 	}
 	
 	[cell flipCard:YES];
+}
+
+#pragma mark - <NSFetchedResultsControllerDelegate>
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+	if ([super respondsToSelector:@selector(controllerWillChangeContent:)]) {
+		[super controllerWillChangeContent:controller];
+	}
+	
+	[self restoreFlippedCell];
 }
 
 @end
