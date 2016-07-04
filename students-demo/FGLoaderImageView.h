@@ -22,6 +22,8 @@ typedef void(^FGLoaderImageViewCompletion)(NSError *error);
 - (void)setImageURL:(NSURL *)url
 completion:(FGLoaderImageViewCompletion)completion;
 
+- (BOOL)isLoading;
+
 - (void)cancel;
 
 - (void)clear;

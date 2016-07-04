@@ -96,6 +96,11 @@
 	}
 }
 
+- (BOOL)isLoading
+{
+	return !!self.pendingTask;
+}
+
 - (void)cancel
 {
 	[self cancelPendingTask];
