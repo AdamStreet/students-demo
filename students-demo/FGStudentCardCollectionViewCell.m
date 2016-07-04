@@ -95,6 +95,8 @@ static NSTimeInterval kFlipAnimationDuration = 0.5;
 		toView = self.studentCardDetailView;
 	}
 	
+	toView.frame = fromView.frame;	// Will be replaced one with the other: keep layout
+	
 	[UIView transitionFromView:fromView
 						toView:toView
 					  duration:(animated? kFlipAnimationDuration : 0.0)
