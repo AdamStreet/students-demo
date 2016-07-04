@@ -289,6 +289,11 @@ static const NSUInteger kNumberOfColumnsOnIPadIdiom = 2;
 			return;
 		}
 	}];
+	
+	UIPopoverPresentationController *popPresenter = actionSheet.popoverPresentationController;
+	popPresenter.barButtonItem = sender;
+	popPresenter.sourceView = self.view;
+	
 	[self presentViewController:actionSheet
 					   animated:YES
 					 completion:nil];
